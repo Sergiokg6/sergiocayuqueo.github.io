@@ -61,22 +61,19 @@ body {
 }
 
 
-/* Light style for navbar */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: flex-end; /* Align navbar content to the right */
+  justify-content: flex-end;
   align-items: center;
   padding: 10px;
   background-color: transparent;
   color: red;
   z-index: 999;
   transition: top 0.5s ease;
-  margin-right: 180px;
-   
 }
 
 .menu-icon {
@@ -85,11 +82,7 @@ body {
   right: 10px;
   font-size: 24px;
   cursor: pointer;
-  
-}
-
-.menu-icon:hover {
-  color: #ffffff;
+  z-index: 1000; /* Ensure the menu icon is above other elements */
 }
 
 .nav-links {
@@ -100,7 +93,7 @@ body {
   border-radius: 5px;
   position: absolute;
   top: 100%;
-  right: 0; /* Align nav-links to the right */
+  right: 0;
   display: none;
 }
 
@@ -135,47 +128,7 @@ body {
     background-color: rgba(168, 120, 120, 0.4);
     margin-right: 20px;
     position: static;
-    align-items: flex-end; /* Align nav-links to the right */
-  }
-  
-}
-
-@media screen and (max-width: 500px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-    z-index: 99999;
-  }
-
-  .nav-links {
-    display: none;
-    width: 100%;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 10px 0;
-  }
-
-  .menu-icon {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  .header h1 {
-    top: 35%; /* Adjust the distance from the top */
-  }
-
-  .header p {
-    top: 75%; /* Adjust the distance from the top */
-  }
-
-  .header img {
-    height: 50vh; /* Adjust header image height for smaller screens */
+    align-items: flex-end;
   }
 }
 
