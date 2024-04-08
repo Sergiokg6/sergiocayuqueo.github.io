@@ -87,33 +87,33 @@ function stickyNavbar() {
 let menuIcon = document.querySelector('.menu-icon');
 let navLinks = document.querySelector('.nav-links');
 let navLinksList = document.querySelectorAll('.nav-links a');
-let navbar = document.querySelector('.navbar'); // Added
+let navbar1 = document.querySelector('.navbar1'); // Added
 
 menuIcon.addEventListener('click', function() {
   navLinks.classList.toggle('active');
-  navbar.classList.toggle('static'); // Added
+  navbar1.classList.toggle('static'); // Added
 });
 
 // Hide navbar when clicking outside or on a link
 document.addEventListener('click', function(event) {
   if (!navLinks.contains(event.target) && !menuIcon.contains(event.target)) {
     navLinks.classList.remove('active');
-    navbar.classList.remove('static'); // Added
+    navbar1.classList.remove('static'); // Added
   }
 });
 
-// Hide navbar when a link is clicked
+// Hide navbar1 when a link is clicked
 navLinksList.forEach(function(link) {
   link.addEventListener('click', function() {
     navLinks.classList.remove('active');
-    navbar.classList.remove('static'); // Added
+    navbar1.classList.remove('static'); // Added
   });
 });
 
 // Added: Make the navbar that is not being deployed static while scrolling
 window.addEventListener('scroll', function() {
   if (!navLinks.classList.contains('active')) {
-    navbar.classList.add('static');
+    navbar1.classList.add('static');
   }
 });
 
