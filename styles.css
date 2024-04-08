@@ -42,7 +42,7 @@ body {
   font-size: 1.2em;
   opacity: 0.8;
   color: #f1f1f1;
-  top: 55%; /* Adjust the distance from the top */
+  top: 65%; /* Adjust the distance from the top */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center horizontally */
 }
