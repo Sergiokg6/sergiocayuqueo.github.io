@@ -117,3 +117,17 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// JavaScript para aplicar el efecto a todas los links
+document.addEventListener('DOMContentLoaded', function() {
+  var words = document.getElementsByTagName('a'); // Obtener todas las palabras del cuerpo de la página
+
+  for (var i = 0; i < words.length; i++) {
+      words[i].addEventListener('mouseover', function() {
+          this.classList.add('hover-effect'); // Agregar clase de efecto hover
+      });
+
+      words[i].addEventListener('mouseout', function() {
+          this.classList.remove('hover-effect'); // Quitar clase de efecto hover
+      });
+  }
+});
