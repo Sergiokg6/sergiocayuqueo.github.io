@@ -58,6 +58,10 @@ body {
   background-position: center;
   margin-bottom: 0%;
   z-index: 0; /* Ensure the image is behind the h1 and p */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 
