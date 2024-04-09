@@ -309,7 +309,7 @@ footer {
   transform: scale(1.2);
 }
 
-/* Animation styles */
+/* Animation styles face first quote */
 .fadeInUp {
   opacity: 0;
   transform: translateY(50px);
@@ -319,4 +319,13 @@ footer {
 .fadeInUp.active {
   opacity: 1;
   transform: translateY(0); /* Change translateY value to 0 for active state */
+}
+
+/*hover over all the a's*/
+.hover-effect {
+  transition: all 0.3s ease; /* Transición suave */
+}
+.hover-effect:hover {
+  font-weight: bold; /* Hacer la palabra en negrita */
+  font-size: 1.2em; /* Aumentar el tamaño de la fuente */
 }
