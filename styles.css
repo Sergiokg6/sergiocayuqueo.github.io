@@ -283,6 +283,10 @@ footer {
   margin-left: 10px;
 }
 
+.mailto a{
+  color: #fdfdfd;
+}
+
 .social-icons, .social-icons a {
   margin-top: 20px;
   padding-right: 20px;
