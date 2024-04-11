@@ -131,3 +131,35 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 });
+
+//carrousel script
+const linksContainer = document.getElementById('roulette-container');
+const links = linksContainer.getElementsByClassName('link');
+const linkWidth = 19; // Width of each image
+const translateStep = 1; // Adjust the movement speed
+let translateX = 1;
+
+function changeLink() {
+  translateX -= translateStep;
+  linksContainer.style.transform = `translateX(${translateX}px)`;
+
+  // Move the first link to the end when it scrolls out of view
+  if (translateX <= -linkWidth) {
+    const firstLink = linksContainer.firstElementChild;
+    linksContainer.appendChild(firstLink);
+    translateX += linkWidth;
+
+    // Smooth transition for the first link reappearing at the end
+    setTimeout(() => {
+      firstLink.style.transition = 'transform 0s'; // Disable transition for the first link
+      firstLink.style.transform = `translateX(${linkWidth}px)`; // Move it to the end
+      setTimeout(() => {
+        firstLink.style.transition = 'transform 1s ease'; // Smooth transition for reappearing
+        firstLink.style.transform = `translateX(0)`; // Move it to its original position
+      }, 0);
+    }, 0); // Delay to ensure transition is applied after resetting transform
+  }
+}
+
+setInterval(changeLink, 60); // Adjust the interval for smoother movement
+
