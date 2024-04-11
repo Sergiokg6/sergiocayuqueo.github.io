@@ -253,6 +253,63 @@ section {
   text-align: center;
 }
 
+/*carrousel styles*/
+.container-carrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.roulette-container {
+  display: flex;
+  transition: transform 3s ease; /* Smoother transition */
+  overflow: hidden;
+  position: relative;
+  width: 100%; /* Ensure full width */
+  max-width: 1200px; /* Set max width */
+  height: 100vh;
+  align-items: center;
+}
+
+.roulette-container a {
+  z-index: 99;
+  display: inline-block;
+  width: 200px; /* Set width for each link */
+  height: auto; 
+  overflow: hidden; /* Hide overflowing content */
+  margin: 0 10px; /* Add some margin between links */
+  transition: transform 0.5s ease, box-shadow 3s ease;
+}
+
+/* Adjust image size for responsive design */
+.link img {
+  width: 100%; /* Make images fill their parent container */
+  height: auto;
+  z-index: 99;
+}
+
+.link-caption {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .roulette-container a {
+    width: 150px; /* Adjust link width for smaller screens */
+    margin: 0 5px; /* Adjust margin for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .roulette-container a {
+    width: 120px; /* Further adjust link width for even smaller screens */
+    margin: 0 3px; /* Further adjust margin for even smaller screens */
+  }
+}
+
 /* Footer styles */
 footer {
   background-color: #0d3c55;
