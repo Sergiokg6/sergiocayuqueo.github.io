@@ -439,3 +439,14 @@ body:before {
   pointer-events: none; /* Ensure the background doesn't interfere with interaction */
   z-index: -1; /* Move the background behind other content */
 }
+
+/*papers link*/
+section .acerca-de-papers {
+  float: right;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
