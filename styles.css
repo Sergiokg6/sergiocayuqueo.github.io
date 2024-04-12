@@ -374,11 +374,11 @@ footer {
 
 .social-icons, .social-icons a {
   margin-top: 20px;
-  padding-right: 10px;
+  padding-right: 5px;
 }
 
 .social-icons a {
-  margin: 10px 15px;
+  margin: 5px 5px;
   font-size: 24px;
   transition: color 0.6s ease;
 }
