@@ -447,6 +447,7 @@ section .acerca-de-papers {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  font-family: Verdana, Tahoma, sans-serif;
 }
+
