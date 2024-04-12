@@ -95,7 +95,7 @@ body:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('science5.jpg'); /* Add your background pattern image */
+    background-image: url('../images_blog/science5.jpg'); /* Add your background pattern image */
     opacity: 0.06; /* Adjust opacity for subtlety */
     pointer-events: none; /* Ensure the background doesn't interfere with interaction */
     z-index: -1; /* Move the background behind other content */
