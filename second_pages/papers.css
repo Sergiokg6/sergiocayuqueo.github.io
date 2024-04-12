@@ -1,0 +1,334 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+}
+header {
+    background-color: rgba(74, 202, 82, 0.7); /* Add a semi-transparent overlay to improve text readability */
+    
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-top: 0;
+}
+.paper {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+.paper h2 {
+    margin-top: 0;
+}
+.paper a {
+    color: rgb(54, 245, 248);
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+.paper a:hover {
+    background-color: #4caf46;
+
+}
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+}
+.download-btn:hover {
+    background-color: #4CAF40;
+}
+
+/* Add this CSS for the hover effect */
+.paper:hover {
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+    background-color: #e0e0e0;
+}
+
+.paper:hover a {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Add this CSS for the parallax effect */
+.parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: transform 0.5s ease-out; /* Add smooth transition */
+}
+
+
+/* Background pattern */
+body:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('science5.jpg'); /* Add your background pattern image */
+    opacity: 0.06; /* Adjust opacity for subtlety */
+    pointer-events: none; /* Ensure the background doesn't interfere with interaction */
+    z-index: -1; /* Move the background behind other content */
+    align-items: center;
+  }
+
+
+  /* Style for the chart canvas */
+#myChart {
+    width: 100%; /* Ensure the canvas fills its container */
+    height: 400px; /* Adjust the height as needed */
+}
+  
+/* Add this CSS for the chart */
+.chart-container {
+    width: 90%; /* Adjust the width as needed */
+    max-width: 800px; /* Ensure the canvas does not exceed the container width */
+    margin: 20px auto; /* Center the canvas horizontally */
+    height: 400px; /* Adjust the height as needed */
+    
+}
+
+@media screen and (max-width: 600px) {
+    /* Styles for screens smaller than 600px */
+    .container {
+        max-width: 90%;
+        padding: 10px;
+    }
+    /* Add more responsive styles as needed */
+}
+
+
+/* Add this CSS for the floating action button */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hide the button by default */
+}
+
+#back-to-top-btn:hover {
+    background-color: #4CAF43;
+
+}
+
+/*make all images just his necessary height and width*/
+img {
+    max-width: 100%; /* Ensure images don't exceed their parent container's width */
+    height: auto; /* Allow images to adjust their height proportionally */
+}
+
+/*styles for social buttons */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-buttons a {
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
+
+.social-buttons button {
+    margin: 10px 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 30px;
+}
+
+.social-buttons button:hover {
+    background-color: #4CAF56;
+}
+
+.social-buttons button:last-child {
+    margin-right: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-buttons button {
+        margin: 10px 0;
+    }
+}
+
+
+/* Typography */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6; /* Improved readability with proper line spacing */
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif; /* Example: Google Font Roboto */
+}
+
+p {
+    font-size: 16px;
+}
+
+/* Whitespace and Padding */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px; /* Add space below heading for visual separation */
+}
+
+.paper {
+    margin-bottom: 40px; /* Increase spacing between papers */
+    padding: 20px;
+}
+
+.paper h2 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Add space below paper title */
+}
+
+.paper p {
+    margin-bottom: 10px; /* Add space below paragraphs */
+}
+
+/*Error handling*/
+.error-message {
+    display: none; /* Initially hide the error message */
+    color: #ff0000; /* Red color for error messages */
+    font-size: 16px;
+    margin-top: 10px; /* Add space above the error message */
+    text-align: center; /* Center align the error message */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffe0e0; /* Light red background color for error messages */
+}
+
+.error-message::before {
+    content: "⚠ "; /* Add a warning icon before the error message */
+}
+
+/*footer section*/
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+    margin-bottom: 20px; /* Add space between columns */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .footer-column {
+        flex: 1 0 100%; /* Each column takes full width on smaller screens */
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-container {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+    }
+
+    .footer-bottom {
+        margin-bottom: 20px; /* Add space between content and footer bottom */
+    }
+}
+
+ /* Add styles for keywords */
+ .paper-keywords {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
