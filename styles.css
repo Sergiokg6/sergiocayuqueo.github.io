@@ -296,7 +296,7 @@ section {
   overflow: hidden;
   position: relative;
   width: 100%; /* Ensure full width */
-  max-width: 1200px; /* Set max width */
+  max-width: 1000px; /* Set max width */
   height: 20vh;
   align-items: center;
 }
