@@ -297,7 +297,7 @@ section {
   position: relative;
   width: 100%; /* Ensure full width */
   max-width: 1200px; /* Set max width */
-  height: 100vh;
+  height: 20vh;
   align-items: center;
 }
 
