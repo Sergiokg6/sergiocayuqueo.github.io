@@ -442,7 +442,7 @@ body:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images_blog/decorative_ornament.png'); /* Add your background pattern image */
+  background-image: url('./images_blog/decorative_ornament.png'); /* Add your background pattern image */
   background-color: none;
   opacity: 0.19; /* Adjust opacity for subtlety */
   pointer-events: none; /* Ensure the background doesn't interfere with interaction */
