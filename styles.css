@@ -204,39 +204,47 @@ section {
   margin-right: 5px;
   line-height: 1; /* Ensure proper alignment */
 }
-
-#poems {
-  position: relative;
-  overflow: hidden;
-}
-
+/* Pseudoelemento ::after para el overlay del fondo */
 #poems::after {
   content: '';
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .9)); /* Gradient overlay */
-  pointer-events: none; /* Allow interaction with underlying elements */
+  background-image: linear-gradient(rgba(5, 25, 25, 0), rgba(25, 55, 55, .4)); /* Gradiente superpuesto */
+  pointer-events: none; /* Permitir interacción con los elementos subyacentes */
   z-index: 0;
+  position: fixed; /* Posición fija para cubrir toda la pantalla */
 }
 
+/* Estilos para la lista no ordenada */
 #poems ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: grid; /* Usar un diseño de cuadrícula para distribuir los poemas */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribuir dinámicamente los poemas */
+  gap: 20px; /* Espacio entre los poemas */
 }
 
+/* Estilos para los enlaces dentro de la lista */
 #poems ul li a {
-  color: #8c1515; /* Dark red */
+  color: #8c1515; /* Rojo oscuro */
   text-decoration: none;
   transition: color 0.3s ease;
+  display: block; /* Cambiado a 'block' para ocupar todo el espacio horizontal */
 }
 
+/* Estilos al pasar el mouse sobre los enlaces */
 #poems ul li a:hover {
-  color: #000000; /* Lighter red */
+  color: #000000; /* Rojo más claro */
 }
+
+/* Estilos para los elementos de la lista de citas */
+#quotes ul li {
+  list-style-type: upper-roman; /* Numeración romana en mayúsculas */
+}
+
 
 #quotes ul li {
   list-style-type: upper-roman;
