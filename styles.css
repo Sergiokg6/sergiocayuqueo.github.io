@@ -444,7 +444,7 @@ body:before {
   height: 100%;
   background-image: url('./images_blog/abstract_cubic2.jpg'); /* Add your background pattern image */
   background-color: none;
-  opacity: 0.07; /* Adjust opacity for subtlety */
+  opacity: 0.27; /* Adjust opacity for subtlety */
   pointer-events: none; /* Ensure the background doesn't interfere with interaction */
   z-index: -1; /* Move the background behind other content */
 }
