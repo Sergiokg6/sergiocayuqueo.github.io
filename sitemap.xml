@@ -33,11 +33,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/second_pages/diaLluvioso.html</loc>
-  <lastmod>2024-04-10T16:01:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://sergiocayuqueo.com/second_pages/nignios.html</loc>
   <lastmod>2024-04-10T16:01:07+00:00</lastmod>
   <priority>0.80</priority>
@@ -58,14 +53,29 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/second_pages/escuche.html</loc>
-  <lastmod>2024-04-10T16:01:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://sergiocayuqueo.com/second_pages/hayUnFuturoFeliz.html</loc>
   <lastmod>2024-04-10T16:01:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://sergiocayuqueo.com/second_pages/trenes.html</loc>
+  <lastmod>2024-04-10T16:01:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sergiocayuqueo.com/second_pages/noLoVes.html</loc>
+  <lastmod>2024-04-10T16:01:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sergiocayuqueo.com/second_pages/escuche.html</loc>
+  <lastmod>2024-04-10T16:01:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
+
+      
+
+      
+      
 </urlset>
