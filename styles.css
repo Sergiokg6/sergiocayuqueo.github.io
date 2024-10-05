@@ -13,25 +13,28 @@ body {
   padding: 0;
   overflow-y: auto; /* Enable vertical scrolling for entire body */
   background-color: #f8f8f8; /* Light gray background color */
+  background-image: url('./images_blog/headerimage.jpg'); /* Mueve la imagen de fondo aquí */
+  background-size: cover; /* Asegura que la imagen cubre todo el área */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Mantiene la imagen fija durante el scroll */
 }
 
 header {
-  height: 100vh;
-  background-image: url('./images_blog/headerimage.jpg');
-  background-size: cover;
-  background-position: center;
+  height: 100vh; /* Asegura que el encabezado ocupa toda la altura de la ventana */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1; /* Asegúrate de que el header esté por encima del fondo */
 }
 
 .overlay {
   color: #000;
   padding: 2rem;
   text-align: center;
+  position: relative; /* Necesario para que el z-index funcione */
+  z-index: 2; /* Asegúrate de que el contenido del encabezado esté encima de la imagen */
 }
-
 
 @-webkit-keyframes fadeIn {
   0% { opacity: 0; }
@@ -55,28 +58,13 @@ header {
   animation: fadeIn 3s ease-in-out;
 }
 
-
-
-/*Ensure images cannot be selected.*/
+/* Ensure images cannot be selected. */
 img {
    user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
 }
-
-/* Ensure the header image appears below the fixed h1 and p */
-/*.header img {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 0%;
-  z-index: 0;
-} */
-
 
 .navbar1 {
   position: fixed;
@@ -177,7 +165,6 @@ img {
   }
 }
 
-
 /* Section styles */
 section {
   padding: 20px;
@@ -191,7 +178,6 @@ section {
 }
 
 #poems {
-  background-color: rgba(168, 120, 120, 0.4);
   padding: 40px;
   margin-bottom: 40px;
   z-index: 99;
@@ -205,7 +191,6 @@ section {
   text-align: justify;
 }
 
-
 #acerca-de p::first-letter,
 #poems p::first-letter {
   font-size: 2em;
@@ -214,6 +199,7 @@ section {
   margin-right: 5px;
   line-height: 1; /* Ensure proper alignment */
 }
+
 /* Pseudoelemento ::after para el overlay del fondo */
 #poems::after {
   content: '';
@@ -255,7 +241,6 @@ section {
   list-style-type: upper-roman; /* Numeración romana en mayúsculas */
 }
 
-
 #quotes ul li {
   list-style-type: upper-roman;
 }
@@ -273,7 +258,6 @@ section {
   margin: auto; /* Centrar el contenedor horizontalmente */
   position: relative;
 }
-
 
 @media (max-width: 768px) {
   #right-quotes {
@@ -442,20 +426,6 @@ footer {
 .hover-effect:hover {
   font-weight: bold; /* Hacer la palabra en negrita */
   font-size: 1.2em; /* Aumentar el tamaño de la fuente */
-}
-
-/* Background pattern */
-body:before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('./images_blog/decorative_ornament.png'); /* Add your background pattern image */
-  opacity: 0.19; /* Adjust opacity for subtlety */
-  pointer-events: none; /* Ensure the background doesn't interfere with interaction */
-  z-index: -1; /* Move the background behind other content */
 }
 
 /*papers link*/
