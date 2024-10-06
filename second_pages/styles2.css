@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+    overflow-x: hidden; /* Avoid horizontal scroll */
+}
+
+header {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    color: #000; /* Change to white for better readability */
+    padding: 2rem;
+    text-align: center;
+    position: relative; /* To contain the gold line absolutely */
+    z-index: 2; /* Ensure overlay is above background */
+}
+
+.overlay h1 {
+    font-size: 4rem;
+    font-weight: normal;
+    margin-bottom: 1rem; /* Adjusted for better spacing */
+    animation: fadeIn 3s ease-in-out;
+}
+
+.overlay .gold-line {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 5px;
+    animation: fadeIn 3s ease-in-out;
+    background: linear-gradient(90deg, #FFD700, #FFCC00); /* Gold gradient */
+    margin: 20px auto; /* Center the line */
+}
+
+.overlay p {
+    font-size: 1.5rem;
+    animation: fadeIn 3s ease-in-out;
+    max-width: 800px; /* Set max width to prevent overflow */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+main {
+    padding: 4rem 2rem;
+}
+
+/* Parallax Section with Image Above Title */
+.content-section {
+    position: relative;
+    padding: 100px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    background: url('../images_blog/waterimage.jpg') fixed; /* Fixed background image */
+    background-size: cover; /* Ensure the image covers the section */
+}
+
+/* Adjust margins to center the content properly */
+.content {
+    background-color: rgba(255, 255, 255, 0.99); /* White semi-transparent background */
+    padding: 3rem;
+    max-width: 800px;
+    border-radius: 0px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Ensure the content is above the background image */
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Allow the header to grow based on content */
+        padding: 2rem 1rem; /* Add padding to the header */
+    }
+
+    .overlay h1 {
+        font-size: 3rem; /* Adjust font size */
+    }
+
+    .overlay p {
+        font-size: 1.2rem; /* Smaller font for mobile */
+        max-width: 90%; /* Make it more fluid */
+    }
+
+    .content-section {
+        padding: 5px;
+    }
+
+    .content {
+        padding: 2rem;
+        font-size: 1rem;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+}  
+
+/* Responsive styles for new sections */
+@media (max-width: 768px) {
+
+}
+
+.contact-section {
+    background-color: #ffffff; /* Changed to white for contrast */
+    padding: 2rem 3rem; /* Increased padding for spaciousness */
+    border-radius: 0px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 600px;
+    margin: 4rem auto; /* Centered with vertical margin */
+    text-align: center;
+    transition: all 0.8s ease; /* Smooth transition for hover effects */
+    background: url('../images_blog/waterimage.jpg') fixed; /* Fixed background image */
+
+}
+
+.contact-section:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.contact-section h2 {
+    margin-bottom: 1.5rem; /* Increased bottom margin for better spacing */
+    font-size: 2rem; /* Larger font for the heading */
+    color: #333; /* Darker color for better contrast */
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section label {
+    margin: 0.5rem 0 0.2rem;
+    font-weight: bold; /* Make labels bold */
+    color: #555; /* Darker color for labels */
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 0.75rem; /* Increased padding for comfort */
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s ease; /* Smooth transition for border color */
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border: 1px solid #007bff; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.contact-section button {
+    padding: 0.75rem;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem; /* Slightly larger button text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact-section button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.contact-section .response {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #28a745; /* Green color for success messages */
+}

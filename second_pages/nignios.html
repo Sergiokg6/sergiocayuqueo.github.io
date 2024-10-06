@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Niños | Poems</title>
-  <link rel="icon" href="../images_blog/sergio_ismael_favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="poems.css">
-  <!--start amplitude-->
-    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-min.js.gz"></script><script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.1.9-min.js.gz"></script><script src="https://cdn.amplitude.com/libs/plugin-autocapture-browser-0.9.0-min.js.gz"></script><script>window.amplitude.init('f711aebfb2094349609443a94080186a');window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.add(window.amplitudeAutocapturePlugin.plugin());</script>
-    <!--end amplitude-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nocturnal Echoes </title>
+    <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
-  <div class="container">
-    <div class="poem">
-      <h1>Niños</h1>
-      <p>Luces parpadeantes <br>
-        En lo oscuro de la noche <br>
-        Parpadeantes luces <br>
-        En lo claro de lo oscuro <br>
-        Noche de luces <br>
-        En la plaza de luces <br>
-        Hay niños de luces <br>
-        Luces de peluches <br>
-        Hay niños de peluches <br>
-        Y peluches de niños <br>
-        Esta amaneciendo <br>
-        En lo claro del día <br>
-        Hay niños durmiendo <br>
-        En la plaza de noche <br>
-        Ya no son niños <br>
-        No hay más peluches <br>
-        Escucha el silencio. <br>
-      </p>
+    <header>
+        <div class="overlay">
+            <h1> Nocturnal Echoes </h1>
+            <div class="gold-line"></div>
+            <p>"Luces parpadeantes" explores the juxtaposition between light and darkness, childhood innocence and the passage of time. The repeated references to "luces" (lights) suggest a vibrant, lively atmosphere that contrasts with the underlying themes of loss and transformation.
 
-      <p class="date">Desconocida</p>
-      
-    </div>
-    <div class="author" id="author">
-      <p>Sergio Cayuqueo</p>
-    </div>
-  </div>
+            </p>
+        </div>
+    </header>
 
-  <img src="../images_blog/web-jewish-mouse.jpg" alt="Funny Image" id="funny-image">
-  <script src="script_poems.js"></script>
+    <main>
+        <section class="content-section">
+            <div class="content">
+                <h1>Niños</h1>
+                <p>
+                    Luces parpadeantes <br>
+                    En lo oscuro de la noche <br>
+                    Parpadeantes luces <br>
+                    En lo claro de lo oscuro <br>
+                    Noche de luces <br>
+                    En la plaza de luces <br>
+                    Hay niños de luces <br>
+                    Luces de peluches <br>
+                    Hay niños de peluches <br>
+                    Y peluches de niños <br>
+                    Esta amaneciendo <br>
+                    En lo claro del día <br>
+                    Hay niños durmiendo <br>
+                    En la plaza de noche <br>
+                    Ya no son niños <br>
+                    No hay más peluches <br>
+                    Escucha el silencio. <br>
+                  </p>
 
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Leave a Comment</h2>
+            <form action="https://formspree.io/f/mkgnwzdo" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="response" id="response" style="display:none;"></div>
+        </section>
+        
+
+
+
+
+    </main>
+
+    <script src="script2.js"></script>
 </body>
 </html>

@@ -1,58 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConductoresSuper | Sergio Ismael Cayuqueo Vera | Poems</title>
-  <link rel="icon" href="../images_blog/sergio_ismael_favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="poems.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Tapestry of Thought</title>
+    <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
-  <div class="container">
-    <div class="poem">
-      <h1>Acciòn</h1>
-      <p>
-        Lavoisier y sus teorías,<br>
-        Faraday y sus reflejos,<br>
-        Montesquieu y sus consejos,<br>
-        Rana en su monotonía.<br>
-        <br>
-        ¿Qué es del animal?<br>
-        ¿Qué es del viviente?<br>
-        ¿Qué es de la torre,<br>
-        de aquellos que corren?<br>
-        <br>
-        Pájaros ínfimos,<br>
-        sin esperanza,<br>
-        mano a mano,<br>
-        avanzan.<br>
-        <br>
-        Renos,<br>
-        Cuernavaca,<br>
-        oasis del miedo,<br>
-        mundo sin medidas.<br>
-        <br>
-        Libros de tetera,<br>
-        hierven sin cesar,<br>
-        las teteras en los libros<br>
-        quieren escapar.<br>
-        <br>
-        Larreta ha viajado,<br>
-        a tierras lejanas,<br>
-        del lenguaje antiguo,<br>
-        en épocas tempranas. <br> 
-      </p>
+    <header>
+        <div class="overlay">
+            <h1> A Tapestry of Thought</h1>
+            <div class="gold-line"></div>
+            <p>"Acciòn" weaves together references to historical figures and vivid imagery to explore themes of knowledge, existential inquiry, and the struggle for hope, reflecting on the complexities of existence in a world marked by uncertainty and the desire for liberation.</p>
+        </div>
+    </header>
 
-      <p class="date">Fecha: Desconocida</p>
-      
-    </div>
-    <div class="author" id="author">
-      <p>Sergio Cayuqueo VI</p>
-    </div>
-  </div>
+    <main>
+        <section class="content-section">
+            <div class="content">
+                <h1>Acciòn</h1>
+                <p>
+                    Lavoisier y sus teorías,<br>
+                    Faraday y sus reflejos,<br>
+                    Montesquieu y sus consejos,<br>
+                    Rana en su monotonía.<br>
+                    <br>
+                    ¿Qué es del animal?<br>
+                    ¿Qué es del viviente?<br>
+                    ¿Qué es de la torre,<br>
+                    de aquellos que corren?<br>
+                    <br>
+                    Pájaros ínfimos,<br>
+                    sin esperanza,<br>
+                    mano a mano,<br>
+                    avanzan.<br>
+                    <br>
+                    Renos,<br>
+                    Cuernavaca,<br>
+                    oasis del miedo,<br>
+                    mundo sin medidas.<br>
+                    <br>
+                    Libros de tetera,<br>
+                    hierven sin cesar,<br>
+                    las teteras en los libros<br>
+                    quieren escapar.<br>
+                    <br>
+                    Larreta ha viajado,<br>
+                    a tierras lejanas,<br>
+                    del lenguaje antiguo,<br>
+                    en épocas tempranas. <br>   
+                </p>
 
-  <img src="../images_blog/web-jewish-mouse.jpg" alt="Funny Image" id="funny-image">
-  <script src="script_poems.js"></script>
+            </div>
+        </section>
 
+        <section class="contact-section">
+            <h2>Leave a Comment</h2>
+            <form action="https://formspree.io/f/mkgnwzdo" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="response" id="response" style="display:none;"></div>
+        </section>
+        
+
+
+
+
+    </main>
+
+    <script src="script2.js"></script>
 </body>
 </html>
