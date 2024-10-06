@@ -350,14 +350,6 @@ section {
   }
 }
 
-/* Footer styles */
-footer {
-  background-color: #0d3c55;
-  color: #fff;
-  padding: 50px 0;
-  text-align: center;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -446,4 +438,143 @@ section .acerca-de-papers {
   border: 2px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: Verdana, Tahoma, sans-serif;
+}
+
+
+footer.visible {
+  opacity: 1;
+  transform: translateY(0); /* Footer slides into view */
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('background.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: 2;
+}
+
+/* Content Styling */
+footer .container {
+  position: relative;
+  z-index: 3;
+}
+
+footer h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
+}
+
+footer p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Adding surprise: glow animation on hover */
+footer h2:hover {
+  color: #f0f0f0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 10px;
+  }
+  
+  footer h2 {
+    font-size: 1.5rem;
+  }
+  
+  footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 20px 5px;
+  }
+  
+  footer h2 {
+    font-size: 1.2rem;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/*make the links great again*/
+/* Global styles for all links */
+a {
+  font-family: 'Poppins', sans-serif; /* Beautiful, modern font */
+  color: #3498db; /* Choose a vibrant color for links */
+  text-decoration: none; /* Remove default underline */
+  font-weight: 500; /* Slightly bold to make them stand out */
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color change */
+}
+
+/* Custom underline using border */
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Distance below the text */
+  width: 0;
+  height: 2px;
+  background-color: #3498db; /* Match the color of the link */
+  transition: width 0.3s ease;
+}
+
+/* On hover, the underline expands */
+a:hover::after {
+  width: 100%; /* Expands to full width */
+}
+
+/* On hover, change color for visual feedback */
+a:hover {
+  color: #2ecc71; /* Change to a complementary color */
+}
+
+/* For buttons that are links */
+a.button-link {
+  background-color: #e74c3c; /* Button-like link background */
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff; /* White text for contrast */
+  display: inline-block; /* Makes the link behave like a button */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.button-link:hover {
+  background-color: #c0392b; /* Darker shade on hover */
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* Focused state for accessibility */
+a:focus {
+  outline: 2px dashed #3498db; /* Highlight focused links for keyboard navigation */
+  outline-offset: 3px;
+}
+
+/* Bounce effect on hover */
+a:hover::after {
+  width: 100%;
+  animation: bounce 0.3s ease-out forwards;
+}
+
+@keyframes bounce {
+  0% { width: 0; }
+  50% { width: 120%; }
+  100% { width: 100%; }
 }
