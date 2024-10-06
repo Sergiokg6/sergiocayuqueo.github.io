@@ -66,6 +66,15 @@ img {
    -ms-user-select: none;
 }
 
+header .overlay img {
+  width: 80px;
+  height: 80px;
+  padding: 0rem;
+  padding-bottom: 0px;
+  position: relative; /* Necesario para que el z-index funcione */
+  z-index: 1; /* Asegúrate de que el contenido del encabezado esté encima de la imagen */
+}
+
 .navbar1 {
   position: fixed;
   top: 0;
