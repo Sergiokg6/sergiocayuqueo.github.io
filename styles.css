@@ -17,6 +17,8 @@ body {
   background-size: cover; /* Asegura que la imagen cubre todo el área */
   background-position: center; /* Centra la imagen */
   background-attachment: fixed; /* Mantiene la imagen fija durante el scroll */
+  animation: fadeIn 3s ease-in-out;
+
 }
 
 header {
