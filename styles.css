@@ -107,7 +107,7 @@ header .overlay img {
   flex-direction: column;
   background-color: rgba(168, 120, 120, 0.4);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0px;
   position: absolute;
   top: 100%;
   right: 5.5%;
@@ -570,7 +570,7 @@ a:hover::after {
 
 /* On hover, change color for visual feedback */
 a:hover {
-  color: #2ecc71; /* Change to a complementary color */
+  color: #000; /* Change to a complementary color */
 }
 
 /* For buttons that are links */
