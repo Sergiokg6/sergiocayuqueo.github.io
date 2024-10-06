@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ConductoresSuper | Sergio Ismael Cayuqueo Vera | Poems</title>
-    <link
-      rel="icon"
-      href="../images_blog/sergio_ismael_favicon.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="poems.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="poem">
-        <h1>No lo ves?</h1>
-        <p>
-          no veo nada <br />
-          en lo blanco de la nube<br />
-          en que voy caminando<br />
-          a media noche, yo<br />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Veiled Perceptions </title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <div class="overlay">
+            <h1> Veiled Perceptions </h1>
+            <div class="gold-line"></div>
+            <p>This poem captures the intricate dance between visibility and obscurity, encouraging reflection on how we navigate our realities and the limitations of our perceptions.
 
-          escribo todo<br />
-          detrás de lo claro<br />
-          en lo que me estoy ocultando<br />
-          a medio día, yo<br />
+            </p>
+        </div>
+    </header>
 
-          observo todo<br />
-          pasos y sonidos<br />
-          los supuestos<br />
-          los conocidos, tu y yo<br />
+    <main>
+        <section class="content-section">
+            <div class="content">
+                <h1>Niños</h1>
+                <p>
+                    no veo nada <br />
+                    en lo blanco de la nube<br />
+                    en que voy caminando<br />
+                    a media noche, yo<br />
+                    <br />
+                    escribo todo<br />
+                    detrás de lo claro<br />
+                    en lo que me estoy ocultando<br />
+                    a medio día, yo<br />
+                    <br />
+                    observo todo<br />
+                    pasos y sonidos<br />
+                    los supuestos<br />
+                    los conocidos, tu y yo<br />
+                    <br />
+                    adelante precaución<br />
+                    que no veo nada<br />
+                    escribo y observo<br />
+                    ¿no lo ves?.<br />
+                  </p>
 
-          adelante precaución<br />
-          que no veo nada<br />
-          escribo y observo<br />
-          ¿no lo ves?.<br />
-        </p>
+            </div>
+        </section>
 
-        <p class="date">Fecha: Desconocida</p>
-      </div>
-      <div class="author" id="author">
-        <p>Sergio Cayuqueo</p>
-      </div>
-    </div>
+        <section class="contact-section">
+            <h2>Leave a Comment</h2>
+            <form action="https://formspree.io/f/mkgnwzdo" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="response" id="response" style="display:none;"></div>
+        </section>
+        
 
-    <img
-      src="../images_blog/web-jewish-mouse.jpg"
-      alt="Funny Image"
-      id="funny-image"
-    />
-    <script src="script_poems.js"></script>
-  </body>
+
+
+
+    </main>
+
+    <script src="script2.js"></script>
+</body>
 </html>
