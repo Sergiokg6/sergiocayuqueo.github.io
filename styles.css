@@ -71,6 +71,7 @@ header .overlay img {
   height: 80px;
   padding: 0rem;
   padding-bottom: 0px;
+  animation: fadeIn 3s ease-in-out;
   position: relative; /* Necesario para que el z-index funcione */
   z-index: 1; /* Asegúrate de que el contenido del encabezado esté encima de la imagen */
 }
@@ -441,6 +442,29 @@ section .acerca-de-papers {
 }
 
 
+/* Importing the beautiful Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+footer {
+  position: relative;
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif; /* Applying the new font */
+  opacity: 0; /* Initially hidden for the fade-in effect */
+  transform: translateY(50px); /* Slightly offscreen */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
+}
+
 footer.visible {
   opacity: 1;
   transform: translateY(0); /* Footer slides into view */
@@ -512,6 +536,7 @@ footer h2:hover {
     font-size: 0.9rem;
   }
 }
+
 
 /*make the links great again*/
 /* Global styles for all links */
