@@ -163,3 +163,14 @@ function changeLink() {
 
 setInterval(changeLink, 60); // Adjust the interval for smoother movement
 
+  // When the page scrolls, check if the footer is visible
+window.addEventListener('scroll', function() {
+  const footer = document.querySelector('footer');
+  const footerPosition = footer.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (footerPosition < screenHeight) {
+    footer.classList.add('visible');
+  }
+
+});
