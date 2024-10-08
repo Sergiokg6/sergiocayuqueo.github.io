@@ -174,3 +174,8 @@ window.addEventListener('scroll', function() {
   }
 
 });
+
+// Add staggered animation for each letter
+document.querySelectorAll('#header-title span').forEach((letter, index) => {
+  letter.style.setProperty('--index', index);
+});
