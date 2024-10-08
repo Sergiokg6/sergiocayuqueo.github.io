@@ -606,6 +606,21 @@ a:hover::after {
   100% { width: 100%; }
 }
 
+/* Animation on load */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+#header-title span {
+  animation: bounce 1s ease infinite;
+  animation-delay: calc(0.1s * var(--index)); /* Staggered animation delay */
+}
+
 
 /* Headings */
 h1, h2 {
@@ -657,6 +672,12 @@ a:hover {
     padding: 8px 10px;
   }
 
+  header .overlay {
+    h1 {
+      font-size: 2.6rem;
+    }
+  }
+
   /* Adjust image size in image container */
   .image-container img {
     max-width: 400px;
@@ -680,13 +701,10 @@ a:hover {
     letter-spacing: 0.5px;
   }
 
-
-
-  header .overlay {
+  header .overlay
     p, h1 {
       font-size: 1.5rem;
     }
-  }
 
   p {
     font-size: 14px;
@@ -697,6 +715,65 @@ a:hover {
   }
 
   .image-container img {
-    max-width: 250px;
+    max-width: 200px;
+  }
+}
+
+/* Header Styling */
+#header {
+  padding: 50px 0;
+  text-align: center;
+  position: relative;
+}
+
+/* Title Styling */
+#header-title {
+  font-size: 4vw; /* Use viewport width for responsive font sizing */
+  display: inline-block;
+  color: #000;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  margin: 0 auto;
+  
+}
+
+/* Title letter spans */
+#header-title span {
+  display: inline-block;
+  transition: transform 0.5s ease, color 0.5s ease;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+/* Animation on hover */
+#header-title span:hover {
+  transform: rotate(360deg) scale(1.2);
+  color: #fff; /* Bright red color on hover */
+  text-shadow: 3px 6px 12px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
+
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  #header-title {
+    font-size: 6vw; /* Increase font size for medium screens */
+    padding-top: 15px;
+
+  }
+}
+
+@media (max-width: 480px) {
+  #header-title {
+    font-size: 8vw; /* Further increase font size for smaller screens */
+    padding-top: 15px;
+
+  }
+  
+  #header {
+    padding: 30px 0; /* Reduce padding for smaller screens */
+  }
+  
+  #header-title span:hover {
+    transform: rotate(360deg) scale(1.1); /* Slightly reduce scaling on small screens for better fit */
   }
 }
