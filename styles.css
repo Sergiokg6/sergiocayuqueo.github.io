@@ -148,7 +148,7 @@ header .overlay img {
   }
 }
 
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 1082px) {
   .menu-icon {
     display: none;
   }
@@ -604,4 +604,99 @@ a:hover::after {
   0% { width: 0; }
   50% { width: 120%; }
   100% { width: 100%; }
+}
+
+
+/* Headings */
+h1, h2 {
+  font-family: 'Montserrat', sans-serif; /* Bold, modern font */
+  color: #2b2d42; /* Dark blue-gray for contrast */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p {
+  font-family: 'Montserrat', sans-serif; /* Bold, modern font */
+  font-size: 18px;
+  color: #000;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+p:hover {
+  transform: scale(1.02); /* Slightly zoom effect on hover */
+}
+
+/* Link Styling */
+a {
+  color: #d90429;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #2b2d42;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust headings for smaller screens */
+  h1, h2 {
+    letter-spacing: 1px;
+  }
+
+  /* Smaller font size for paragraphs */
+  p {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  /* Adjust image size in image container */
+  .image-container img {
+    max-width: 400px;
+  }
+
+  /* Add spacing adjustments for mobile layout */
+  .acerca-de .acerca-de-papers {
+    padding: 10px;
+  }
+
+  /* Ensure list items in the poems section are easy to read */
+  #poems ul li {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further scaling down for very small screens */
+  h1, h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+
+
+
+  header .overlay {
+    p, h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .acerca-de-papers {
+    margin-bottom: 40px;
+  }
+
+  .image-container img {
+    max-width: 250px;
+  }
 }
