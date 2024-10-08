@@ -1,0 +1,607 @@
+/* Reset default browser styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: Verdana, sans-serif, Tahoma;
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+/* Global styles */
+body {
+  padding: 0;
+  overflow-y: auto; /* Enable vertical scrolling for entire body */
+  background-color: #f8f8f8; /* Light gray background color */
+  background-image: url('./images_blog/headerimage.jpg'); /* Mueve la imagen de fondo aquí */
+  background-size: cover; /* Asegura que la imagen cubre todo el área */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Mantiene la imagen fija durante el scroll */
+  animation: fadeIn 3s ease-in-out;
+
+}
+
+header {
+  height: 100vh; /* Asegura que el encabezado ocupa toda la altura de la ventana */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Asegúrate de que el header esté por encima del fondo */
+}
+
+.overlay {
+  color: #000;
+  padding: 2rem;
+  text-align: center;
+  position: relative; /* Necesario para que el z-index funcione */
+  z-index: 2; /* Asegúrate de que el contenido del encabezado esté encima de la imagen */
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.overlay h1 {
+  font-size: 4rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.overlay p {
+  font-size: 1.5rem;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Ensure images cannot be selected. */
+img {
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+
+header .overlay img {
+  width: 80px;
+  height: 80px;
+  padding: 0rem;
+  padding-bottom: 0px;
+  animation: fadeIn 3s ease-in-out;
+  position: relative; /* Necesario para que el z-index funcione */
+  z-index: 1; /* Asegúrate de que el contenido del encabezado esté encima de la imagen */
+}
+
+.navbar1 {
+  position: fixed;
+  top: 0;
+  left: -2.5%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+  color: red;
+  z-index: 999;
+  transition: top 0.5s ease;
+}
+
+.menu-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure the menu icon is above other elements */
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(168, 120, 120, 0.4);
+  padding: 10px;
+  border-radius: 0px;
+  position: absolute;
+  top: 100%;
+  right: 5.5%;
+  display: none;
+}
+
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  top: calc(100% + 10px);
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+#first-imag {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+@media screen and (max-width: 501px) {
+  #first-image {
+    height: 70vh; /* Adjusted height for smaller screens */
+  }
+
+  .header h1 {
+    top: 35%; /* Adjust the distance from the top */
+    left: 50%; /* Center horizontally */
+  }
+
+  .header p {
+    top: 65%; /* Adjust the distance from the top */
+    left: 50%; /* Center horizontally */
+  }
+}
+
+@media screen and (min-width: 501px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .navbar1 {
+    position: static;
+    background-color: transparent;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(168, 120, 120, 0.4);
+    margin-right: 20px;
+    position: static;
+    align-items: flex-end;
+  }
+  
+  #first-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+/* Section styles */
+section {
+  padding: 20px;
+}
+
+#acerca-de p {
+  font-size: 1.2em;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+#poems {
+  padding: 40px;
+  margin-bottom: 40px;
+  z-index: 99;
+}
+
+#acerca-de p,
+#poems p, a {
+  font-size: 1.2em;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+#acerca-de p::first-letter,
+#poems p::first-letter {
+  font-size: 2em;
+  color: #8c1515; /* Dark red */
+  float: left;
+  margin-right: 5px;
+  line-height: 1; /* Ensure proper alignment */
+}
+
+/* Pseudoelemento ::after para el overlay del fondo */
+#poems::after {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permitir interacción con los elementos subyacentes */
+  background-image: none;
+  z-index: 0;
+  position: fixed; /* Posición fija para cubrir toda la pantalla */
+}
+
+/* Estilos para la lista no ordenada */
+#poems ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid; /* Usar un diseño de cuadrícula para distribuir los poemas */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribuir dinámicamente los poemas */
+  gap: 20px; /* Espacio entre los poemas */
+}
+
+/* Estilos para los enlaces dentro de la lista */
+#poems ul li a {
+  color: #8c1515; /* Rojo oscuro */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block; /* Cambiado a 'block' para ocupar todo el espacio horizontal */
+}
+
+/* Estilos al pasar el mouse sobre los enlaces */
+#poems ul li a:hover {
+  color: #000000; /* Rojo más claro */
+}
+
+/* Estilos para los elementos de la lista de citas */
+#quotes ul li {
+  list-style-type: upper-roman; /* Numeración romana en mayúsculas */
+}
+
+#quotes ul li {
+  list-style-type: upper-roman;
+}
+
+#left-quotes {
+  text-align: left;
+}
+
+#right-quotes {
+  background-color: #ffffff;
+  padding: 15px;
+  text-align: right;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 90%; /* Ancho máximo del contenedor */
+  margin: auto; /* Centrar el contenedor horizontalmente */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  #right-quotes {
+    max-width: 100%; /* Ancho máximo al 100% en pantallas pequeñas */
+    border-radius: 0; /* Sin bordes redondeados en pantallas pequeñas */
+  }
+}
+
+/* Image container styles */
+.image-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.image-container img {
+  max-width: 100%; /* Ensure images don't overflow on smaller screens */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.image-container p {
+  font-size: 14px;
+  text-align: center;
+}
+
+/*carrousel styles*/
+.container-carrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.roulette-container {
+  display: flex;
+  transition: transform 3s ease; /* Smoother transition */
+  overflow: hidden;
+  position: relative;
+  width: 100%; /* Ensure full width */
+  max-width: 1000px; /* Set max width */
+  height: 20vh;
+  align-items: center;
+}
+
+.roulette-container a {
+  z-index: 99;
+  display: inline-block;
+  width: 200px; /* Set width for each link */
+  height: auto; 
+  overflow: hidden; /* Hide overflowing content */
+  margin: 0 10px; /* Add some margin between links */
+  transition: transform 0.5s ease, box-shadow 3s ease;
+}
+
+/* Adjust image size for responsive design */
+.link img {
+  width: 100%; /* Make images fill their parent container */
+  height: auto;
+  z-index: 99;
+}
+
+.link-caption {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .roulette-container a {
+    width: 150px; /* Adjust link width for smaller screens */
+    margin: 0 5px; /* Adjust margin for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .roulette-container a {
+    width: 120px; /* Further adjust link width for even smaller screens */
+    margin: 0 3px; /* Further adjust margin for even smaller screens */
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  text-align: justify;
+}
+
+.container .logo {
+  height: 10%;
+  width: 10%;
+  padding-left: 10px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  margin-left: 10px;
+}
+
+.mailto a{
+  color: #fdfdfd;
+  z-index: 999;
+}
+
+.social-icons, .social-icons a {
+  margin-top: 40px;
+  padding-right: 10px;
+  z-index: 999;
+}
+
+.social-icons a {
+  margin: 15px 10px;
+  z-index: 999;
+  font-size: 24px;
+  transition: color 0.6s ease;
+}
+
+/* Add hover effect for social icons */
+.social-icons a:hover {
+  transform: translateY(-30px);
+}
+
+/* Magnifying glass effect for text */
+.magnify {
+  display: inline-block;
+}
+
+.word-magnify {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.word-magnify:hover {
+  transform: scale(1.2);
+}
+
+/* Animation styles face first quote */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fadeInUp.active {
+  opacity: 1;
+  transform: translateY(0); /* Change translateY value to 0 for active state */
+}
+
+/*hover over all the a's*/
+.hover-effect {
+  transition: all 0.3s ease; /* Transición suave */
+}
+.hover-effect:hover {
+  font-weight: bold; /* Hacer la palabra en negrita */
+  font-size: 1.2em; /* Aumentar el tamaño de la fuente */
+}
+
+/*papers link*/
+section .acerca-de-papers {
+  float: right;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 0px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+
+/* Importing the beautiful Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+footer {
+  position: relative;
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif; /* Applying the new font */
+  opacity: 0; /* Initially hidden for the fade-in effect */
+  transform: translateY(50px); /* Slightly offscreen */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
+}
+
+footer.visible {
+  opacity: 1;
+  transform: translateY(0); /* Footer slides into view */
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./images_blog/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: 2;
+}
+
+/* Content Styling */
+footer .container {
+  position: relative;
+  z-index: 3;
+}
+
+footer h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
+}
+
+footer p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Adding surprise: glow animation on hover */
+footer h2:hover {
+  color: #f0f0f0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 10px;
+  }
+  
+  footer h2 {
+    font-size: 1.5rem;
+  }
+  
+  footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 20px 5px;
+  }
+  
+  footer h2 {
+    font-size: 1.2rem;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
+
+/*make the links great again*/
+/* Global styles for all links */
+a {
+  font-family: 'Poppins', sans-serif; /* Beautiful, modern font */
+  color: #3498db; /* Choose a vibrant color for links */
+  text-decoration: none; /* Remove default underline */
+  font-weight: 500; /* Slightly bold to make them stand out */
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color change */
+}
+
+/* Custom underline using border */
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Distance below the text */
+  width: 0;
+  height: 2px;
+  background-color: #3498db; /* Match the color of the link */
+  transition: width 0.3s ease;
+}
+
+/* On hover, the underline expands */
+a:hover::after {
+  width: 100%; /* Expands to full width */
+}
+
+/* On hover, change color for visual feedback */
+a:hover {
+  color: #000; /* Change to a complementary color */
+}
+
+/* For buttons that are links */
+a.button-link {
+  background-color: #e74c3c; /* Button-like link background */
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff; /* White text for contrast */
+  display: inline-block; /* Makes the link behave like a button */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.button-link:hover {
+  background-color: #c0392b; /* Darker shade on hover */
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* Focused state for accessibility */
+a:focus {
+  outline: 2px dashed #3498db; /* Highlight focused links for keyboard navigation */
+  outline-offset: 3px;
+}
+
+/* Bounce effect on hover */
+a:hover::after {
+  width: 100%;
+  animation: bounce 0.3s ease-out forwards;
+}
+
+@keyframes bounce {
+  0% { width: 0; }
+  50% { width: 120%; }
+  100% { width: 100%; }
+}
