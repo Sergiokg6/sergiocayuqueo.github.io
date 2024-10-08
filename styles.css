@@ -69,8 +69,8 @@ img {
 }
 
 header .overlay img {
-  width: 80px;
-  height: 80px;
+  width: 300px;
+  height: 300px;
   padding: 0rem;
   padding-bottom: 0px;
   animation: fadeIn 3s ease-in-out;
