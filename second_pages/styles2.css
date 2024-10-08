@@ -58,6 +58,11 @@ main {
     padding: 4rem 2rem;
 }
 
+.content img {
+    width: 300px;
+    height: 300px;
+}
+
 /* Parallax Section with Image Above Title */
 .content-section {
     position: relative;
