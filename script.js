@@ -175,7 +175,64 @@ window.addEventListener('scroll', function() {
 
 });
 
-// Add staggered animation for each letter
+// Add staggered animation for each letter in the header
 document.querySelectorAll('#header-title span').forEach((letter, index) => {
   letter.style.setProperty('--index', index);
+});
+
+
+// Function to add confetti that explodes from the center of the full page
+function createConfetti(container) {
+  const containerWidth = window.innerWidth;  // Use full viewport width
+  const containerHeight = window.innerHeight; // Use full viewport height
+  const numOfConfetti = Math.max(Math.floor(containerWidth / 10), 100); // Increase count for a better explosion
+
+  // Determine the center of the viewport
+  const centerX = containerWidth / 2;
+  const centerY = containerHeight / 2;
+
+  for (let i = 0; i < numOfConfetti; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti-piece");
+
+      // Set initial position to the center of the viewport
+      confetti.style.left = `${centerX}px`;
+      confetti.style.top = `${centerY}px`;
+      confetti.style.backgroundColor = getRandomColor();
+
+      // Randomize the direction for the explosion
+      const dirX = Math.random() * 2 - 1; // Random direction on the x-axis (-1 to 1)
+      const dirY = Math.random() * 2 - 1; // Random direction on the y-axis (-1 to 1)
+
+      // Randomize the distance to spread across the entire viewport
+      const distanceX = dirX * (Math.random() * (containerWidth / 2)); // Scale by half the width
+      const distanceY = dirY * (Math.random() * (containerHeight / 2)); // Scale by half the height
+      
+      // Set the final position using CSS variables
+      confetti.style.setProperty('--end-x', `${distanceX}px`);
+      confetti.style.setProperty('--end-y', `${distanceY}px`);
+
+      container.appendChild(confetti);
+
+      // Remove confetti after animation ends
+      setTimeout(() => {
+          confetti.remove();
+      }, 4000);
+  }
+}
+
+function getRandomColor() {
+  const colors = ["#FFD700", "#FF4500", "#1E90FF", "#32CD32", "#FF69B4"];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+document.querySelector('.new-poem').addEventListener('mouseenter', function() {
+  const container = this.nextElementSibling;
+  container.style.display = "block";
+  createConfetti(container);
+});
+
+document.querySelector('.new-poem').addEventListener('mouseleave', function() {
+  const container = this.nextElementSibling;
+  container.style.display = "none";
 });

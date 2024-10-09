@@ -777,3 +777,73 @@ a:hover {
     transform: rotate(360deg) scale(1.1); /* Slightly reduce scaling on small screens for better fit */
   }
 }
+
+
+/* Style for the highlighted new poem link start */
+.new-poem {
+  color: #FFD700; /* Gold color to make it bright */
+  font-weight: bold;
+  text-shadow: 0px 0px 5px #FFF700, 0px 0px 10px #FFD700;
+  position: relative;
+}
+
+/* Additional effect for the "New!" label */
+.new-label {
+  background-color: #FF4500; /* Bright orange background */
+  color: white;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-left: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Animation to give the label a glowing effect */
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 5px #FF4500;
+  }
+  50% {
+      box-shadow: 0 0 20px #FF6347;
+  }
+  100% {
+      box-shadow: 0 0 5px #FF4500;
+  }
+}
+
+/* Confetti container */
+.confetti-container {
+  position: fixed; /* Change to fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Cover the full width */
+  height: 100vh; /* Cover the full height */
+  pointer-events: none;
+  overflow: hidden;
+  display: none;
+}
+
+/* Styling for each confetti piece */
+.confetti-piece {
+  position: absolute;
+  width: 1.5vw; /* Responsive width */
+  height: 3vh;  /* Responsive height */
+  background-color: #FFD700;
+  opacity: 0;
+  border-radius: 50%;
+  animation: explode 2s ease forwards;
+  transform-origin: center center; /* Ensure it animates from the center */
+}
+
+/* Explosion animation from the center to outward */
+@keyframes explode {
+  0% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+  }
+  100% {
+      opacity: 0;
+      transform: translate(var(--end-x), var(--end-y)) scale(0.5) rotate(720deg);
+  }
+}
