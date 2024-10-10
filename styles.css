@@ -1,4 +1,24 @@
 /* Reset default browser styles */
+:root {
+  --background-image: url('./images_blog/headerimage.jpg');
+  --text-color: black;
+  --background-color: white;
+  --primary-color: #3498db;
+  --header-image: url('./images_blog/train.svg'); /* Imagen OSCURA PARA FONDO CLARO */
+  --hover-color: white;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --background-image: url('./images_blog/backgroundplantes.png');
+  --text-color: white;
+  --background-color: black;
+  --primary-color: #2980b9;
+  --header-image: url('./images_blog/traincopy.svg'); /* Imagen CLARA PARA FONDO OSCURO */
+  --hover-color:black;
+  --box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -12,8 +32,8 @@ body, html {
 body {
   padding: 0;
   overflow-y: auto; /* Enable vertical scrolling for entire body */
-  background-color: #f8f8f8; /* Light gray background color */
-  background-image: url('./images_blog/headerimage.jpg'); /* Mueve la imagen de fondo aquí */
+  /*background-color: #f8f8f8; /* Light gray background color */
+  /* background-image: url('./images_blog/headerimage.jpg'); Mueve la imagen de fondo aquí */
   background-size: cover; /* Asegura que la imagen cubre todo el área */
   background-position: center; /* Centra la imagen */
   background-attachment: fixed; /* Mantiene la imagen fija durante el scroll */
@@ -31,7 +51,7 @@ header {
 }
 
 .overlay {
-  color: #000;
+  color: var(--text-color);
   padding: 2rem;
   text-align: center;
   position: relative; /* Necesario para que el z-index funcione */
@@ -76,7 +96,9 @@ header .overlay img {
   animation: fadeIn 3s ease-in-out;
   position: relative; /* Necesario para que el z-index funcione */
   z-index: 1; /* Asegúrate de que el contenido del encabezado esté encima de la imagen */
+  content: var(--header-image); /* Usar la variable CSS como fuente de la imagen */
 }
+
 
 .navbar1 {
   position: fixed;
@@ -100,18 +122,21 @@ header .overlay img {
   font-size: 24px;
   cursor: pointer;
   z-index: 1000; /* Ensure the menu icon is above other elements */
+  transition: transform 0.3s ease;
 }
 
 .nav-links {
   display: flex;
   flex-direction: column;
-  background-color: rgba(168, 120, 120, 0.4);
+  background-color: transparent;
   padding: 10px;
   border-radius: 0px;
   position: absolute;
   top: 100%;
   right: 5.5%;
   display: none;
+  box-shadow: var(--box-shadow);
+
 }
 
 .nav-links.active {
@@ -121,7 +146,7 @@ header .overlay img {
 }
 
 .nav-links a {
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   padding: 10px;
 }
@@ -164,7 +189,8 @@ header .overlay img {
   .nav-links {
     display: flex;
     flex-direction: row;
-    background-color: rgba(168, 120, 120, 0.4);
+    background-color: transparent;
+    box-shadow: var(--box-shadow);
     margin-right: 20px;
     position: static;
     align-items: flex-end;
@@ -184,7 +210,7 @@ section {
 
 #acerca-de p {
   font-size: 1.2em;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
   text-align: justify;
 }
@@ -198,7 +224,7 @@ section {
 #acerca-de p,
 #poems p, a {
   font-size: 1.2em;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
   text-align: justify;
 }
@@ -206,7 +232,7 @@ section {
 #acerca-de p::first-letter,
 #poems p::first-letter {
   font-size: 2em;
-  color: #8c1515; /* Dark red */
+  color: var(--text-color);
   float: left;
   margin-right: 5px;
   line-height: 1; /* Ensure proper alignment */
@@ -237,7 +263,7 @@ section {
 
 /* Estilos para los enlaces dentro de la lista */
 #poems ul li a {
-  color: #8c1515; /* Rojo oscuro */
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease;
   display: block; /* Cambiado a 'block' para ocupar todo el espacio horizontal */
@@ -245,7 +271,7 @@ section {
 
 /* Estilos al pasar el mouse sobre los enlaces */
 #poems ul li a:hover {
-  color: #000000; /* Rojo más claro */
+  color: #2196F3; /* Rojo más claro */
 }
 
 /* Estilos para los elementos de la lista de citas */
@@ -262,13 +288,13 @@ section {
 }
 
 #right-quotes {
-  background-color: #ffffff;
   padding: 15px;
   text-align: right;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: var(--box-shadow); /* Sombra suave */
   max-width: 90%; /* Ancho máximo del contenedor */
   margin: auto; /* Centrar el contenedor horizontalmente */
   position: relative;
+  background-color: var(--background-color);
 }
 
 @media (max-width: 768px) {
@@ -358,7 +384,7 @@ section {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   text-align: justify;
 }
@@ -375,7 +401,7 @@ section {
 }
 
 .mailto a{
-  color: #fdfdfd;
+  color: var(--text-color);
   z-index: 999;
 }
 
@@ -435,11 +461,9 @@ section {
 /*papers link*/
 section .acerca-de-papers {
   float: right;
-  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 0px;
-  border: 2px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   font-family: Verdana, Tahoma, sans-serif;
 }
 
@@ -449,7 +473,7 @@ section .acerca-de-papers {
 
 footer {
   position: relative;
-  color: #fff;
+  color: var(--text-color);
   padding: 50px 20px;
   text-align: center;
   background-size: cover;
@@ -505,7 +529,7 @@ footer p {
 
 /* Adding surprise: glow animation on hover */
 footer h2:hover {
-  color: #f0f0f0;
+  color: #2196F3; /* Rojo más claro */
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
   transition: text-shadow 0.3s ease, color 0.3s ease;
 }
@@ -544,7 +568,7 @@ footer h2:hover {
 /* Global styles for all links */
 a {
   font-family: 'Poppins', sans-serif; /* Beautiful, modern font */
-  color: #3498db; /* Choose a vibrant color for links */
+  color: var(--text-color);
   text-decoration: none; /* Remove default underline */
   font-weight: 500; /* Slightly bold to make them stand out */
   position: relative;
@@ -570,7 +594,8 @@ a:hover::after {
 
 /* On hover, change color for visual feedback */
 a:hover {
-  color: #000; /* Change to a complementary color */
+  color: #2196F3; /* Rojo más claro */
+
 }
 
 /* For buttons that are links */
@@ -578,13 +603,14 @@ a.button-link {
   background-color: #e74c3c; /* Button-like link background */
   padding: 10px 20px;
   border-radius: 5px;
-  color: #fff; /* White text for contrast */
+  color: var(--text-color);
   display: inline-block; /* Makes the link behave like a button */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 a.button-link:hover {
   background-color: #c0392b; /* Darker shade on hover */
+  color: #2196F3; /* Rojo más claro */
   transform: translateY(-2px); /* Subtle lift effect on hover */
 }
 
@@ -625,7 +651,7 @@ a:hover::after {
 /* Headings */
 h1, h2 {
   font-family: 'Montserrat', sans-serif; /* Bold, modern font */
-  color: #2b2d42; /* Dark blue-gray for contrast */
+  color: #2b2d42;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -636,11 +662,11 @@ h1, h2 {
 p {
   font-family: 'Montserrat', sans-serif; /* Bold, modern font */
   font-size: 18px;
-  color: #000;
+  color: var(--text-color);
   padding: 10px 15px;
   margin-bottom: 20px;
   line-height: 1.8;
-  box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   transition: transform 0.3s ease;
 }
 
@@ -650,13 +676,14 @@ p:hover {
 
 /* Link Styling */
 a {
-  color: #d90429;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover {
-  color: #2b2d42;
+  color: #2196F3; /* Rojo más claro */
+
 }
 
 /* Responsive Design */
@@ -730,7 +757,7 @@ a:hover {
 #header-title {
   font-size: 4vw; /* Use viewport width for responsive font sizing */
   display: inline-block;
-  color: #000;
+  color: var(--text-color);
   letter-spacing: 0.1em;
   white-space: nowrap;
   margin: 0 auto;
@@ -748,8 +775,8 @@ a:hover {
 /* Animation on hover */
 #header-title span:hover {
   transform: rotate(360deg) scale(1.2);
-  color: #fff; /* Bright red color on hover */
-  text-shadow: 3px 6px 12px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
+  color: var(--hover-color);
+  text-shadow: 2px 4px 8px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
 
 }
 
@@ -781,7 +808,7 @@ a:hover {
 
 /* Style for the highlighted new poem link start */
 .new-poem {
-  color: #FFD700; /* Gold color to make it bright */
+  color: var(--text-color);
   font-weight: bold;
   text-shadow: 0px 0px 5px #FFF700, 0px 0px 10px #FFD700;
   position: relative;
@@ -790,7 +817,7 @@ a:hover {
 /* Additional effect for the "New!" label */
 .new-label {
   background-color: #FF4500; /* Bright orange background */
-  color: white;
+  color: var(--text-color);
   font-size: 0.9em;
   font-weight: bold;
   padding: 3px 6px;
@@ -846,4 +873,81 @@ a:hover {
       opacity: 0;
       transform: translate(var(--end-x), var(--end-y)) scale(0.5) rotate(720deg);
   }
+}
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon.active {
+  transform: rotate(90deg);
+}
+
+
+body {
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  transition: background-image 0.5s ease, color 0.5s ease;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.theme-switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  align-items: center;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
