@@ -1,3 +1,6 @@
+/* Importing the beautiful Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
 /* Reset default browser styles */
 :root {
   --background-image: url('./images_blog/headerimage.jpg');
@@ -16,7 +19,7 @@
   --primary-color: #2980b9;
   --header-image: url('./images_blog/traincopy.svg'); /* Imagen CLARA PARA FONDO OSCURO */
   --hover-color:black;
-  --box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+  --box-shadow: 0 10px 20px rgba(255, 255, 255, 0.03);
 }
 
 body, html {
@@ -24,7 +27,7 @@ body, html {
   padding: 0;
   height: 100%;
   scroll-behavior: smooth;
-  font-family: Verdana, sans-serif, Tahoma;
+  font-family: 'Poppins', sans-serif; /* Applying the new font */
   overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
@@ -32,13 +35,16 @@ body, html {
 body {
   padding: 0;
   overflow-y: auto; /* Enable vertical scrolling for entire body */
-  /*background-color: #f8f8f8; /* Light gray background color */
-  /* background-image: url('./images_blog/headerimage.jpg'); Mueve la imagen de fondo aquí */
   background-size: cover; /* Asegura que la imagen cubre todo el área */
   background-position: center; /* Centra la imagen */
   background-attachment: fixed; /* Mantiene la imagen fija durante el scroll */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--background-image);
+  color: var(--text-color);
   animation: fadeIn 3s ease-in-out;
-
+  transition: background-image 0.5s ease, color 0.5s ease;
 }
 
 header {
@@ -110,8 +116,7 @@ header .overlay img {
   align-items: center;
   padding: 10px;
   background-color: transparent;
-  color: red;
-  z-index: 999;
+  z-index: 99;
   transition: top 0.5s ease;
 }
 
@@ -121,7 +126,7 @@ header .overlay img {
   right: 10px;
   font-size: 24px;
   cursor: pointer;
-  z-index: 1000; /* Ensure the menu icon is above other elements */
+  z-index: 100; /* Ensure the menu icon is above other elements */
   transition: transform 0.3s ease;
 }
 
@@ -232,7 +237,7 @@ section {
 #acerca-de p::first-letter,
 #poems p::first-letter {
   font-size: 2em;
-  color: var(--text-color);
+  color: #2b2d42;
   float: left;
   margin-right: 5px;
   line-height: 1; /* Ensure proper alignment */
@@ -464,12 +469,8 @@ section .acerca-de-papers {
   padding: 20px;
   border-radius: 0px;
   box-shadow: var(--box-shadow);
-  font-family: Verdana, Tahoma, sans-serif;
+  background-color: none
 }
-
-
-/* Importing the beautiful Poppins font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 footer {
   position: relative;
@@ -485,7 +486,6 @@ footer {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif; /* Applying the new font */
   opacity: 0; /* Initially hidden for the fade-in effect */
   transform: translateY(50px); /* Slightly offscreen */
   transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
@@ -567,7 +567,7 @@ footer h2:hover {
 /*make the links great again*/
 /* Global styles for all links */
 a {
-  font-family: 'Poppins', sans-serif; /* Beautiful, modern font */
+  font-family: 'Monserrat', sans-serif; /* Beautiful, modern font */
   color: var(--text-color);
   text-decoration: none; /* Remove default underline */
   font-weight: 500; /* Slightly bold to make them stand out */
@@ -660,7 +660,7 @@ h1, h2 {
 
 /* Paragraphs */
 p {
-  font-family: 'Montserrat', sans-serif; /* Bold, modern font */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 18px;
   color: var(--text-color);
   padding: 10px 15px;
@@ -886,16 +886,7 @@ a:hover {
 }
 
 
-body {
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--text-color);
-  font-family: Arial, sans-serif;
-  transition: background-image 0.5s ease, color 0.5s ease;
-}
-
+/*dark button*/
 button {
   background-color: var(--primary-color);
   color: var(--text-color);
