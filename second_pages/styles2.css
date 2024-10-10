@@ -1,4 +1,24 @@
-* {
+:root {
+    --background-color: #f7f7f7; /* Color de fondo claro */
+    --text-color: #333; /* Color del texto claro */
+    --overlay-color: #000; /* Color del texto de la capa (overlay) */
+    --header-background: url('../images_blog/headerimage.jpg'); /* Imagen de fondo clara */
+    --gold-line-color: linear-gradient(90deg, #FFD700, #FFCC00);
+    --box-shadow:0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --background-color: #121212; /* Color de fondo oscuro */
+    --text-color: #f0f0f0; /* Color del texto oscuro */
+    --overlay-color: #f0f0f0; /* Texto blanco para la capa */
+    --header-background: url('../images_blog/backgroundplantes.png'); /* Imagen de fondo oscura */
+    --gold-line-color: linear-gradient(90deg, #FFCC00, #FFA200); /* Ligeramente más claro en modo oscuro */
+    --box-shadow:0 4px 20px rgba(255, 255, 255, 0.1);
+
+}
+
+
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,9 +27,9 @@
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
-    background-color: #f7f7f7;
-    color: #333;
     overflow-x: hidden; /* Avoid horizontal scroll */
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 header {
@@ -23,7 +43,7 @@ header {
 }
 
 .overlay {
-    color: #000; /* Change to white for better readability */
+    color: var(--overlay-color); /* Cambia según el modo oscuro/claro */
     padding: 2rem;
     text-align: center;
     position: relative; /* To contain the gold line absolutely */
@@ -43,8 +63,8 @@ header {
     width: 50%;
     height: 5px;
     animation: fadeIn 3s ease-in-out;
-    background: linear-gradient(90deg, #FFD700, #FFCC00); /* Gold gradient */
     margin: 20px auto; /* Center the line */
+    background: var(--gold-line-color); /* Color de la línea dorada */
 }
 
 .overlay p {
@@ -71,14 +91,14 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #000;
-    background: url('../images_blog/waterimage.jpg') fixed; /* Fixed background image */
+    background-color: var(--background-color);
+    background: var(--header-background) fixed; /* Imagen de fondo para el main */
     background-size: cover; /* Ensure the image covers the section */
 }
 
 /* Adjust margins to center the content properly */
 .content {
-    background-color: rgba(255, 255, 255, 0.99); /* White semi-transparent background */
+    background-color: var(--background-color);
     padding: 3rem;
     max-width: 800px;
     border-radius: 0px;
@@ -86,6 +106,8 @@ main {
     position: relative;
     z-index: 1; /* Ensure the content is above the background image */
     animation: fadeInUp 2s ease-in-out;
+    color: var(--text-color);
+
 }
 
 .content h1 {
@@ -146,17 +168,19 @@ main {
 }
 
 .contact-section {
-    background-color: #ffffff; /* Changed to white for contrast */
+    background-color: var(--background-color);
+    color: var(--text-color);
     padding: 2rem 3rem; /* Increased padding for spaciousness */
     border-radius: 0px; /* More rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    box-shadow: var(--box-shadow); /* Soft shadow for depth */
     max-width: 600px;
     margin: 4rem auto; /* Centered with vertical margin */
     text-align: center;
     transition: all 0.8s ease; /* Smooth transition for hover effects */
-    background: url('../images_blog/waterimage.jpg') fixed; /* Fixed background image */
+    background: var(--header-background); /* Usar la imagen de fondo adecuada */
 
 }
+
 
 .contact-section:hover {
     transform: translateY(-3px); /* Lift effect on hover */
@@ -165,7 +189,6 @@ main {
 .contact-section h2 {
     margin-bottom: 1.5rem; /* Increased bottom margin for better spacing */
     font-size: 2rem; /* Larger font for the heading */
-    color: #333; /* Darker color for better contrast */
 }
 
 .contact-section form {
@@ -176,7 +199,7 @@ main {
 .contact-section label {
     margin: 0.5rem 0 0.2rem;
     font-weight: bold; /* Make labels bold */
-    color: #555; /* Darker color for labels */
+    color: var(--text-color);
 }
 
 .contact-section input,
@@ -184,8 +207,10 @@ main {
     padding: 0.75rem; /* Increased padding for comfort */
     margin-bottom: 1rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 3px;
     transition: border 0.3s ease; /* Smooth transition for border color */
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .contact-section input:focus,
@@ -198,7 +223,6 @@ main {
     padding: 0.75rem;
     border: none;
     background-color: #007bff;
-    color: #ffffff;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1.1rem; /* Slightly larger button text */
