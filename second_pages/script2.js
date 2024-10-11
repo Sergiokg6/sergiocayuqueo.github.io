@@ -22,16 +22,3 @@ if (currentTheme) {
         toggleSwitch.innerHTML = 'Dark Mode';
     }
 }
-
-toggleSwitch.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        toggleSwitch.innerHTML = 'Dark Mode';
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        toggleSwitch.innerHTML = 'Light Mode';
-    }
-});
