@@ -30,6 +30,7 @@ body {
     overflow-x: hidden; /* Avoid horizontal scroll */
     background-color: var(--background-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 header {

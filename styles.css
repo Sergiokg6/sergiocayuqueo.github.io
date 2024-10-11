@@ -129,6 +129,7 @@ header .overlay img {
   background-color: transparent;
   z-index: 99;
   transition: top 0.5s ease;
+  overflow-x: hidden;
 }
 
 /* Burger button */
