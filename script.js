@@ -259,3 +259,24 @@ toggleSwitch.addEventListener('change', function () {
     localStorage.setItem('theme', 'light');
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.querySelector('.menu-icon');
+  const navLinks = document.querySelector('.nav-links');
+  const links = document.querySelectorAll('.nav-links a'); // Get all links
+
+  // Toggle the active class on burger button and nav links when burger is clicked
+  menuIcon.addEventListener('click', function() {
+    menuIcon.classList.toggle('active'); // Animate burger icon
+    navLinks.classList.toggle('static'); // Show/hide nav links
+  });
+
+  // Close the navbar smoothly when any link is clicked (in mobile view)
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      navLinks.classList.remove('active'); // Hide nav links
+      menuIcon.classList.remove('active'); // Reset burger icon
+    });
+  });
+});

@@ -105,68 +105,7 @@ header .overlay img {
   content: var(--header-image); /* Usar la variable CSS como fuente de la imagen */
 }
 
-
-.navbar1 {
-  position: fixed;
-  top: 0;
-  left: -2.5%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
-  background-color: transparent;
-  z-index: 99;
-  transition: top 0.5s ease;
-}
-
-.menu-icon {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 100; /* Ensure the menu icon is above other elements */
-  transition: transform 0.3s ease;
-}
-
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  padding: 10px;
-  border-radius: 0px;
-  position: absolute;
-  top: 100%;
-  right: 5.5%;
-  display: none;
-  box-shadow: var(--box-shadow);
-
-}
-
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  top: calc(100% + 10px);
-}
-
-.nav-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  padding: 10px;
-}
-
-#first-imag {
-  position: relative;
-  width: 100%;
-  height: 50vh;
-}
-
 @media screen and (max-width: 501px) {
-  #first-image {
-    height: 70vh; /* Adjusted height for smaller screens */
-  }
-
   .header h1 {
     top: 35%; /* Adjust the distance from the top */
     left: 50%; /* Center horizontally */
@@ -177,35 +116,109 @@ header .overlay img {
     left: 50%; /* Center horizontally */
   }
 }
+/* General navbar styling */
+.navbar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+  z-index: 99;
+  transition: top 0.5s ease;
+}
 
+/* Burger button */
+.menu-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+/* Animation for burger icon (changes to X when active) */
+.menu-icon.active {
+  transform: rotate(90deg); /* Example animation (you can change this) */
+}
+
+/* Mobile nav links hidden initially */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 0px;
+  position: absolute;
+  top: -200%; /* Hidden initially */
+  right: 5.5%;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none; /* Prevent interaction when hidden */
+  box-shadow: var(--box-shadow);
+}
+
+/* When the nav-links are active on mobile (after clicking the burger) */
+.nav-links.active {
+  top: calc(100% + 30px);
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Nav links for larger screens (desktop) */
 @media screen and (min-width: 1082px) {
   .menu-icon {
-    display: none;
-  }
-
-  .navbar1 {
-    position: static;
-    background-color: transparent;
-    position: fixed !important;
-    top: 0 !important;
-    width: 100% !important;
+    display: none; /* Hide burger icon on desktop */
   }
 
   .nav-links {
-    display: flex;
+    display: flex; /* Always show links on larger screens */
     flex-direction: row;
+    position: static; /* Make links part of the regular layout */
     background-color: transparent;
-    box-shadow: var(--box-shadow);
-    margin-right: 20px;
-    position: static;
-    align-items: flex-end;
+    margin-right: 40px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    top: auto;
   }
-  
-  #first-image {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-  }
+}
+
+/* Links styling */
+.nav-links a {
+  color: var(--text-color);
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* Burger button lines (optional for burger icon animation) */
+.menu-icon span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Change burger lines to cross when active */
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0; /* Hide middle line */
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Section styles */
@@ -918,7 +931,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgba(255, 255, 255, 0.8);
   transition: 0.4s;
   border-radius: 34px;
 }
@@ -930,13 +943,13 @@ button {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.8);
   transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: rgba(55, 25, 25, 0.8);
 }
 
 input:checked + .slider:before {
