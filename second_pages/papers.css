@@ -1,5 +1,8 @@
+/* Importing the beautiful Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat' ,Arial, sans-serif;
     margin: 0;
     padding: 0;
     align-items: center;
@@ -210,12 +213,12 @@ a{
 
 /* Typography */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Arial', sans-serif;
     line-height: 1.6; /* Improved readability with proper line spacing */
 }
 
 h1, h2, h3 {
-    font-family: 'Roboto', sans-serif; /* Example: Google Font Roboto */
+    font-family: 'Montserrat', 'Roboto', sans-serif; /* Example: Google Font Roboto */
 }
 
 p {

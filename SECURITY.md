@@ -12,6 +12,15 @@ currently being supported with security updates.
 | 4.0.x   | :white_check_mark: |
 | < 4.0   | :x:                |
 
+| Version | Supported        |
+| ------- | ---------------- |
+| 5.1.x   | :Brave:          |
+| 5.0.x   | :Microsoft Edge: |
+| 4.0.x   | :Chrome:         |
+| < 4.0   | :Safari:         |
+| 4.0.x   | :Firefox:        |
+| < 4.0   | :Opera:          |
+
 ## Reporting a Vulnerability
 
 Use this section to tell people how to report a vulnerability.
