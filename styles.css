@@ -430,15 +430,22 @@ section {
 .social-icons, .social-icons a {
   margin-top: 40px;
   padding-right: 10px;
-  z-index: 999;
+  z-index: 99;
 }
 
 .social-icons a {
   margin: 15px 10px;
-  z-index: 999;
+  z-index: 99;
   font-size: 24px;
   transition: color 0.6s ease;
 }
+
+/*LINKEDIN PROFILE FROM LINKEDIN WEB PAGE*/
+.badge-base {
+  align-items: center;
+  margin-left: 10%;
+}
+
 
 /* Add hover effect for social icons */
 .social-icons a:hover {
