@@ -5,7 +5,7 @@ var data = {
         label: "Number of Papers",
         data: [0, 0, 0, 3, 0, 0, 0,0], // Sample data
         backgroundColor: 'rgba(54, 162, 235, 0.4)', // Background color for the line
-        borderColor: 'rgba(0, 0, 0, 1)', // Border color for the line
+        borderColor: 'rgba(69, 160, 73, 1)', // Border color for the line
         borderWidth: 1
     }]
 };
@@ -105,3 +105,18 @@ function showError(message) {
 // Example usage:
 // Call showError() with an error message when needed, e.g., when a form submission fails or a link is broken
 // showError("Sorry, the page you're looking for could not be found.");
+
+
+
+//darkmode whitemode
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.innerHTML = 'Light Mode';
+    } else {
+        toggleSwitch.innerHTML = 'Dark Mode';
+    }
+}

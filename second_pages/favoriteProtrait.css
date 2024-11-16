@@ -1,43 +1,115 @@
-/* Base styles */
+/* Importing the beautiful Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+
+/* Defining variables for light and dark mode */
+:root {
+    /* General Color Palette */
+    --background-color-light: #f7f7f7;
+    --background-color-dark: #121212;
+    --text-color-light: #333;
+    --text-color-dark: #f0f0f0;
+
+    /* Header Backgrounds */
+    --header-background-light: #ffffff;
+    --header-background-dark: rgba(26, 26, 26, 0.8); /* Darker header for dark mode */
+
+    /* Text Colors */
+    --primary-text-light: #333;
+    --primary-text-dark: #ddd;
+    --secondary-text-light: #444;
+    --secondary-text-dark: #bbb;
+
+    /* Link & Button Colors */
+    --primary-link-color: #4CAF50;
+    --secondary-link-color: #FFCC00;
+    --link-hover-color: #fff;
+    --link-hover-background: #4CAF50;
+    --button-hover-color: #fff;
+    --button-hover-background: #45a049;
+
+    /* Box Shadows */
+    --box-shadow-light: 0 12px 30px rgba(0, 0, 0, 0.1); /* Lighter shadow for dark mode */
+    --box-shadow-dark: 0 12px 30px rgba(0, 0, 0, 0.15); 
+
+    /* Font Family */
+    --luxury-font: 'Montserrat', 'Lora', Georgia, serif;
+
+    /* Smooth Transitions */
+    --transition-effect: 0.3s ease-in-out;
+
+    /* Background Gradient & Image */
+    --background-gradient-light: linear-gradient(to bottom right, #f0f0f0, #fff);
+    --background-gradient-dark: linear-gradient(to bottom right, #2c2c2c, #121212);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --header-background: var(--header-background-dark);
+    --primary-text: var(--primary-text-dark);
+    --box-shadow: var(--box-shadow-dark);
+}
+
+/* Light Mode */
+[data-theme="light"] {
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --header-background: var(--header-background-light);
+    --primary-text: var(--primary-text-light);
+    --box-shadow: var(--box-shadow-light);
+}
+
 body {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
+    font-family: var(--luxury-font);
+    font-size: 18px;
     font-weight: 300;
     line-height: 1.6;
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
 }
 
+
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Image Container */
 .image-container {
     text-align: center;
-    margin-bottom: 40px;
+    margin: 8%;
+    margin-bottom: 10px;
+    margin-top: 10px;
     position: relative;
 }
 
 .image-container img {
-    height: 19cm;
-    width: 28.5cm;
+    height: auto;
+    width: 100%;
     max-width: 100%;
     display: block;
     margin: 0 auto;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    transition: box-shadow var(--transition-effect);
 }
 
+/* Paragraph Styling */
 .parrafo-image {
     font-size: 18px;
     font-weight: 400;
-    color: #333;
+    color: var(--primary-text);
     text-align: justify;
     margin-bottom: 30px;
+    transition: color var(--transition-effect);
 }
+
 
 .parrafo-image::first-letter {
     font-size: 3em;
@@ -45,13 +117,21 @@ body {
     float: left;
     margin-right: 5px;
     line-height: 1;
-    font-family: Georgia, serif;
+    font-family: var(--luxury-font);
 }
 
+/* Link Styling */
 a {
     text-decoration: none;
+    font-size: 2em;
+    color: var(--primary-link-color);
+    transition: color var(--transition-effect), background-color var(--transition-effect);
 }
 
+a:hover {
+    color: var(--link-hover-color);
+    background-color: var(--link-hover-background);
+}
 
 /* Background pattern */
 body:before {
@@ -68,26 +148,84 @@ body:before {
 }
 
 
-
-/* Responsive design */
+/* Responsive design for various devices */
 @media only screen and (max-width: 768px) {
     body {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .image-container img {
-        height: auto;
         width: 100%;
+        height: auto;
+    }
+
+    .container {
+        padding: 0 15px;
     }
 }
 
 @media only screen and (max-width: 480px) {
     body {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .image-container img {
+        width: 100%;
         height: auto;
+    }
+}
+
+/* Responsive Button Styling */
+@media only screen and (max-width: 600px) {
+    button {
         width: 100%;
     }
 }
+
+/* Responsive Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--luxury-font);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    transition: color var(--transition-effect);
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.8em;
+}
+
+h5 {
+    font-size: 1.6em;
+}
+
+h6 {
+    font-size: 1.4em;
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+}
+

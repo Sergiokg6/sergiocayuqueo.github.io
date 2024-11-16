@@ -80,7 +80,7 @@ header {
 
 .overlay h1 {
   font-size: 4rem;
-  font-weight: normal;
+  font-weight: 290;
   margin-bottom: 0.5rem;
   animation: fadeIn 3s ease-in-out;
 }
@@ -383,7 +383,7 @@ section {
 .link-caption {
   margin-top: 10px;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 290;
 }
 
 /* Responsive adjustments */
@@ -476,7 +476,7 @@ section {
   transition: all 0.3s ease; /* Transición suave */
 }
 .hover-effect:hover {
-  font-weight: bold; /* Hacer la palabra en negrita */
+  font-weight: 400; /* Hacer la palabra en negrita */
   font-size: 1.2em; /* Aumentar el tamaño de la fuente */
 }
 
@@ -587,7 +587,7 @@ a {
   font-family: 'Montserrat', sans-serif; /* Beautiful, modern font */
   color: var(--text-color);
   text-decoration: none; /* Remove default underline */
-  font-weight: 500; /* Slightly bold to make them stand out */
+  font-weight: 290; /* Slightly bold to make them stand out */
   position: relative;
   transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color change */
 }
@@ -695,7 +695,7 @@ p:hover {
 a {
   color: var(--text-color);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 290;
 }
 
 a:hover {
@@ -826,7 +826,7 @@ a:hover {
 /* Style for the highlighted new poem link start */
 .new-poem {
   color: var(--text-color);
-  font-weight: bold;
+  font-weight: 290;
   text-shadow: 0px 0px 5px #FFF700, 0px 0px 10px #FFD700;
   position: relative;
 }
@@ -836,7 +836,7 @@ a:hover {
   background-color: #FF4500; /* Bright orange background */
   color: var(--text-color);
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: 290;
   padding: 3px 6px;
   border-radius: 5px;
   margin-left: 10px;
