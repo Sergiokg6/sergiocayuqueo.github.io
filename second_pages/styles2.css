@@ -1,3 +1,6 @@
+/* Importing the beautiful Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 :root {
     --background-color: #f7f7f7; /* Color de fondo claro */
     --text-color: #333; /* Color del texto claro */
@@ -25,7 +28,7 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
     line-height: 1.6;
     overflow-x: hidden; /* Avoid horizontal scroll */
     background-color: var(--background-color);
@@ -119,7 +122,7 @@ main {
 .content p {
     margin-bottom: 1rem;
     font-size: 1.2rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
 /* Animations */
