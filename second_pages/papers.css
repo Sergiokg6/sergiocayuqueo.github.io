@@ -1,82 +1,175 @@
 /* Importing the beautiful Montserrat font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap'); /* Added a luxurious serif font */
+
+:root {
+    /* General Color Palette */
+    --background-color-light: #f7f7f7;
+    --background-color-dark: #121212;
+    --text-color-light: #333;
+    --text-color-dark: #f0f0f0;
+    --overlay-color-light: #fff;
+    --overlay-color-dark: #f0f0f0;
+
+    /* Header Backgrounds */
+    --header-background-light: #ffffff;
+    --header-background-dark: rgba(26, 26, 26, 0.8); /* Darker header for dark mode */
+
+    /* Text Colors */
+    --primary-text-light: #333;
+    --primary-text-dark: #ddd;
+    --secondary-text-light: #444;
+    --secondary-text-dark: #bbb;
+
+    /* Link & Button Colors */
+    --primary-link-color: #4CAF50;
+    --secondary-link-color: #FFCC00;
+    --link-hover-color: #fff;
+    --link-hover-background: #4CAF50;
+    --button-hover-color: #fff;
+    --button-hover-background: #45a049;
+
+    /* Box Shadows */
+    --box-shadow-light: 0 12px 30px rgba(255, 255, 255, 0.05); /* Lighter shadow for dark mode */
+    --box-shadow-dark: 0 12px 20px rgba(0, 0, 0, 0.15); 
+
+    /* Gold Line Colors */
+    --gold-line-color-light: #FFD700;
+    --gold-line-color-dark: #d4af37;
+    
+    /* Background Gradient & Image */
+    --background-gradient-light: #f0f0f0;
+    --background-gradient-dark: #2c2c2c;
+    --background-image: url('../images_blog/archduke-johann-higher-resolution.jpg');
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --overlay-color: var(--overlay-color-dark);
+    --header-background: var(--header-background-dark);
+    --primary-text: var(--primary-text-dark);
+    --secondary-text: var(--secondary-text-dark);
+    --gold-line-color: var(--gold-line-color-dark);
+    --box-shadow: var(--box-shadow-light);
+}
+
+/* Light Mode */
+[data-theme="light"] {
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --overlay-color: var(--overlay-color-light);
+    --header-background: var(--header-background-light);
+    --primary-text: var(--primary-text-light);
+    --secondary-text: var(--secondary-text-light);
+    --gold-line-color: var(--gold-line-color-light);
+    --box-shadow: var(--box-shadow-dark);
+}
+
+
+/* General Body Styles */
 body {
-    font-family: 'Montserrat' ,Arial, sans-serif;
+    background-color: var(--background-color);
+    font-family: 'Montserrat', Arial, sans-serif;
     margin: 0;
     padding: 0;
     align-items: center;
     text-align: center;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Header Section */
 header {
-    background-color: rgba(74, 202, 82, 0.7); /* Add a semi-transparent overlay to improve text readability */
-    
-    color: #fff;
-    padding: 20px;
+    color: var(--text-color);
+    padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
+    box-shadow: var(--box-shadow);
+    background-image:  var(--background-image);
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s ease;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+/* Heading Styles */
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 h1 {
-    margin-top: 0;
-}
-.paper {
+    font-size: 3em;
     margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 4px;
 }
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+/* Container for Content */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 5%;
+}
+
+/* Paper Section */
+.paper {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
 .paper h2 {
+    font-family: 'Playfair Display', serif;
     margin-top: 0;
-}
-.paper a {
-    color: rgb(54, 245, 248);
-    text-decoration: none;
-    margin-right: 10px;
-    transition: background-color 0.3s;
-}
-.paper a:hover {
-    background-color: #4caf46;
-
-}
-.download-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    margin-bottom: 5px;
-}
-.download-btn:hover {
-    background-color: #4CAF40;
+    margin-bottom: 10px;
+    font-size: 1.6em;
 }
 
-/* Add this CSS for the hover effect */
+/* Paper Hover Effect */
 .paper:hover {
-    transform: rotate(-2deg);
-    transition: transform 0.3s ease;
-    background-color: #e0e0e0;
+    transform: translateY(-5px);
+    background-color: var(--background-color);
 }
 
-.paper:hover a {
+.paper a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.paper a:hover {
+    color: var(--text-color);
     background-color: #4CAF50;
-    color: white;
+    transform: scale(1.05);
 }
 
-/* Add this CSS for the parallax effect */
+/* Parallax Background Effect */
 .parallax {
     position: fixed;
     top: 0;
@@ -86,11 +179,10 @@ h1 {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    transition: transform 0.5s ease-out; /* Add smooth transition */
+    transition: transform 0.5s ease-out;
 }
 
-
-/* Background pattern */
+/* Background Pattern */
 body:before {
     content: '';
     position: fixed;
@@ -98,74 +190,48 @@ body:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images_blog/science5.jpg'); /* Add your background pattern image */
-    opacity: 0.06; /* Adjust opacity for subtlety */
-    pointer-events: none; /* Ensure the background doesn't interfere with interaction */
-    z-index: -1; /* Move the background behind other content */
-    align-items: center;
-  }
-
-
-  /* Style for the chart canvas */
-#myChart {
-    width: 100%; /* Ensure the canvas fills its container */
-    height: 400px; /* Adjust the height as needed */
+    background-image: url('../images_blog/science5.jpg');
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: -1;
 }
-  
-/* Add this CSS for the chart */
+
+/* Chart Styles */
 .chart-container {
-    width: 90%; /* Adjust the width as needed */
-    max-width: 800px; /* Ensure the canvas does not exceed the container width */
-    margin: 20px auto; /* Center the canvas horizontally */
-    height: 400px; /* Adjust the height as needed */
-    
+    width: 80%;
+    max-width: 1000px;
+    margin: 40px auto;
+    height: 400px;
 }
 
-@media screen and (max-width: 600px) {
-    /* Styles for screens smaller than 600px */
-    .container {
-        max-width: 90%;
-        padding: 10px;
-    }
-    /* Add more responsive styles as needed */
+/* Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
-
-/* Add this CSS for the floating action button */
+/* Back-to-Top Button */
 #back-to-top-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     background-color: #4CAF50;
-
-    color: white;
+    color: var(--text-color);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
     cursor: pointer;
-    display: none; /* Hide the button by default */
+    display: none;
+    box-shadow: var(--box-shadow);
 }
 
 #back-to-top-btn:hover {
-    background-color: #4CAF43;
-
+    background-color: #45a049;
 }
 
-/*make all images just his necessary height and width*/
-img {
-    max-width: 100%; /* Ensure images don't exceed their parent container's width */
-    height: auto; /* Allow images to adjust their height proportionally */
-}
-
-/*standar a*/
-a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: bolder;
-}
-
-/*styles for social buttons */
+/* Social Buttons */
 .social-buttons {
     display: flex;
     justify-content: center;
@@ -173,120 +239,46 @@ a{
 }
 
 .social-buttons a {
+    color: var(--text-color);
     text-decoration: none;
-    text-align: center;
-    color: #fff;
 }
 
 .social-buttons button {
-    margin: 10px 10px;
-    padding: 10px 20px;
-    font-size: 16px;
     background-color: #4CAF50;
     border: none;
     border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 .social-buttons button:hover {
-    background-color: #4CAF56;
+    background-color: #45a049;
+    transform: scale(1.05);
 }
 
-.social-buttons button:last-child {
-    margin-right: 0;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 600px) {
-    .social-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-buttons button {
-        margin: 10px 0;
-    }
-}
-
-
-/* Typography */
-body {
-    font-family: 'Montserrat', 'Arial', sans-serif;
-    line-height: 1.6; /* Improved readability with proper line spacing */
-}
-
-h1, h2, h3 {
-    font-family: 'Montserrat', 'Roboto', sans-serif; /* Example: Google Font Roboto */
-}
-
-p {
-    font-size: 16px;
-}
-
-/* Whitespace and Padding */
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-h1 {
-    margin-top: 0;
-    margin-bottom: 20px; /* Add space below heading for visual separation */
-}
-
-.paper {
-    margin-bottom: 40px; /* Increase spacing between papers */
-    padding: 20px;
-}
-
-.paper h2 {
-    margin-top: 0;
-    margin-bottom: 10px; /* Add space below paper title */
-}
-
-.paper p {
-    margin-bottom: 10px; /* Add space below paragraphs */
-}
-
-/*Error handling*/
-.error-message {
-    display: none; /* Initially hide the error message */
-    color: #ff0000; /* Red color for error messages */
-    font-size: 16px;
-    margin-top: 10px; /* Add space above the error message */
-    text-align: center; /* Center align the error message */
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #ffe0e0; /* Light red background color for error messages */
-}
-
-.error-message::before {
-    content: "⚠ "; /* Add a warning icon before the error message */
-}
-
-/*footer section*/
-/* Footer styles */
+/* Footer Section */
 .footer {
-    background-color: #333;
-    color: #fff;
+    margin-top: 10%;
+    color: var(--text-color);
     padding: 40px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
-    justify-content: space-between;
 }
 
 .footer-column {
     flex: 1;
     padding: 0 20px;
-    margin-bottom: 20px; /* Add space between columns */
+    margin-bottom: 20px;
 }
 
 .footer-column h3 {
@@ -295,7 +287,7 @@ h1 {
 }
 
 .footer-column ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -304,12 +296,14 @@ h1 {
 }
 
 .footer-column ul li a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
+    font-weight: 500;
 }
 
 .footer-column ul li a:hover {
     text-decoration: underline;
+    color: var(--text-color);
 }
 
 .footer-bottom {
@@ -318,27 +312,74 @@ h1 {
     font-size: 14px;
 }
 
-/* Responsive design */
+/* Responsive Footer */
 @media screen and (max-width: 768px) {
     .footer-column {
-        flex: 1 0 100%; /* Each column takes full width on smaller screens */
-        padding: 0 10px; /* Reduce padding for smaller screens */
+        flex: 1 0 100%;
+        padding: 0 10px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .footer-container {
-        flex-direction: column; /* Stack columns vertically on smaller screens */
+        flex-direction: column;
     }
-
     .footer-bottom {
-        margin-bottom: 20px; /* Add space between content and footer bottom */
+        margin-top: 30px;
     }
 }
 
- /* Add styles for keywords */
- .paper-keywords {
-    margin-top: 5px;
+/* Error Handling */
+.error-message {
+    display: none;
+    color: var(--text-color);
+    font-size: 16px;
+    background-color: #f44336;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Floating Action Button - Back to Top */
+#back-to-top-btn {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+    /* Responsive Styles for Mobile Devices */
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-buttons button {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Styling for Keywords */
+.paper-keywords {
     font-size: 14px;
-    color: #666;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
 }

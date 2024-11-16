@@ -1,25 +1,38 @@
-/* Importing the beautiful Montserrat font */
+/* Importing the elegant Montserrat font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
+/* Root variables for color themes and font sizes */
 :root {
-    --background-color: #f7f7f7; /* Color de fondo claro */
-    --text-color: #333; /* Color del texto claro */
-    --overlay-color: #000; /* Color del texto de la capa (overlay) */
-    --header-background: url('../images_blog/headerimage.jpg'); /* Imagen de fondo clara */
-    --gold-line-color: linear-gradient(90deg, #FFD700, #FFCC00);
-    --box-shadow:0 4px 20px rgba(0, 0, 0, 0.1);
+    --background-color-light: #f7f7f7;
+    --background-color-dark: #121212;
+    --text-color-light: #333;
+    --text-color-dark: #f0f0f0;
+    --overlay-color-light: #fff;
+    --overlay-color-dark: #f0f0f0;
+    --gold-line-color-light: linear-gradient(90deg, #FFD700, #FFCC00);
+    --gold-line-color-dark: linear-gradient(90deg, #FFCC00, #FFA200);
+    /*--box-shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: 0 4px 20px rgba(255, 255, 255, 0.1);*/
+    --box-shadow-dark: 0 12px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover, just for hovering, Yes */
+    --primary-color: #007bff;
+    --secondary-color: #FFCC00;
 }
 
 [data-theme="dark"] {
-    --background-color: #121212; /* Color de fondo oscuro */
-    --text-color: #f0f0f0; /* Color del texto oscuro */
-    --overlay-color: #f0f0f0; /* Texto blanco para la capa */
-    --header-background: url('../images_blog/backgroundplantes.png'); /* Imagen de fondo oscura */
-    --gold-line-color: linear-gradient(90deg, #FFCC00, #FFA200); /* Ligeramente más claro en modo oscuro */
-    --box-shadow:0 4px 20px rgba(255, 255, 255, 0.1);
-
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --overlay-color: var(--overlay-color-dark);
+    --header-background: var(--header-background-dark);
+    --gold-line-color: var(--gold-line-color-dark);
+    /*--box-shadow: var(--box-shadow-dark);*/
 }
 
+
+[data-theme="light"] {
+    --background-color: var(--background-color-light);
+    --gold-line-color: var(--gold-line-color-light);
+    /*--box-shadow: var(--box-shadow-light);*/
+}
 
 html {
     margin: 0;
@@ -28,217 +41,266 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', 'Open Sans', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden; /* Avoid horizontal scroll */
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+    line-height: 1.6;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
+/* Header Section Styling */
 header {
     height: 100vh;
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*background-image: var(--header-background);/**/
 }
 
 .overlay {
-    color: var(--overlay-color); /* Cambia según el modo oscuro/claro */
+    color: var(--overlay-color);
     padding: 2rem;
-    text-align: center;
-    position: relative; /* To contain the gold line absolutely */
-    z-index: 2; /* Ensure overlay is above background */
+    z-index: 2;
 }
 
 .overlay h1 {
     font-size: 4rem;
-    font-weight: normal;
-    margin-bottom: 1rem; /* Adjusted for better spacing */
+    font-weight: 100;
+    margin-bottom: 1rem;
     animation: fadeIn 3s ease-in-out;
+    text-transform: capitalize;
+    line-height: 1.4;
 }
 
 .overlay .gold-line {
-    content: '';
     display: block;
     width: 50%;
     height: 5px;
-    animation: fadeIn 3s ease-in-out;
-    margin: 20px auto; /* Center the line */
-    background: var(--gold-line-color); /* Color de la línea dorada */
+    background: var(--gold-line-color);
+    margin: 20px auto;
+    opacity: 0;
+    animation: goldLineAnimation 3s ease-in-out 1s forwards;
+}
+
+@keyframes goldLineAnimation {
+    0% {
+        width: 50%;
+        opacity: 0;
+    }
+    100% {
+        width: 80%;
+        opacity: 1;
+    }
+}
+
+.overlay .gold-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    opacity: 0.6;
+    animation: whiteLineMove 2s linear 1s forwards;
+}
+
+@keyframes whiteLineMove {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 .overlay p {
     font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
     animation: fadeIn 3s ease-in-out;
-    max-width: 800px; /* Set max width to prevent overflow */
-    margin: 0 auto; /* Center the paragraph */
 }
 
-main {
-    padding: 4rem 2rem;
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-.content img {
-    width: 300px;
-    height: 300px;
-}
-
-/* Parallax Section with Image Above Title */
+/* Content Section Styling */
 .content-section {
     position: relative;
-    padding: 100px 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding: 80px 10%;
     background-color: var(--background-color);
-    background: var(--header-background) fixed; /* Imagen de fondo para el main */
-    background-size: cover; /* Ensure the image covers the section */
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    margin-top: 2rem;
 }
 
-/* Adjust margins to center the content properly */
 .content {
     background-color: var(--background-color);
     padding: 3rem;
-    max-width: 800px;
-    border-radius: 0px;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
-    z-index: 1; /* Ensure the content is above the background image */
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
     animation: fadeInUp 2s ease-in-out;
-    color: var(--text-color);
-
 }
 
 .content h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    font-weight: 100;
 }
 
 .content p {
-    margin-bottom: 1rem;
     font-size: 1.2rem;
-    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    line-height: 1.6;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px);}
-    100% { opacity: 1; }
+.content img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 8px;
 }
 
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-    header {
-        height: auto; /* Allow the header to grow based on content */
-        padding: 2rem 1rem; /* Add padding to the header */
-    }
-
-    .overlay h1 {
-        font-size: 3rem; /* Adjust font size */
-    }
-
-    .overlay p {
-        font-size: 1.2rem; /* Smaller font for mobile */
-        max-width: 90%; /* Make it more fluid */
-    }
-
-    .content-section {
-        padding: 5px;
-    }
-
-    .content {
-        padding: 2rem;
-        font-size: 1rem;
-    }
-
-    .content h1 {
-        font-size: 2rem;
-    }
-}  
-
-/* Responsive styles for new sections */
-@media (max-width: 768px) {
-
-}
-
+/* Contact Section Styling */
 .contact-section {
     background-color: var(--background-color);
     color: var(--text-color);
-    padding: 2rem 3rem; /* Increased padding for spaciousness */
-    border-radius: 0px; /* More rounded corners */
-    box-shadow: var(--box-shadow); /* Soft shadow for depth */
+    padding: 2rem 3rem;
+    box-shadow: var(--box-shadow);
     max-width: 600px;
-    margin: 4rem auto; /* Centered with vertical margin */
+    margin: 4rem auto;
+    border-radius: 8px;
     text-align: center;
-    transition: all 0.8s ease; /* Smooth transition for hover effects */
-    background: var(--header-background); /* Usar la imagen de fondo adecuada */
-
+    transition: all 0.3s ease;
+    background: var(--header-background);
 }
 
-
 .contact-section:hover {
-    transform: translateY(-3px); /* Lift effect on hover */
+    transform: translateY(-3px);
 }
 
 .contact-section h2 {
-    margin-bottom: 1.5rem; /* Increased bottom margin for better spacing */
-    font-size: 2rem; /* Larger font for the heading */
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 100;
 }
 
 .contact-section form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .contact-section label {
     margin: 0.5rem 0 0.2rem;
-    font-weight: bold; /* Make labels bold */
+    font-weight: lighter;
     color: var(--text-color);
 }
 
 .contact-section input,
 .contact-section textarea {
-    padding: 0.75rem; /* Increased padding for comfort */
+    width: 100%;
+    padding: 0.75rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
-    border-radius: 3px;
-    transition: border 0.3s ease; /* Smooth transition for border color */
+    border-radius: 5px;
     background-color: var(--background-color);
     color: var(--text-color);
+    font-size: 1rem;
+    transition: border 0.3s ease;
 }
 
 .contact-section input:focus,
 .contact-section textarea:focus {
-    border: 1px solid #007bff; /* Highlight border on focus */
-    outline: none; /* Remove default outline */
+    border: 1px solid var(--secondary-color);
+    outline: none;
 }
 
+/* Contact section button styling */
 .contact-section button {
-    padding: 0.75rem;
+    background-color: var(--secondary-color); /* Initial background color */
+    color: var(--text-color-light);
+    padding: 12px 24px;
     border: none;
-    background-color: #007bff;
-    border-radius: 4px;
+    border-radius: 50px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 1.1rem; /* Slightly larger button text */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out; /* Smoother transition for all properties */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for normal state */
 }
 
 .contact-section button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: var(--secondary-color); /* On hover, change to secondary color */
+    color: var(--background-color-dark); /* Change text color for contrast */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+    transform: scale(1.1) rotate(3deg); /* Larger scale and rotation for more impact */
+    letter-spacing: 2px; /* Slight letter spacing for added style */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    background-image: var(--gold-line-color); /* Gradients based on theme */
+}
+
+.contact-section button:focus {
+    outline: none; /* Remove default focus outline */
+    border: 2px solid var(--secondary-color); /* Add border on focus */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Focused shadow */
 }
 
 .contact-section .response {
     margin-top: 1rem;
     font-size: 1rem;
-    color: #28a745; /* Green color for success messages */
+    color: #28a745;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 4rem 2rem;
+    }
+
+    .overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .overlay p {
+        font-size: 1.2rem;
+    }
+
+    .content-section {
+        padding: 2rem;
+    }
+
+    .content {
+        padding: 1.5rem;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .contact-section {
+        padding: 2rem;
+    }
+
+    .contact-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-section button {
+        font-size: 1rem;
+    }
 }
