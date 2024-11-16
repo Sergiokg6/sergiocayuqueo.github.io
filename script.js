@@ -280,3 +280,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+
+// // Get the video element
+// const videoElement = document.querySelector('#header video');
+
+// // Function to update video source based on theme
+// function updateVideoSource(theme) {
+//   const sourceElement = videoElement.querySelector('source');
+
+//   // Update the video source based on the theme
+//   if (theme === 'dark') {
+//     sourceElement.src = './videos_blog/immersive_technology.mp4'; // Video for dark theme
+//   } else {
+//     sourceElement.src = './videos_blog/flowers_and_betterflies_white.mp4'; // Video for light theme
+//   }
+
+//   // Reload the video to apply the new source
+//   videoElement.load();
+// }
+
+// // Event listener for theme toggle
+// toggleSwitch.addEventListener('change', function () {
+//   const theme = this.checked ? 'dark' : 'light';
+//   document.documentElement.setAttribute('data-theme', theme);
+//   localStorage.setItem('theme', theme);
+
+//   // Update video source
+//   updateVideoSource(theme);
+// });
+
+// // On page load, apply the stored theme and update video source
+// const currentThemeVideo = localStorage.getItem('theme') || 'light';
+// document.documentElement.setAttribute('data-theme', currentThemeVideo);
+// toggleSwitch.checked = currentThemeVideo === 'dark';
+// updateVideoSource(currentThemeVideo);
