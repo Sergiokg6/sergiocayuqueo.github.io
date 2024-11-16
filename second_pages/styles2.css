@@ -38,6 +38,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+        overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
@@ -45,9 +46,9 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Header Section Styling */
@@ -251,6 +252,7 @@ header {
     letter-spacing: 2px; /* Slight letter spacing for added style */
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
     background-image: var(--gold-line-color); /* Gradients based on theme */
+    clip-path: inset(0); /* Ensure scaled elements stay within bounds */
 }
 
 .contact-section button:focus {
@@ -263,6 +265,10 @@ header {
     margin-top: 1rem;
     font-size: 1rem;
     color: #28a745;
+}
+
+.overlay, .content-section, .contact-section {
+    overflow: hidden; /* Ensure specific sections don’t overflow */
 }
 
 /* Responsive Styles */
@@ -302,5 +308,8 @@ header {
 
     .contact-section button {
         font-size: 1rem;
+    }
+    .overlay, .content-section, .contact-section {
+        overflow: hidden; /* Ensure specific sections don’t overflow */
     }
 }
