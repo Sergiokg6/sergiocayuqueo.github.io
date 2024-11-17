@@ -57,3 +57,73 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 1. **Clonar el repositorio:**
    ```bash
    $ git clone https://github.com/tu_usuario/proyecto-xyz.git
+
+
+
+
+markdown
+Copiar código
+# Proyecto XYZ
+
+Este proyecto es tù estatica pàgina web y también sirve como plataforma de aprendizaje.
+
+## Navegar al directorio del proyecto
+
+```bash
+$ cd proyecto-xyz
+Construir y levantar el contenedor (si usas Docker)
+bash
+Copiar código
+$ docker-compose build
+$ docker-compose up -d
+Configurar variables de entorno
+Renombra el archivo .env.example a .env.
+Llena las variables necesarias según tus configuraciones.
+Ejecutar en un entorno local
+bash
+Copiar código
+$ npm start
+Colaboración
+Aunque es un proyecto personal, estoy abierto a recibir ideas y sugerencias para mejorarlo.
+
+Si quieres colaborar:
+Realiza un fork del repositorio.
+
+Crea una rama para tu contribución:
+
+bash
+Copiar código
+$ git checkout -b mi-contribucion
+Realiza tus cambios y haz un commit:
+
+bash
+Copiar código
+$ git commit -am "Descripción clara de los cambios"
+Haz push de tu rama:
+
+bash
+Copiar código
+$ git push origin mi-contribucion
+Abre un pull request en este repositorio.
+
+Capturas de Pantalla
+Pantalla Principal
+
+Modal de Detalle
+
+Preguntas Frecuentes
+¿Cuál es el propósito principal de este proyecto?
+
+Este proyecto busca solucionar el problema de XYZ y también sirve como plataforma de aprendizaje.
+
+¿Puedo usar tu código para mis proyectos personales?
+
+Por supuesto, siempre y cuando respetes la licencia.
+
+¿Tienes pensado extenderlo en el futuro?
+
+Sí, tengo planeado agregar funcionalidades como [característica específica] y soporte para [otra tecnología].
+
+¿Cómo puedo contactarte si tengo preguntas?
+
+Puedes escribirme a través de LinkedIn.
