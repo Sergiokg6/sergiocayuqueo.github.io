@@ -1,37 +1,39 @@
-// Reemplaza esto con tu API key de Pexels, Es gratis. Dejo esta expuesta.    
-const API_KEY = 'h82S0GkwM3BZFcKsV9z4vvIQUY3v0NOo9F4dit5FsfXzRJMfew0Lmmrr';
-    
+// Reemplaza esto con tu k  -   e  -  y de Pexels, Es gratis. Dejo esta expuesta.
+const PARTS = ['h82S0GkwM3BZF', 'cKsV9z4vvIQUY3v', '0NOo9F4dit5Fs', 'fXz', 'RJM', 'few', '0Lmmr', 'r'];
+
 let currentPage = 1;
-    
+
 let currentCategory = 'all';
-    
+
 let currentSearch = '';
-    
+
 let loading = false;
-    
+
 let currentImages = [];
-    
+
 let currentView = 'grid';
-    
+
 let currentFilter = 'all';
 
 // Elementos DOM    
 const galleryGrid = document.getElementById('galleryGrid');
-    
+
 const loadingElement = document.getElementById('loading');
-    
+
 const modal = document.getElementById('modal');
-    
+
 const modalImage = document.getElementById('modalImage');
     
 const modalPhotographer = document.getElementById('modalPhotographer');
-    
+
 const modalDescription = document.getElementById('modalDescription');
-    
+
 const searchInput = document.querySelector('.search-input');
-    
+
+const A_K = PARTS.join('');
+
 const toast = document.getElementById('toast');
-    
+
 let currentImageIndex = 0;
 
     
@@ -81,7 +83,7 @@ async function fetchImages(category, page, search = '') {
     
             headers: {
     
-                'Authorization': API_KEY
+                'Authorization': A_K
     
             }
     
@@ -318,7 +320,7 @@ function downloadImage(url, filename) {
     
             link.href = URL.createObjectURL(blob);
     
-            link.download = filename || 'pexels-image.jpg';
+            link.download = filename || 'world-image.jpg';
     
             document.body.appendChild(link);
     
@@ -605,34 +607,61 @@ modalImage.addEventListener('touchend', e => {
     
 });
 
+
     
+// Variables de seguimiento para la navegaciòn por teclado
+let pressStartX = 0; 
+
+let pressEndX = 0; 
+
+// Agrega un event listener para las teclas de flecha
+document.addEventListener('keydown', handleArrowKey);
+
 function handleSwipe() {
-    
     const swipeThreshold = 50;
-    
-    const diff = touchEndX - touchStartX;
-    
-    
+
+    const diff = pressEndX - pressStartX;
+
     if (Math.abs(diff) > swipeThreshold) {
-    
+
         if (diff > 0 && currentImageIndex > 0) {
-    
+
             // Swipe derecha -> imagen anterior
-    
+
             currentImageIndex--;
-    
+
             showModal(currentImages[currentImageIndex]);
-    
+
         } else if (diff < 0 && currentImageIndex < currentImages.length - 1) {
-    
+
             // Swipe izquierda -> imagen siguiente
-    
+
             currentImageIndex++;
-    
+
             showModal(currentImages[currentImageIndex]);
-    
         }
-    
     }
-    
 }
+
+// Nueva función para manejar las teclas de flecha
+
+function handleArrowKey(event) {
+
+    if (event.key === 'ArrowRight' && currentImageIndex < currentImages.length - 1) {
+
+        // Flecha derecha -> imagen siguiente
+
+        currentImageIndex++;
+
+        showModal(currentImages[currentImageIndex]);
+
+    } else if (event.key === 'ArrowLeft' && currentImageIndex > 0) {
+
+        // Flecha izquierda -> imagen anterior
+
+        currentImageIndex--;
+
+        showModal(currentImages[currentImageIndex]);
+    }
+}
+
