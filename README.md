@@ -69,15 +69,16 @@ Este proyecto es tù estatica pàgina web y también sirve como plataforma de ap
 
 ## Navegar al directorio del proyecto
 
-```bash
-$ cd proyecto-xyz
+2.**Ejecuta este codigo:**
+   ```bash
+   $ cd proyecto-xyz
 
 Construir y levantar el contenedor (si usas Docker)
 Copiar código
 
-```bash
-$ docker-compose build
-$ docker-compose up -d
+   ```bash
+   $ docker-compose build
+   $ docker-compose up -d
 
 Configurar variables de entorno
 Renombra el archivo .env.example a .env.
@@ -97,21 +98,27 @@ Realiza un fork del repositorio.
 Crea una rama para tu contribución:
 
 Copiar código
-```bash
-$ git checkout -b mi-contribucion
+
+3.**Checkout your contribution:**
+   ```bash
+   $ git checkout -b mi-contribucion
 
 Realiza tus cambios y haz un commit:
 
 Copiar código
-```bash
-$ git commit -am "Descripción clara de los cambios"
+
+4.**Commit your contribution:**
+   ```bash
+   $ git commit -am "Descripción clara de los cambios"
 
 Haz push de tu rama:
 
 Copiar código
 
-```bash
-$ git push origin mi-contribucion
+
+5.**Contribute:**
+   ```bash
+   $ git push origin mi-contribucion
 
 Abre un pull request en este repositorio.
 
