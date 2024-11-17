@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Pexels Gallery</title>
+    <link rel="stylesheet" href="style_image_page.css">
+</head>
+<body>
+    <div class="gallery-header">
+        <div class="header-content">
+            <h1>ALL THE FREE IMAGES OF THE WORLD</h1>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for all the free photos in the world...">
+            </div>
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="nature">Nature</button>
+                <button class="category-btn" data-category="travel">Travel</button>
+                <button class="category-btn" data-category="art">Art</button>
+                <button class="category-btn" data-category="architecture">Architecture</button>
+                <button class="category-btn" data-category="food">Food</button>
+            </div>
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="grid">Grid View</button>
+                <button class="view-btn" data-view="list">List View</button>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="portrait">Portrait</button>
+                <!-- <button class="filter-btn" data-filter="landscape">Landscape</button>
+                <button class="filter-btn" data-filter="square">Square</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <div id="galleryGrid" class="gallery-grid"></div>
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <div>Loading images...</div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close-modal">&times;</span>
+
+        <div class="modal-content">
+            <div class="modal-image-container">
+                <img id="modalImage" class="modal-image" src="" alt="">
+                <div class="modal-nav">
+                    <span class="nav-btn prev">‹</span>
+                    <span class="nav-btn next">›</span>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <h2 id="modalPhotographer"></h2>
+                <p id="modalDescription"></p>
+                <button class="download-btn">Download</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script_image_page.js"></script>
+    </body>
+</html>
