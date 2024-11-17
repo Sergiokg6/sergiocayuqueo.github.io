@@ -11,18 +11,20 @@ We actively maintain the following versions of this project, ensuring they recei
 | 4.0.x   | :white_check_mark: Yes |
 | < 4.0   | :x: No             |
 
+
 ## Supported Browsers
 
-The project is tested for compatibility with the most popular browsers. Below is a list of browsers and the corresponding supported versions.
+The project is tested for compatibility with the most popular browsers. Below is a list of browsers and the corresponding supported versions:
 
 | Version | Supported        |
 | ------- | ---------------- |
-| 5.1.x   | :Brave:          |
-| 5.0.x   | :Microsoft Edge: |
-| 4.0.x   | :Chrome:         |
-| < 4.0   | :Safari:         |
-| 4.0.x   | :Firefox:        |
-| < 4.0   | :Opera:          |
+| 5.1.x   | ![Brave](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Brave_logo.svg/1024px-Brave_logo.svg.png) |
+| 5.0.x   | ![Microsoft Edge](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_Edge_logo_2020.svg/1024px-Microsoft_Edge_logo_2020.svg.png) |
+| 4.0.x   | ![Chrome](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google%2BChrome_Logo_2023.png/1024px-Google%2BChrome_Logo_2023.png) |
+| < 4.0   | ![Safari](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Safari_logo_2020.svg/1024px-Safari_logo_2020.svg.png) |
+| 4.0.x   | ![Firefox](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Firefox_logo_2023.svg/1024px-Firefox_logo_2023.svg.png) |
+| < 4.0   | ![Opera](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Opera_2022_logo.svg/1024px-Opera_2022_logo.svg.png) |
+
 
 ## Reporting a Vulnerability
 
