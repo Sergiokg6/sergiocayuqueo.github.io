@@ -344,15 +344,23 @@ const burgerMenu = document.getElementById("burger-menu");
 const navLinks = document.getElementById("nav-links");
 const links = document.querySelectorAll(".nav-links a");
 
-// Toggle navbar visibility on burger menu click
+// Toggle navbar and burger menu animation
 burgerMenu.addEventListener("click", () => {
+    burgerMenu.classList.toggle("active");
     navLinks.classList.toggle("active");
 });
 
 // Close the navbar when a link is clicked
 links.forEach(link => {
     link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
+        burgerMenu.classList.remove("active"); // Reset the burger animation
+        navLinks.classList.remove("active");  // Hide the navigation menu
     });
 });
+
+burgerMenu.addEventListener("click", () => {
+    const expanded = burgerMenu.classList.contains("active");
+    burgerMenu.setAttribute("aria-expanded", !expanded);
+});
+
 
