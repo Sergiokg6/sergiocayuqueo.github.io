@@ -1,318 +1,358 @@
-//from the nav go down smoothly
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll('nav ul li a');
+// Enhanced Custom Cursor
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
 
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
+window.addEventListener('mousemove', (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
 
-//enlarge and shrink
-document.addEventListener("DOMContentLoaded", function() {
-    const img = document.querySelector('.image-container img');
-
-    window.addEventListener('scroll', function() {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const imgOffsetTop = img.offsetTop;
-
-        if (scrollY > imgOffsetTop - windowHeight / 2) {
-            img.style.transform = 'scale(1.01)';
-        } else {
-            img.style.transform = 'scale(1)';
-        }
-    });
-});
-
-//fade text while scoll down.
-document.addEventListener("DOMContentLoaded", function() {
-    const texts = document.querySelectorAll('.header h1, .acerca-de, #acerca-de h2');
-
-    window.addEventListener('scroll', function() {
-        texts.forEach(text => {
-            const textOffsetTop = text.offsetTop;
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-
-            if (scrollY > textOffsetTop - windowHeight / 100) {
-                text.classList.add('fadeInUp');
-            } else if (scrollY < textOffsetTop - windowHeight / 100) {
-                text.classList.remove('fadeInUp');
-            }
-        });
-    });
-});
-
-
-//magnifing glass for text.
-document.addEventListener("DOMContentLoaded", function() {
-    const magnifyElement = document.querySelector('.magnify');
-
-    // Function to wrap each word in a span
-    function wrapWords(element) {
-        const words = element.textContent.split(/\s+/);
-        const newContent = words.map(word => `<span class="word-magnify">${word}&nbsp;</span>`).join('');
-        element.innerHTML = newContent;
-    }
-
-    // Wrap each word in a span
-    wrapWords(magnifyElement);
-});
-
-//static nav bar
-window.onscroll = function() {stickyNavbar()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function stickyNavbar() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-
-//nav new functionalities
-let menuIcon = document.querySelector('.menu-icon');
-let navLinks = document.querySelector('.nav-links');
-let navLinksList = document.querySelectorAll('.nav-links a');
-let navbar1 = document.querySelector('.navbar1'); // Added
-
-menuIcon.addEventListener('click', function() {
-  navLinks.classList.toggle('active');
-  navbar1.classList.toggle('static'); // Added
-});
-
-// Hide navbar when clicking outside or on a link
-document.addEventListener('click', function(event) {
-  if (!navLinks.contains(event.target) && !menuIcon.contains(event.target)) {
-    navLinks.classList.remove('active');
-    navbar1.classList.remove('static'); // Added
-  }
-});
-
-// Hide navbar1 when a link is clicked
-navLinksList.forEach(function(link) {
-  link.addEventListener('click', function() {
-    navLinks.classList.remove('active');
-    navbar1.classList.remove('static'); // Added
-  });
-});
-
-// Added: Make the navbar that is not being deployed static while scrolling
-window.addEventListener('scroll', function() {
-  if (!navLinks.classList.contains('active')) {
-    navbar1.classList.add('static');
-  }
-});
-
-// JavaScript para aplicar el efecto a todas los links
-document.addEventListener('DOMContentLoaded', function() {
-  var words = document.getElementsByTagName('a'); // Obtener todas las palabras del cuerpo de la página
-
-  for (var i = 0; i < words.length; i++) {
-      words[i].addEventListener('mouseover', function() {
-          this.classList.add('hover-effect'); // Agregar clase de efecto hover
-      });
-
-      words[i].addEventListener('mouseout', function() {
-          this.classList.remove('hover-effect'); // Quitar clase de efecto hover
-      });
-  }
-});
-
-//carrousel script
-const linksContainer = document.getElementById('roulette-container');
-const links = linksContainer.getElementsByClassName('link');
-const linkWidth = 19; // Width of each image
-const translateStep = 1; // Adjust the movement speed
-let translateX = 1;
-
-function changeLink() {
-  translateX -= translateStep;
-  linksContainer.style.transform = `translateX(${translateX}px)`;
-
-  // Move the first link to the end when it scrolls out of view
-  if (translateX <= -linkWidth) {
-    const firstLink = linksContainer.firstElementChild;
-    linksContainer.appendChild(firstLink);
-    translateX += linkWidth;
-
-    // Smooth transition for the first link reappearing at the end
+    cursorDot.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
+    
+    // Add slight delay to outline for smooth effect
     setTimeout(() => {
-      firstLink.style.transition = 'transform 0s'; // Disable transition for the first link
-      firstLink.style.transform = `translateX(${linkWidth}px)`; // Move it to the end
-      setTimeout(() => {
-        firstLink.style.transition = 'transform 1s ease'; // Smooth transition for reappearing
-        firstLink.style.transform = `translateX(0)`; // Move it to its original position
-      }, 0);
-    }, 0); // Delay to ensure transition is applied after resetting transform
-  }
-}
-
-setInterval(changeLink, 60); // Adjust the interval for smoother movement
-
-  // When the page scrolls, check if the footer is visible
-window.addEventListener('scroll', function() {
-  const footer = document.querySelector('footer');
-  const footerPosition = footer.getBoundingClientRect().top;
-  const screenHeight = window.innerHeight;
-
-  if (footerPosition < screenHeight) {
-    footer.classList.add('visible');
-  }
-
+        cursorOutline.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
+    }, 100);
 });
 
-// Add staggered animation for each letter in the header
-document.querySelectorAll('#header-title span').forEach((letter, index) => {
-  letter.style.setProperty('--index', index);
-});
-
-
-// Function to add confetti that explodes from the center of the full page
-function createConfetti(container) {
-  const containerWidth = window.innerWidth;  // Use full viewport width
-  const containerHeight = window.innerHeight; // Use full viewport height
-  const numOfConfetti = Math.max(Math.floor(containerWidth / 10), 100); // Increase count for a better explosion
-
-  // Determine the center of the viewport
-  const centerX = containerWidth / 2;
-  const centerY = containerHeight / 2;
-
-  for (let i = 0; i < numOfConfetti; i++) {
-      const confetti = document.createElement("div");
-      confetti.classList.add("confetti-piece");
-
-      // Set initial position to the center of the viewport
-      confetti.style.left = `${centerX}px`;
-      confetti.style.top = `${centerY}px`;
-      confetti.style.backgroundColor = getRandomColor();
-
-      // Randomize the direction for the explosion
-      const dirX = Math.random() * 2 - 1; // Random direction on the x-axis (-1 to 1)
-      const dirY = Math.random() * 2 - 1; // Random direction on the y-axis (-1 to 1)
-
-      // Randomize the distance to spread across the entire viewport
-      const distanceX = dirX * (Math.random() * (containerWidth / 2)); // Scale by half the width
-      const distanceY = dirY * (Math.random() * (containerHeight / 2)); // Scale by half the height
-      
-      // Set the final position using CSS variables
-      confetti.style.setProperty('--end-x', `${distanceX}px`);
-      confetti.style.setProperty('--end-y', `${distanceY}px`);
-
-      container.appendChild(confetti);
-
-      // Remove confetti after animation ends
-      setTimeout(() => {
-          confetti.remove();
-      }, 4000);
-  }
-}
-
-function getRandomColor() {
-  const colors = ["#FFD700", "#FF4500", "#1E90FF", "#32CD32", "#FF69B4"];
-  return colors[Math.floor(Math.random() * colors.length)];
-}
-
-document.querySelector('.new-poem').addEventListener('mouseenter', function() {
-  const container = this.nextElementSibling;
-  container.style.display = "block";
-  createConfetti(container);
-});
-
-document.querySelector('.new-poem').addEventListener('mouseleave', function() {
-  const container = this.nextElementSibling;
-  container.style.display = "none";
-});
-
-
-//darkmode whitemode
-const toggleSwitch = document.querySelector('#theme-toggle');
-const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme) {
-  document.documentElement.setAttribute('data-theme', currentTheme);
-
-  if (currentTheme === 'dark') {
-    toggleSwitch.checked = true;
-  }
-}
-
-toggleSwitch.addEventListener('change', function () {
-  if (this.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-  }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const menuIcon = document.querySelector('.menu-icon');
-  const navLinks = document.querySelector('.nav-links');
-  const links = document.querySelectorAll('.nav-links a'); // Get all links
-
-  // Toggle the active class on burger button and nav links when burger is clicked
-  menuIcon.addEventListener('click', function() {
-    menuIcon.classList.toggle('active'); // Animate burger icon
-    navLinks.classList.toggle('static'); // Show/hide nav links
-  });
-
-  // Close the navbar smoothly when any link is clicked (in mobile view)
-  links.forEach(link => {
-    link.addEventListener('click', function() {
-      navLinks.classList.remove('active'); // Hide nav links
-      menuIcon.classList.remove('active'); // Reset burger icon
+// Hover effect on interactive elements
+document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursorOutline.style.width = '60px';
+        cursorOutline.style.height = '60px';
     });
-  });
+    
+    el.addEventListener('mouseleave', () => {
+        cursorOutline.style.width = '40px';
+        cursorOutline.style.height = '40px';
+    });
 });
 
+// Enhanced Scroll Progress
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    const scrollProgress = document.querySelector('.scroll-progress-bar');
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / height) * 100;
+    
+    scrollProgress.style.width = scrolled + '%';
+    
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
 
-
-// // Get the video element
-// const videoElement = document.querySelector('#header video');
-
-// // Function to update video source based on theme
-// function updateVideoSource(theme) {
-//   const sourceElement = videoElement.querySelector('source');
-
-//   // Update the video source based on the theme
-//   if (theme === 'dark') {
-//     sourceElement.src = './videos_blog/immersive_technology.mp4'; // Video for dark theme
-//   } else {
-//     sourceElement.src = './videos_blog/flowers_and_betterflies_white.mp4'; // Video for light theme
-//   }
-
-//   // Reload the video to apply the new source
-//   videoElement.load();
-// }
-
-// // Event listener for theme toggle
-// toggleSwitch.addEventListener('change', function () {
-//   const theme = this.checked ? 'dark' : 'light';
-//   document.documentElement.setAttribute('data-theme', theme);
-//   localStorage.setItem('theme', theme);
-
-//   // Update video source
-//   updateVideoSource(theme);
+// Smooth Scrolling
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//         e.preventDefault();
+//             // Complete the smooth scrolling function
+//             document.querySelector(this.getAttribute('href')).scrollIntoView({
+//             behavior: 'smooth'
+//         });
+//     });
 // });
 
-// // On page load, apply the stored theme and update video source
-// const currentThemeVideo = localStorage.getItem('theme') || 'light';
-// document.documentElement.setAttribute('data-theme', currentThemeVideo);
-// toggleSwitch.checked = currentThemeVideo === 'dark';
-// updateVideoSource(currentThemeVideo);
+// Poem rotation animation
+const poems = document.querySelectorAll('.poem-card');
+let currentPoem = 0;
+
+function rotatePoems() {
+    poems.forEach((poem, index) => {
+        poem.classList.remove('active');
+        if (index === currentPoem) {
+            poem.classList.add('active');
+        }
+    });
+    currentPoem = (currentPoem + 1) % poems.length;
+}
+
+// Start rotation
+setInterval(rotatePoems, 6000);
+
+// // Optional: Pause on hover
+// const poemContainer = document.querySelector('.poems-container');
+// poemContainer.addEventListener('mouseover', () => clearInterval(interval));
+// poemContainer.addEventListener('mouseout', () => interval = setInterval(rotatePoems, 6000));
+
+
+// Phrases fade-in animation
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('phrase-visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.wisdom-phrase').forEach(phrase => {
+    observer.observe(phrase);
+});
+
+// Theme Switcher
+const themes = {
+    default: {
+        primary: '#ffd700',
+        secondary: '#1a1a1a',
+        bg: '#0a0a0a'
+    },
+    cyber: {
+        primary: '#00ff9d',
+        secondary: '#1a1a2e',
+        bg: '#0a0a1a'
+    },
+    neon: {
+        primary: '#ff00ff',
+        secondary: '#2a1a2a',
+        bg: '#1a0a1a'
+    }
+};
+
+document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const theme = themes[btn.dataset.theme];
+        Object.entries(theme).forEach(([key, value]) => {
+            document.documentElement.style.setProperty(`--${key}`, value);
+        });
+    });
+});
+
+// // Skill Progress Animation
+// const observerSkills = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             const progress = entry.target.querySelector('.progress');
+//             const percent = entry.target.querySelector('.skill-percentage').textContent;
+//             const value = parseInt(percent);
+//             progress.style.strokeDashoffset = 440 - (440 * value / 100);
+//         }
+//     });
+// }, { threshold: 0.5 });
+
+// document.querySelectorAll('.skill-card').forEach(card => {
+//     observerSkills.observe(card);
+// });
+
+// 1. Project Filter System
+const projectFilters = `
+<div class="filter-container">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="mobile">Mobile</button>
+    <button class="filter-btn" data-filter="design">Design</button>
+</div>
+`;
+
+document.querySelector('.projects').insertAdjacentHTML('afterbegin', projectFilters);
+
+// Add data-category attributes to your project cards
+document.querySelectorAll('.project-card').forEach(card => {
+    card.setAttribute('data-category', ['web', 'mobile', 'design'][Math.floor(Math.random() * 3)]);
+});
+
+// Filter functionality
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = 'block';
+                setTimeout(() => card.style.opacity = '1', 0);
+            } else {
+                card.style.opacity = '0';
+                setTimeout(() => card.style.display = 'none', 500);
+            }
+        });
+    });
+});
+
+// 2. Dynamic Skill Progress Animation
+// function initSkillAnimation() {
+//     const skills = [
+//         { name: 'Web Development', percent: 90 },
+//         { name: 'UI/UX Design', percent: 85 },
+//         { name: 'Mobile Development', percent: 80 },
+//         { name: 'Cloud Architecture', percent: 75 }
+//     ];
+
+//     const skillContainer = document.querySelector('.skill-container');
+//     skillContainer.innerHTML = skills.map(skill => `
+//         <div class="skill-card" data-aos="fade-up">
+//             <div class="skill-progress">
+//                 <svg class="skill-circle" width="100" height="100" viewBox="0 0 150 150">
+//                     <circle cx="75" cy="75" r="70"/>
+//                     <circle class="progress" cx="75" cy="75" r="70"/>
+//                 </svg>
+//                 <div class="skill-percentage">${skill.percent}%</div>
+//             </div>
+//             <h3>${skill.name}</h3>
+//             <p>Expert Level Proficiency</p>
+//         </div>
+//     `).join('');
+// }
+
+// initSkillAnimation();
+
+
+// 3. Interactive Timeline
+const timelineSection = `
+<section class="timeline" id="timeline">
+    <h2 class="section-title">Journey</h2>
+    <div class="timeline-container">
+        <div class="timeline-item" data-year="2024">
+            <div class="timeline-content">
+                <h3>19 Jr. Developer</h3>
+                <p>Being an assitant professor and entrepreneur</p>
+            </div>
+        </div>
+        <div class="timeline-item" data-year="2022">
+            <div class="timeline-content">
+                <h3>18 A simple student</h3>
+                <p>Architecting scalable solutions in mind</p>
+            </div>
+        </div>
+        <div class="timeline-item" data-year="2020">
+            <div class="timeline-content">
+                <h3>17 Writing and Reading</h3>
+                <p>From AI to Human Biology</p>
+            </div>
+        </div>
+    </div>
+</section>
+`;
+
+document.querySelector('.poems').insertAdjacentHTML('afterend', timelineSection);
+
+
+// // 4. Live Project Stats Counter
+// function initProjectStats() {
+//     const stats = [
+//         { label: 'Projects Completed', value: 150 },
+//         { label: 'Happy Clients', value: 80 },
+//         { label: 'Awards Won', value: 25 },
+//         { label: 'Years Experience', value: 8 }
+//     ];
+
+//     const statsSection = `
+//     <section class="stats" id="stats">
+//         <div class="stats-container">
+//             ${stats.map(stat => `
+//                 <div class="stat-item">
+//                     <h3 class="stat-value" data-target="${stat.value}">0</h3>
+//                     <p>${stat.label}</p>
+//                 </div>
+//             `).join('')}
+//         </div>
+//     </section>
+//     `;
+
+//     document.querySelector('.projects').insertAdjacentHTML('afterend', statsSection);
+// }
+
+// initProjectStats();
+
+// // Animate stats when in view
+// function animateStats() {
+//     const stats = document.querySelectorAll('.stat-value');
+//     stats.forEach(stat => {
+//         const target = parseInt(stat.dataset.target);
+//         const increment = target / 50;
+//         let current = 0;
+    
+//         const updateCount = () => {
+//             if (current < target) {
+//                 current += increment;
+//                 stat.textContent = Math.ceil(current);
+//                 setTimeout(updateCount, 40);
+//             } else {
+//                 stat.textContent = target;
+//             }
+//         };
+    
+//         updateCount();
+//     });
+// }
+
+// 5. Theme Persistence
+const savedTheme = localStorage.getItem('portfolio-theme');
+if (savedTheme) {
+    const theme = themes[savedTheme];
+    Object.entries(theme).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(`--${key}`, value);
+    });
+}
+
+document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const themeKey = btn.dataset.theme;
+        localStorage.setItem('portfolio-theme', themeKey);
+    });
+});
+
+// 6. Remove loader properly
+// window.addEventListener('load', () => {
+//     const loader = document.querySelector('.loader');
+//     loader.classList.add('hidden');
+//     setTimeout(() => loader.style.display = 'none', 500);
+
+//     // Initialize stat counters after load
+//     setTimeout(animateStats, 1000);
+// });
+
+
+// const hero = document.querySelector('.hero');
+
+// hero.addEventListener('mousemove', (e) => {
+//     const { offsetX, offsetY, clientWidth, clientHeight } = e;
+//     const x = (offsetX / clientWidth) * 100;
+//     const y = (offsetY / clientHeight) * 100;
+
+//     hero.style.setProperty('--mouse-x', `${x}%`);
+//     hero.style.setProperty('--mouse-y', `${y}%`);
+// });
+
+// // Update CSS with mouse-tracking effect
+// const root = document.documentElement;
+// hero.addEventListener('mousemove', (e) => {
+//     const x = (e.clientX / window.innerWidth) * 100;
+//     const y = (e.clientY / window.innerHeight) * 100;
+//     root.style.setProperty('--mouse-x', `${x}%`);
+//     root.style.setProperty('--mouse-y', `${y}%`);
+// });
+
+// Navbar Scroll Effect
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Get elements
+const burgerMenu = document.getElementById("burger-menu");
+const navLinks = document.getElementById("nav-links");
+const links = document.querySelectorAll(".nav-links a");
+
+// Toggle navbar visibility on burger menu click
+burgerMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// Close the navbar when a link is clicked
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
+
