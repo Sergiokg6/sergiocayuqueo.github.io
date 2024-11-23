@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://www.googletagmanager.com https://cdn.amplitude.com https://*.cloudflare.com 'nonce-${nonce}';
+    style-src 'self' https://*.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
+    font-src 'self' https://*.cloudflare.com https://fonts.gstatic.com;
+    img-src 'self' data: https: blob:;
+    connect-src 'self' https://www.google-analytics.com https://*.amplitude.com;
+    frame-src 'self';
+    frame-ancestors 'self';
+    form-action 'self';
+    base-uri 'self';
+    manifest-src 'self';
+    media-src 'self';
+    object-src 'none';
+    worker-src 'self' blob:;
+    upgrade-insecure-requests;
+    block-all-mixed-content"> -->
+
+    <!-- Additional Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"> -->
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="referrer" content="no-referrer">
 
     <meta charset="UTF-8">
@@ -101,7 +125,7 @@
         
         <div class="nav-content">
             <!-- <div class="logo"><a href="index.html">SERGIO CAYUQUEO</a></div> -->
-            <h2 class="glitch-text logo" data-text="Software"><a href="#home"></a></h2>
+            <h2 class="glitch-text logo" data-text="Developer"><a href="#home"></a></h2>
             <div class="burger" id="burger-menu">
                 <span></span>
                 <span></span>
@@ -137,7 +161,7 @@
                     <div class="tagline">The race for AI is wild in the intelligence age</div>
                 </div>
                 <audio id="myAudio" controls autoplay loop>
-                    <source src="audio_blog/Choir Hymn - More Than Family.mp3" type="audio/mp3">
+                    <source src="audio_blog/The sheperd Psaml.m4a" type="audio/mp3">
                     Your browser does not support the audio element.
                     <br>
                 </audio>
@@ -303,36 +327,36 @@
         <br>
         <ul>
             <li>
-                <a href="./poems/esperanza.html" class="new-poem">ESPERANZA 
+                <a target="_blank" href="./poems/esperanza.html" class="new-poem">ESPERANZA 
                     <span class="new-label"></span>
                 </a>
                 <!-- <span class="confetti-container"></span> Container for confetti -->
             </li>
            
-            <li> <a href="./poems/miamigotestaaliastorre.html">NIKOLA TESLA ALIAS TORRE</a></li>
-            <li> <a href="./poems/espacioytiempo.html">ESPACIO Y TIEMPO</a></li>
-            <li> <a href="./poems/rapidez_de_cambio.html">RAPIDEZ DE CAMBIO</a></li> 
-            <li> <a href="./poems/silencio.html">SILENCIO</a></li>
-            <li> <a href="./poems/ojos_blancos.html">OJOS BLANCOS</a></li>
-            <li> <a href="./poems/odaAUnRobot.html">ODA A UN ROBOT</a></li>
-            <li> <a href="./poems/hayUnFuturoFeliz.html">HAY UN FUTURO FELIZ</a></li>
-            <li> <a href="./poems/hueso.html">HUESO</a></li>
-            <li> <a href="./poems/sabios.html">SABIOS</a></li>
-            <li> <a href="./poems/nignios.html">NIÑOS</a></li>
-            <li> <a href="./poems/trenes.html">TRENES</a></li>
-            <li> <a href="./poems/noLoVes.html">NO LO VES?</a></li>
-            <li> <a href="./poems/pajarosRaros.html">PÀJAROS RAROS</a></li>
-            <li> <a href="./poems/escuche.html">ESCUCHÈ</a></li>
-            <li> <a href="./poems/ciervos.html">CIERVOS</a></li>
-            <li> <a href="./poems/dediaslluviosos.html">DE DÌAS LLUVIOSOS</a></li>
-            <li> <a href="./poems/accion.html">ACCIÒN</a></li>
+            <li> <a target="_blank" href="./poems/miamigotestaaliastorre.html">NIKOLA TESLA ALIAS TORRE</a></li>
+            <li> <a target="_blank" href="./poems/espacioytiempo.html">ESPACIO Y TIEMPO</a></li>
+            <li> <a target="_blank" href="./poems/rapidez_de_cambio.html">RAPIDEZ DE CAMBIO</a></li> 
+            <li> <a target="_blank" href="./poems/silencio.html">SILENCIO</a></li>
+            <li> <a target="_blank" href="./poems/ojos_blancos.html">OJOS BLANCOS</a></li>
+            <li> <a target="_blank" href="./poems/odaAUnRobot.html">ODA A UN ROBOT</a></li>
+            <li> <a target="_blank" href="./poems/hayUnFuturoFeliz.html">HAY UN FUTURO FELIZ</a></li>
+            <li> <a target="_blank" href="./poems/hueso.html">HUESO</a></li>
+            <li> <a target="_blank" href="./poems/sabios.html">SABIOS</a></li>
+            <li> <a target="_blank" href="./poems/nignios.html">NIÑOS</a></li>
+            <li> <a target="_blank" href="./poems/trenes.html">TRENES</a></li>
+            <li> <a target="_blank" href="./poems/noLoVes.html">NO LO VES?</a></li>
+            <li> <a target="_blank" href="./poems/pajarosRaros.html">PÀJAROS RAROS</a></li>
+            <li> <a target="_blank" href="./poems/escuche.html">ESCUCHÈ</a></li>
+            <li> <a target="_blank" href="./poems/ciervos.html">CIERVOS</a></li>
+            <li> <a target="_blank" href="./poems/dediaslluviosos.html">DE DÌAS LLUVIOSOS</a></li>
+            <li> <a target="_blank" href="./poems/accion.html">ACCIÒN</a></li>
         </ul>   
     </section>
 
     <!-- All the free images of the world Section ¿ACHIEVEMENTS? -->
     <section class="achievements" id="achievements">
         <h2 class="section-title">
-            <a class="world-images-title" href="./world_images/index_image_page.html">All the Free Images of the World</a>
+            <a target="_blank" class="world-images-title" href="./world_images/index_image_page.html">All the Free Images of the World</a>
         </h2>
         <!-- <div class="achievements" id="achievements"></div>
         </div> -->
@@ -354,7 +378,7 @@
             <div class="footer-section">
                 <h3>Others</h3>
                 <ul>
-                    <li><a href="./papers/papers.html">Papers</a></li>
+                    <li><a target="_blank" href="./papers/papers.html">Papers</a></li>
                     <li><a href="#portrits">Portraits</a></li>
                     <li><a href="#analysis">Analysis</a></li>
                     <li><a href="#essays">Essays</a></li>
@@ -364,7 +388,7 @@
                 <h3>Recomended</h3>
                 <ul>
                     <li><a href="#papers">Pages</a></li>
-                    <li><a target="_blank" href="https://www.paulgraham.com/articles.html">Paul Graham Essays</a></li>
+                    <li><a target="_blank" target="_blank" href="https://www.paulgraham.com/articles.html">Paul Graham Essays</a></li>
                     <li><a href="#analysis">Videos</a></li>
                     <li><a target="_blank" href="https://ocw.mit.edu/">MITOPENCOURSEWARE</a></li>
 
@@ -407,6 +431,13 @@
     </div>
      -->
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" 
+            aria-label="Back to top"
+            onclick="scrollTo()">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js" defer></script>
 </body> 
 </html>
