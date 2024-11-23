@@ -508,7 +508,6 @@ burgerMenu.addEventListener("click", () => {
 
 
 const endpoint = 'https://script.google.com/macros/s/AKfycbwqK15Y6Y6F0QbJCVMzKidMer5qIP0KScSChj6WRclTkoxutIy-2hc4ktp78qS6XbzuHg/exec'; // Replace with your web app URL
-
 async function subscribeToNewsletter(email) {
     const successMessage = document.getElementById('success');
 
