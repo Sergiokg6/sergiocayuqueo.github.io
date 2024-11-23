@@ -1705,3 +1705,59 @@ body {
 .audio-button:hover::before {
     width: 100%;
 }
+/*end audio buttons*/
+
+
+/* High Contrast Focus Indicators */
+a:focus,
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    color: var(--text);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: var(--glow);
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .back-to-top {
+        bottom: 0.5rem;
+        right: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

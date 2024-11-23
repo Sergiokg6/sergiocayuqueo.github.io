@@ -546,10 +546,26 @@ function pauseAudio() {
 }
 
 
-
-
-
 //Update footer bottom date automatically
-document.querySelector('footer p').innerHTML = 
-    `&copy; ${new Date().getFullYear()} - Sergio I Cayuqueo V. Under <a href="https://github.com/sergiocayuqueo/sergiocayuqueo.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>.`;
+document.querySelector('footer p').innerHTML = `&copy; ${new Date().getFullYear()} - Sergio I Cayuqueo V. Under <a href="https://github.com/sergiocayuqueo/sergiocayuqueo.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>.`;
 
+
+
+// Back to top functionality
+const backToTopButton = document.querySelector('.back-to-top');
+window.addEventListener('scroll', () => {
+    if (backToTopButton) {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    }
+});
+  
+backToTopButton?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+});
