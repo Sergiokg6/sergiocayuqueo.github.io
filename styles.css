@@ -1,3 +1,6 @@
+/* Importing the beautiful Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 :root {
     --primary: #ffdF700;
     --secondary: #1a1a1a;
@@ -1602,15 +1605,16 @@ body {
 } */
 
 
+
+
 .glitch-text {
     font-size: 1.8rem;
     font-weight: 500;
     position: relative;
     text-shadow: 2px 2px var(--bg);
     background: var(--accent-color);
-    /* background-clip: text; Standard property for compatibility */
-    -webkit-background-clip: text; /* Webkit-specific property for older browsers */
-    -webkit-text-fill-color: transparent; /* Makes the text transparent so the background shows through */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 20px rgba(0, 255, 148, 0.3));
 }
 
