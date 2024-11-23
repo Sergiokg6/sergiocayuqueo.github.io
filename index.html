@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- basic secutiry -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self';">
+    <meta name="referrer" content="no-referrer">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Cayuqueo | AI | Sergio Ismael Cayuqueo Vera</title>
@@ -83,6 +88,8 @@
     
     <link rel="icon" href="./images_blog/sergio_ismael_favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#ff8000">
 </head>
 <body>
@@ -113,8 +120,8 @@
     </nav>
 
     <div class="social-icons">
-        <button class="audio-button" onclick="playAudio()">Play</button>
-        <button class="audio-button" onclick="pauseAudio()">Pause</button>
+        <button class="audio-button" onclick="playAudio()" aria-label="Play Audio">Play</button>
+        <button class="audio-button" onclick="pauseAudio()" aria-label="Pause Audio">Pause</button>
         <a target="_blank" href="https://github.com/sergiocayuqueo/" class="social-icon"><i class="fab fa-github"></i></a>
         <a target="_blank" href="https://www.linkedin.com/in/sergiocayuqueovi/" class="social-icon"><i class="fab fa-linkedin"></i></a>
         <a target="_blank" href="https://x.com/sergiocayuqueov" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -153,21 +160,21 @@
         <h2 class="section-title">Featured Works</h2>
         <div class="project-grid">
             <div class="project-card">
-                <img src="./images_blog/pexels-Google DeepMind-25626508.jpg" alt="Project 1" class="project-image">
+                <img loading="lazy" src="./images_blog/pexels-Google DeepMind-25626508.jpg" alt="Project 1" class="project-image">
                 <div class="project-content">
                     <h3 class="project-title">Innovative Design</h3>
                     <p>Pushing boundaries through creative solutions.</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="./images_blog/pexels-Aleksandar Pasaric-1437493.jpg" alt="Project 2" class="project-image">
+                <img loading="lazy" src="./images_blog/pexels-Aleksandar Pasaric-1437493.jpg" alt="Project 2" class="project-image">
                 <div class="project-content">
                     <h3 class="project-title">Digital Excellence</h3>
                     <p>Where technology meets artistry.</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="./images_blog/pexels-Elina Sazonova-1855349.jpg" alt="Project 3" class="project-image">
+                <img loading="lazy" src="./images_blog/pexels-Elina Sazonova-1855349.jpg" alt="Project 3" class="project-image">
                 <div class="project-content">
                     <h3 class="project-title">Future Forward</h3>
                     <p>Embracing tomorrow's possibilities today.</p>
@@ -255,7 +262,7 @@
             <!-- Image Section -->
             <div class="timeline-image">
                 <div class="image-wrapper">
-                    <img src="images_blog/profilesergio.jpg" alt="Sergio at the age of 18">
+                    <img loading="lazy" src="images_blog/profilesergio.jpg" alt="Sergio at the age of 18">
                 </div>
             </div>
         </div>
@@ -377,16 +384,16 @@
                 <div class="footer-contact">
                     <a target="_blank" href="mailto:sergiocayuqueo4@gmail.com">sergiocayuqueo4@gmail.com</a>
                     <a target="_blank" href="tel:+56936978100">+56936978100</a>
-                    <button class="audio-button" onclick="playAudio()">Play</button>
-                    <button class="audio-button" onclick="pauseAudio()">Pause</button>
+                    <button class="audio-button" onclick="playAudio()" aria-label="Play Audio">Play</button>
+                    <button class="audio-button" onclick="pauseAudio()" aria-label="Pause Audio">Pause</button>
                 </div>
 
             </div>
             <div class="footer-section">
                 <h3>Newsletter</h3>
                 <form class="newsletter-form" id="newsletter-form">
-                    <input id="emailInput" type="email" placeholder="Enter your email" required />
-                    <button id="subscribeButton" class="newsletter-btn" type="submit">SUBSCRIBE</button>
+                    <input aria-label="Enter Email" id="emailInput" type="email" placeholder="Enter your email" required />
+                    <button aria-label="Subscribe Button" id="subscribeButton" class="newsletter-btn" type="submit">SUBSCRIBE</button>
                     <span id="success" class="success-message" style="display: none;">Success!</span>
                 </form>
             </div>
