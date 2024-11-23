@@ -553,7 +553,7 @@ body {
 /* Social Icons */
 .social-icons {
     position: fixed;
-    right: 1rem;
+    right: 0.4rem;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -1189,7 +1189,7 @@ body {
 
 .footer-bottom {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 3.15rem;
     padding-top: 2rem;
     border-top: 1px solid var(--glass);
 }
@@ -1680,7 +1680,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    font-size: 15px;
+    font-size: 11px;
     
 }
 
