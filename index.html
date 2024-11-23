@@ -94,9 +94,10 @@
         <div class="scroll-progress">
             <div class="scroll-progress-bar"></div>
         </div>
-    
+        
         <div class="nav-content">
-            <div class="logo"><a href="index.html">SERGIO CAYUQUEO</a></div>
+            <!-- <div class="logo"><a href="index.html">SERGIO CAYUQUEO</a></div> -->
+            <a href="#home"><h2 class="glitch-text logo" data-text="Software"></h2></a>
             <div class="burger" id="burger-menu">
                 <span></span>
                 <span></span>
@@ -112,6 +113,8 @@
     </nav>
 
     <div class="social-icons">
+        <button class="audio-button" onclick="playAudio()">Play</button>
+        <button class="audio-button" onclick="pauseAudio()">Pause</button>
         <a target="_blank" href="https://github.com/sergiocayuqueo/" class="social-icon"><i class="fab fa-github"></i></a>
         <a target="_blank" href="https://www.linkedin.com/in/sergiocayuqueovi/" class="social-icon"><i class="fab fa-linkedin"></i></a>
         <a target="_blank" href="https://x.com/sergiocayuqueov" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -120,7 +123,6 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Digital Artisan</h1>
             <div class="tagline-wrapper">
                 <div class="rotating-taglines">
                     <div class="tagline">Building a better future for humanity or not</div>
@@ -129,12 +131,23 @@
                     <div class="tagline">Non-linear thinking</div>
                     <div class="tagline">Doxa density function</div>
                     <div class="tagline">The race for AI is wild in the intelligence age</div>
-
                 </div>
+                <audio id="myAudio" controls autoplay loop>
+                    <source src="audio_blog/Choir Hymn - More Than Family.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                    <br>
+                </audio>
             </div>
             <a href="#projects" class="cta-button">Explore My Work</a>
         </div>
+        <div class="scroll-indicator">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+            <p>Scroll to explore</p>
+        </div>
     </section>
+
 
     <section class="projects" id="projects">
         <h2 class="section-title">Featured Works</h2>
@@ -364,14 +377,17 @@
                 <div class="footer-contact">
                     <a target="_blank" href="mailto:sergiocayuqueo4@gmail.com">sergiocayuqueo4@gmail.com</a>
                     <a target="_blank" href="tel:+56936978100">+56936978100</a>
+                    <button class="audio-button" onclick="playAudio()">Play</button>
+                    <button class="audio-button" onclick="pauseAudio()">Pause</button>
                 </div>
 
             </div>
             <div class="footer-section">
                 <h3>Newsletter</h3>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input id="emailInput" type="email" placeholder="Enter your email" required />
+                    <button id="subscribeButton" class="newsletter-btn" type="submit">SUBSCRIBE</button>
+                    <span id="success" class="success-message" style="display: none;">Success!</span>
                 </form>
             </div>
         </div>
@@ -379,6 +395,7 @@
             <p>&copy; 2024 Sergiocvi. All Rights Free.</p>
         </div>
     </footer>
+    
 
     <!-- Loading Animation -->
     <!-- <div class="loader">

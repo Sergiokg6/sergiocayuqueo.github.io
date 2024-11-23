@@ -388,3 +388,162 @@ burgerMenu.addEventListener("click", () => {
 });
 
 
+
+
+
+(() => {
+    // Text scramble effect
+    class TextScramble {
+        constructor(el) {
+            this.el = el;
+            this.chars = '!<>-_\\/[]{}—=+*^?#________';
+            this.update = this.update.bind(this);
+        }
+        
+        setText(newText) {
+            const oldText = this.el.innerText;
+            const length = Math.max(oldText.length, newText.length);
+            const promise = new Promise((resolve) => this.resolve = resolve);
+            this.queue = [];
+            
+            for (let i = 0; i < length; i++) {
+                const from = oldText[i] || '';
+                const to = newText[i] || '';
+                const start = Math.floor(Math.random() * 40);
+                const end = start + Math.floor(Math.random() * 40);
+                this.queue.push({ from, to, start, end });
+            }
+            
+            cancelAnimationFrame(this.frameRequest);
+            this.frame = 0;
+            this.update();
+            return promise;
+        }
+        
+        update() {
+            let output = '';
+            let complete = 0;
+            
+            for (let i = 0, n = this.queue.length; i < n; i++) {
+                let { from, to, start, end, char } = this.queue[i];
+                
+                if (this.frame >= end) {
+                    complete++;
+                    output += to;
+                } else if (this.frame >= start) {
+                    if (!char || Math.random() < 0.28) {
+                        char = this.randomChar();
+                        this.queue[i].char = char;
+                    }
+                    output += `<span class="scramble">${char}</span>`;
+                } else {
+                    output += from;
+                }
+            }
+            
+            this.el.innerHTML = output;
+            
+            if (complete === this.queue.length) {
+                this.resolve();
+            } else {
+                this.frameRequest = requestAnimationFrame(this.update);
+                this.frame++;
+            }
+        }
+        
+        randomChar() {
+            return this.chars[Math.floor(Math.random() * this.chars.length)];
+        }
+    }
+
+    // Initialize text scramble effect on hero text
+    const phrases = [
+        'Developer',
+        'Craftsman',
+        'Code Artist',
+        'Problem Solver',
+        'Polymath',
+        'Sergio I'
+    ];
+
+    const heroText = document.querySelector('.glitch-text');
+    if (heroText) {
+        const fx = new TextScramble(heroText);
+        let counter = 0;
+        
+        const next = () => {
+            fx.setText(phrases[counter]).then(() => {
+                setTimeout(next, 3000);
+            });
+            counter = (counter + 1) % phrases.length;
+        };
+        
+        next();
+    }
+
+    // Smooth page transitions
+    const pageTransition = () => {
+        const overlay = document.createElement('div');
+        overlay.className = 'page-transition-overlay';
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener('animationend', () => {
+            overlay.remove();
+        });
+    };
+
+    document.querySelectorAll('a:not([target="_blank"])').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (link.hostname === window.location.hostname) {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                pageTransition();
+                setTimeout(() => {
+                    window.location = href;
+                }, 500);
+            }
+        });
+    });
+})();
+
+
+const endpoint = 'https://script.google.com/macros/s/AKfycbwqK15Y6Y6F0QbJCVMzKidMer5qIP0KScSChj6WRclTkoxutIy-2hc4ktp78qS6XbzuHg/exec'; // Replace with your web app URL
+
+async function subscribeToNewsletter(email) {
+    const successMessage = document.getElementById('success');
+
+    // Show success
+    successMessage.style.display = 'inline';
+
+    //API call with fetch request
+    //No need for handling
+    const response = await fetch(endpoint, {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+    });
+}
+
+// Handle form submission
+document.getElementById('newsletter-form').addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent default form submission
+    const email = document.getElementById('emailInput').value.trim();
+    if (email) {
+      subscribeToNewsletter(email);
+    } else {
+      alert('Please enter a valid email address!');
+    }
+});
+
+
+// Get the audio element
+const audio = document.getElementById('myAudio');
+
+// Function to play the audio
+function playAudio() {
+    audio.play();
+}
+
+// Function to pause the audio
+function pauseAudio() {
+    audio.pause();
+}
