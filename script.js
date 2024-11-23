@@ -537,13 +537,20 @@ document.getElementById('newsletter-form').addEventListener('submit', (event) =>
 
 // Get the audio element
 const audio = document.getElementById('myAudio');
-
 // Function to play the audio
 function playAudio() {
     audio.play();
 }
-
 // Function to pause the audio
 function pauseAudio() {
     audio.pause();
 }
+
+
+
+
+
+//Update footer bottom date automatically
+document.querySelector('footer p').innerHTML = 
+    `&copy; ${new Date().getFullYear()} - Sergio I Cayuqueo V. Under <a href="https://github.com/sergiocayuqueo/sergiocayuqueo.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>.`;
+
