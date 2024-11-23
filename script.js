@@ -76,24 +76,56 @@ setInterval(rotatePoems, 6000);
 // poemContainer.addEventListener('mouseover', () => clearInterval(interval));
 // poemContainer.addEventListener('mouseout', () => interval = setInterval(rotatePoems, 6000));
 
+//wisdom section
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-// Phrases fade-in animation
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('phrase-visible');
+                }, index * 100); // Staggered animations
+            }
+        });
+    }, observerOptions);
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('phrase-visible');
-        }
+    document.querySelectorAll('.wisdom-phrase').forEach(phrase => {
+        observer.observe(phrase);
     });
-}, observerOptions);
 
-document.querySelectorAll('.wisdom-phrase').forEach(phrase => {
-    observer.observe(phrase);
+    // Dynamic Shuffle
+    // const shuffleButton = document.getElementById("shuffle-btn");
+    // const wisdomGrid = document.getElementById("wisdom-grid");
+
+    // const additionalPhrases = [
+    //     { icon: "fas fa-rocket", text: "The only way to do great work is to love what you do. - Steve Jobs" },
+    //     { icon: "fas fa-tree", text: "Do what you can, with what you have, where you are. - Theodore Roosevelt" },
+    //     { icon: "fas fa-star", text: "Shoot for the moon. Even if you miss, you'll land among the stars. - Les Brown" }
+        
+    // ];
+
+    // shuffleButton.addEventListener("click", () => {
+    //     wisdomGrid.innerHTML = ""; // Clear existing phrases
+
+    //     // Shuffle and display new phrases
+    //     additionalPhrases.sort(() => 0.5 - Math.random()).forEach(phrase => {
+    //         const phraseDiv = document.createElement("div");
+    //         phraseDiv.classList.add("wisdom-phrase");
+    //         phraseDiv.innerHTML = `<i class="${phrase.icon}"></i><p>"${phrase.text}"</p>`;
+    //         wisdomGrid.appendChild(phraseDiv);
+
+    //         observer.observe(phraseDiv); // Attach observer to new phrases
+    //     });
+    // });
+
 });
+
+//end wisdom section
+
 
 // Theme Switcher
 const themes = {
@@ -203,34 +235,26 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 // initSkillAnimation();
 
 
-// 3. Interactive Timeline
-const timelineSection = `
-<section class="timeline" id="timeline">
-    <h2 class="section-title">Journey</h2>
-    <div class="timeline-container">
-        <div class="timeline-item" data-year="2024">
-            <div class="timeline-content">
-                <h3>19 Jr. Developer</h3>
-                <p>Being an assitant professor and entrepreneur</p>
-            </div>
-        </div>
-        <div class="timeline-item" data-year="2022">
-            <div class="timeline-content">
-                <h3>18 A simple student</h3>
-                <p>Architecting scalable solutions in mind</p>
-            </div>
-        </div>
-        <div class="timeline-item" data-year="2020">
-            <div class="timeline-content">
-                <h3>17 Writing and Reading</h3>
-                <p>From AI to Human Biology</p>
-            </div>
-        </div>
-    </div>
-</section>
-`;
 
-document.querySelector('.poems').insertAdjacentHTML('afterend', timelineSection);
+
+// Timeline Scroll Animation
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+const observerOptions = {
+    threshold: 0.25,
+    rootMargin: '0px 0px -50px 0px',
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+timelineItems.forEach(item => observer.observe(item));
+
 
 
 // // 4. Live Project Stats Counter
