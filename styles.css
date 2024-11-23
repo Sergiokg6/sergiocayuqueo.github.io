@@ -248,7 +248,6 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     background: linear-gradient(to right, var(--primary), #f0f0f5);
-    background-clip: text; /* Standard property for compatibility */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0;
@@ -1609,7 +1608,7 @@ body {
     position: relative;
     text-shadow: 2px 2px var(--bg);
     background: var(--accent-color);
-    background-clip: text; /* Standard property for compatibility */
+    /* background-clip: text; Standard property for compatibility */
     -webkit-background-clip: text; /* Webkit-specific property for older browsers */
     -webkit-text-fill-color: transparent; /* Makes the text transparent so the background shows through */
     filter: drop-shadow(0 0 20px rgba(0, 255, 148, 0.3));
