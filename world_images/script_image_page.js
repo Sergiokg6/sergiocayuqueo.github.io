@@ -487,7 +487,7 @@ function updateGalleryView() {
 
 
 // Enhanced Modal UI Component
-class CarouselModal {
+class CarouselModal { 
     constructor() {
         this.createModalElement();
         this.bindEvents();
