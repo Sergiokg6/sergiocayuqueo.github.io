@@ -462,7 +462,6 @@ burgerMenu.addEventListener("click", () => {
         'Craftsman',
         'Code Artist',
         'Problem Solver',
-        'Polymath',
         'Sergio I'
     ];
 
