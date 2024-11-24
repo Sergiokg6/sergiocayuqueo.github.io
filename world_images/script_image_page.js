@@ -352,33 +352,6 @@ function initGallery() {
 
 // Event Listeners
 function setupEventListeners() {
-    // Category buttons
-    document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelector('.category-btn.active').classList.remove('active');
-            btn.classList.add('active');
-            filterImages(btn.dataset.category);
-        });
-    });
-
-    // View toggle
-    document.querySelectorAll('.view-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelector('.view-btn.active').classList.remove('active');
-            btn.classList.add('active');
-            currentView = btn.dataset.view;
-            updateGalleryView();
-        });
-    });
-
-    // Filter dropdown
-    const filterBtn = document.querySelector('.filter-btn');
-    const filterMenu = document.querySelector('.filter-menu');
-    
-    filterBtn.addEventListener('click', () => {
-        filterMenu.style.display = filterMenu.style.display === 'block' ? 'none' : 'block';
-    });
-
     // Close filter menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!filterBtn.contains(e.target) && !filterMenu.contains(e.target)) {
@@ -511,7 +484,6 @@ function filterImages(category) {
 function updateGalleryView() {
     galleryGrid.className = `gallery-grid ${currentView}-view`;
 }
-
 
 
 // Enhanced Modal UI Component
@@ -799,3 +771,85 @@ UI.createImageElement = function(photo) {
     
     return div;
 };
+
+//filter
+document.addEventListener('DOMContentLoaded', function() {
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    const filterBtn = filterDropdown.querySelector('.filter-btn');
+    const filterMenu = document.querySelector('.filter-menu');
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const viewButtons = document.querySelectorAll('.view-btn');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const activeFiltersContainer = document.getElementById('active-filters');
+
+    // Handle filter dropdown
+    filterBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        filterDropdown.classList.toggle('active');
+        filterBtn.setAttribute('aria-expanded', 
+            filterBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+        );
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!filterDropdown.contains(e.target)) {
+            filterDropdown.classList.remove('active');
+            filterBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Handle category selection
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+
+    // Handle view toggle
+    viewButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            viewButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+
+    // Handle checkbox changes and active filters
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            updateActiveFilters();
+        });
+    });
+
+    function updateActiveFilters() {
+        activeFiltersContainer.innerHTML = '';
+        
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const filterTag = document.createElement('span');
+                filterTag.className = 'filter-tag';
+                filterTag.innerHTML = `
+                    ${checkbox.nextElementSibling.textContent}
+                    <i class="fas fa-times"></i>
+                `;
+                
+                filterTag.addEventListener('click', () => {
+                    checkbox.checked = false;
+                    updateActiveFilters();
+                });
+                
+                activeFiltersContainer.appendChild(filterTag);
+            }
+        });
+    }
+
+    // Keyboard navigation for dropdown
+    filterMenu.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            filterDropdown.classList.remove('active');
+            filterBtn.setAttribute('aria-expanded', 'false');
+            filterBtn.focus();
+        }
+    });
+});

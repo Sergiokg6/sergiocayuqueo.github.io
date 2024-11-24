@@ -32,16 +32,16 @@
             
             <div class="search-container">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" placeholder="Search for stunning images...">
+                <input aria-label="Search images" role="searchbox" autocomplete="off" type="text" class="search-input" placeholder="Search for stunning images...">
                 <button class="search-button">Search</button>
             </div>
 
             <div class="trending-tags">
                 <span>Trending:</span>
-                <a href="#" class="tag">Minimalist</a>
-                <a href="#" class="tag">Nature</a>
-                <a href="#" class="tag">Architecture</a>
-                <a href="#" class="tag">Portrait</a>
+                <a href="#" class="tag" data-category="minimalist">Minimalist</a>
+                <a href="#" class="tag" data-category="nature">Nature</a>
+                <a href="#" class="tag" data-category="architecture">Architecture</a>
+                <a href="#" class="tag" data-category="portrait">Portrait</a>
             </div>
         </div>
     </header>
@@ -68,38 +68,57 @@
 
             <div class="view-controls">
                 <div class="filter-dropdown">
-                    <button class="filter-btn">
+                    <button class="filter-btn" aria-expanded="false" aria-controls="filter-menu">
                         <i class="fas fa-filter"></i>
                         Filters
                         <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="filter-menu">
-                        <label class="filter-option">
-                            <input type="checkbox" name="orientation" value="portrait">
-                            Portrait
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="orientation" value="landscape">
-                            Landscape
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="orientation" value="square">
-                            Square
-                        </label>
+                    <div class="filter-menu" id="filter-menu">
+                        <div class="filter-section">
+                            <div class="filter-section-title">Orientation</div>
+                            <label class="filter-option">
+                                <input type="checkbox" name="orientation" value="portrait">
+                                <span>Portrait</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="orientation" value="landscape">
+                                <span>Landscape</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="orientation" value="square">
+                                <span>Square</span>
+                            </label>
+                        </div>
+                        <div class="filter-section">
+                            <div class="filter-section-title">Date Range</div>
+                            <label class="filter-option">
+                                <input type="checkbox" name="date" value="today">
+                                <span>Today</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="date" value="week">
+                                <span>This Week</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="date" value="month">
+                                <span>This Month</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
                 <div class="view-toggle">
-                    <button class="view-btn active" data-view="grid">
+                    <button class="view-btn active" data-view="grid" aria-label="Grid view">
                         <i class="fas fa-th"></i>
                     </button>
-                    <button class="view-btn" data-view="list">
+                    <button class="view-btn" data-view="list" aria-label="List view">
                         <i class="fas fa-list"></i>
                     </button>
                 </div>
             </div>
         </div>
-
+        <div class="active-filters" id="active-filters"></div>
+         
         <div id="galleryGrid" class="gallery-grid"></div>
         
         <div id="loading" class="loading">
@@ -110,7 +129,8 @@
 
     <div id="modal" class="modal">
         <div class="modal-overlay"></div>
-        <button class="close-modal">
+        <button class="close-modal" 
+        aria-label="Close modal" class="close-modal">
             <i class="fas fa-times"></i>
         </button>
         
