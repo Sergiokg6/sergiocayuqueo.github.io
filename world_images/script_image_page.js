@@ -493,7 +493,7 @@ class CarouselModal {
         this.bindEvents();
         this.touchStartX = 0;
         this.currentImageIndex = 0;
-    }
+    } 
 
     createModalElement() {
         const modalHTML = `
