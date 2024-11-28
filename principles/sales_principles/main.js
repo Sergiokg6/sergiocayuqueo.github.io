@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Five Ways to Build a $100 Million Business",
             url: "https://christophjanz.blogspot.com/2014/10/five-ways-to-build-100-million-business.html",
             description: "Classic blog post about scaling a business"
-        }, 
+        },  
         {
             title: "The Sales Acceleration Formula",
             url: "https://www.amazon.com/Sales-Acceleration-Formula-Technology-Inbound/dp/1119047072",
