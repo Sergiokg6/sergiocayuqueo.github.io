@@ -1,0 +1,217 @@
+/* Root variables for color scheme */
+:root {
+    --rich-black: #0A0A0A;
+    --gold-accent: #D4AF37;
+    --soft-cream: #F5F5DC;
+    --deep-charcoal: #1C1C1C;
+    --elegant-gray: #353535;
+    --midnight-blue: #1A2C4F;
+    --silk-white: #F8F9FA;
+}
+
+/* General reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Smooth scroll for better user experience */
+}
+
+/* Background and animation settings */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--rich-black); /* Text color */
+    line-height: 1.8;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    perspective: 1000px; /* For depth effect in 3D transformations */
+
+    /* Background image for the body */
+    background-image: url("../../images_blog/home-topo-pattern.png");
+    background-size: cover; /* Ensure the image fully covers the screen */
+    background-position: center; /* Keep the image centered */
+    background-attachment: fixed; /* Prevent scrolling the background with the page */
+    background-repeat: no-repeat; /* Avoid repeating the background image */
+
+
+}
+
+
+/* Keyframes for the immersive zoom effect on the background image */
+@keyframes immersiveZoom {
+    0% {
+        transform: scale(1); /* Start at normal scale */
+    }
+    50% {
+        transform: scale(1.1); /* Zoom in */
+    }
+    100% {
+        transform: scale(1); /* Return to normal scale */
+    }
+}
+
+/* Container for the essay content */
+.essay-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1; /* Ensure content is above background */
+    background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.1) 0%, transparent 70%),
+                radial-gradient(circle at bottom left, rgba(28, 28, 28, 0.05) 0%, transparent 50%);
+}
+
+/* Essay header section */
+.essay-header {
+    position: relative;
+    padding: 4rem 2rem;
+    color: var(--soft-cream);
+    text-align: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transform: translateZ(-1px) scale(1.1);
+}
+
+/* Animation for the moving diagonal pattern on the header */
+.essay-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(212, 175, 55, 0.1) 10px,
+        rgba(212, 175, 55, 0.2) 20px
+    ); */
+    opacity: 0.3; /* Slightly visible for a soft effect */
+    /* animation: diagonal-move 20s linear infinite; Infinite diagonal movement */
+}
+
+/* Keyframes for the diagonal pattern animation */
+@keyframes diagonal-move {
+    0% { transform: rotate(0deg) translate(-25%, -25%); }
+    100% { transform: rotate(360deg) translate(-25%, -25%); }
+}
+
+/* Essay title styling */
+.essay-title {
+    font-family: 'Montserrat', serif;
+    font-size: 4rem;
+    font-weight: 100;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+    color: var(--gold-accent);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    position: relative;
+    transform-style: preserve-3d;
+    /* animation: title-hover 3s ease-in-out infinite alternate; */
+}
+
+/* Title hover animation for a subtle 3D effect */
+@keyframes title-hover {
+    0% { transform: translateZ(-10px) rotate(-1deg); }
+    100% { transform: translateZ(10px) rotate(1deg); }
+}
+
+/* Essay subtitle styling */ 
+.essay-subtitle { 
+    font-family: 'Montserrat', monospace;
+    font-size: 1.2rem;
+    font-weight: 10;
+    color: rgba(2, 45, 20, 0.8);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Essay content container */
+.essay-container {
+    max-width: 900px;
+    width: 90%;
+    margin: 3rem auto;
+    padding: 3rem;
+    background: white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1), 0 15px 50px rgba(212, 175, 55, 0.1);
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Hover effect for the essay content container */
+.essay-container:hover::after {
+    opacity: 1;
+}
+
+/* Essay content (text) style */
+.essay-content {
+    font-family: 'Montserrat', serif;
+    text-align: justify;
+    color: var(--elegant-gray);
+    font-size: 1.1rem;
+    line-height: 2;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Show essay content with smooth transition when it becomes visible */
+.essay-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Essay metadata (like date, version) styling */
+.essay-metadata {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: linear-gradient(to right, rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.01));
+    border-left: 6px solid var(--gold-accent);
+    font-size: 0.9rem;
+    color: var(--elegant-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Version indicator styling */
+.version-indicator {
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgba(212, 175, 55, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .essay-title { font-size: 2.5rem; }
+    .essay-subtitle { font-size: 1rem; }
+    .essay-container { 
+        padding: 1.5rem; 
+        width: 95%;
+    }
+}
+
+/* Pulse animation for highlighted text */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Highlighted text effect */
+.highlight {
+    background-color: rgba(212, 175, 55, 0.2);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for highlighted text */
+.highlight:hover {
+    background-color: rgba(212, 175, 55, 0.4);
+    animation: pulse 0.5s infinite;
+}
