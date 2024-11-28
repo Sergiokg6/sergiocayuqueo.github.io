@@ -82,7 +82,7 @@ body {
 .logo {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary, #ff6f61);
+    /* color: var(--primary, #ff6f61); */
     text-shadow: 0 3px 8px rgba(255, 111, 97, 0.8);
     position: relative;
     overflow: hidden;
@@ -93,7 +93,7 @@ body {
 }
 
 .logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Nav Links */
@@ -598,6 +598,11 @@ body {
 
 }
 
+#poems h2 {
+    color: var(--primary);
+    font-size: 2.5rem;
+}
+
 /* Pseudoelemento ::after para el overlay del fondo */
 #poems::after {
     content: '';
@@ -622,7 +627,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribuir dinámicamente los poemas */
     gap: 20px; /* Espacio entre los poemas */
     margin-left: 5%;
-    margin-left: 5%;
+    margin-right: 5%;
 
 }
 
@@ -633,7 +638,7 @@ body {
     transition: color 0.3s ease;
     display: block; /* Cambiado a 'block' para ocupar todo el espacio horizontal */
     margin-left: 5%;
-    margin-left: 5%;
+    margin-right: 5%;
 
 }
 
@@ -1192,6 +1197,9 @@ body {
     padding-top: 3rem;
     border-top: 1px solid var(--glass);
 }
+.footer-bottom a {
+    color: var(--primary);
+}
 
 @media (max-width: 768px) {
     .newsletter-form {
@@ -1606,15 +1614,16 @@ body {
 
 .glitch-text {
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 100;
     position: relative;
     text-shadow: 2px 2px var(--bg);
-    background: var(--accent-color);
+    background: var(--glass);
     background-clip: text; /* Standard property for compatibility */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 20px rgba(0, 255, 148, 0.3));
     text-decoration: none;
+    color: var(--primary);
 }
 
 
