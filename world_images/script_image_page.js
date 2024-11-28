@@ -515,7 +515,7 @@ class CarouselModal {
                             <button class="action-btn download-btn">
                                 <i class="fas fa-download"></i> Download
                             </button>
-                            <button class="action-btn share-btn">
+                           <button class="action-btn share-btn">
                                 <i class="fas fa-share"></i> Share
                             </button>
                         </div>
