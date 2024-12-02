@@ -829,10 +829,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (checkbox.checked) {
                 const filterTag = document.createElement('span');
                 filterTag.className = 'filter-tag';
-                filterTag.innerHTML = `
-                    ${checkbox.nextElementSibling.textContent}
-                    <i class="fas fa-times"></i>
-                `;
+                filterTag.textContent = checkbox.nextElementSibling.textContent;
+                const closeIcon = document.createElement('i');
+                closeIcon.className = 'fas fa-times';
+                filterTag.appendChild(closeIcon);
                 
                 filterTag.addEventListener('click', () => {
                     checkbox.checked = false;
