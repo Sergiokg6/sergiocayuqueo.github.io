@@ -41,7 +41,7 @@
     /* Background Gradient & Image */
     --background-gradient-light: #f0f0f0;
     --background-gradient-dark: #2c2c2c;
-    --background-image: url('../images_blog/archduke-johann-higher-resolution.jpg');
+    /* --background-image: url('../images_blog/archduke-johann-higher-resolution.jpg'); */
 }
 
 /* Dark Mode */
@@ -71,7 +71,7 @@
 
 /* General Body Styles */
 body {
-    background-color: var(--background-color);
+    background-image: url('../images_blog/home-topo-pattern.png');
     font-family: 'Montserrat', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -79,6 +79,7 @@ body {
     text-align: center;
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+    background-attachment: fixed;
 }
 
 /* Header Section */
@@ -137,7 +138,7 @@ p {
 .paper {
     margin-bottom: 50px;
     padding: 30px;
-    background-color: var(--background-color);
+    background-color: var(--background-color-light);
     border-radius: 8px;
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease-in-out, background-color 0.3s ease;
@@ -182,19 +183,6 @@ p {
     transition: transform 0.5s ease-out;
 }
 
-/* Background Pattern */
-body:before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../images_blog/science5.jpg');
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: -1;
-}
 
 /* Chart Styles */
 .chart-container {
