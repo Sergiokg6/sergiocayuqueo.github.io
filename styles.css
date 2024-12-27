@@ -310,7 +310,7 @@ body {
     color: var(--primary);
     text-decoration: none;
     border: 2px solid var(--primary);
-    border-radius: 50px;
+    border-radius: 4px;
     font-weight: 500;
     position: relative;
     overflow: hidden;
@@ -383,7 +383,7 @@ body {
 /* Project Card */
 .project-card {
     background: var(--card-bg);
-    border-radius: 15px;
+    border-radius: 4px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -438,6 +438,10 @@ body {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--primary);
+}
+
+.project-a-link {
+    text-decoration: none;
 }
 
 /* Responsive Adjustments */
@@ -671,7 +675,7 @@ body {
 .poem-card {
     background: rgba(255, 255, 255, 0.1); /* Glass effect */
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 4px;
     margin: 2rem 0;
     opacity: 0;
     transform: translateY(30px);
@@ -724,7 +728,7 @@ body {
     .poem-card {
         padding: 1.0rem; /* Reduce padding inside cards for small screens */
         margin: 1.5rem 0; /* Adjust margin to fit better on small screens */
-        border-radius: 10px; /* Slightly smaller radius for smaller screens */
+        border-radius: 4px; /* Slightly smaller radius for smaller screens */
     }
 
     .poem-content h3 {
@@ -877,7 +881,7 @@ body {
 .wisdom-phrase {
     background: var(--card-bg, #fff);
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     opacity: 0;
@@ -1078,6 +1082,7 @@ body {
     }
     .footer-contact .audio-button {
         display: none;
+        border-radius: 1px;
     }
 }
 
@@ -1095,7 +1100,6 @@ body {
         color: var(--primary);
         text-decoration: none;
         border: 2px solid var(--primary);
-        border-radius: 5px;
         position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
@@ -1261,7 +1265,7 @@ body {
 .theme-btn {
     width: 20px;
     height: 20px;
-    border-radius: 10%;
+    border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 0;
@@ -1370,7 +1374,7 @@ body {
     background: var(--card-bg);
     border: 1px solid var(--glass);
     color: var(--text);
-    border-radius: 25px;
+    border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1rem;
@@ -1645,7 +1649,7 @@ body {
     width: 30px;
     height: 50px;
     border: 2px solid var(--text-color);
-    border-radius: 15px;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
     padding-top: 10px;
@@ -1686,7 +1690,6 @@ body {
     color: var(--primary);
     text-decoration: none;
     border: 2px solid var(--primary);
-    border-radius: 5px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -1770,3 +1773,105 @@ img {
         height: 1.5rem;
     }
 }
+
+
+
+
+/*START projects combox*/
+.projects-combobox {
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+}
+
+.select-box {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+
+/* .select-box:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: linear-gradient(90deg, rgba(20, 20, 30, 0.55), rgba(40, 40, 60, 0.55));
+} */
+
+
+.select-box .selected-item {
+    flex: 1;
+    font-size: 1.2em; /* Adjust font size as needed */
+}
+
+
+.select-box .arrow-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+
+.select-box .arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000;
+    transition: transform 0.3s ease;
+}
+/* Style for active/open dropdown arrow */
+.select-box.active .arrow {
+    transform: rotate(180deg); /* Rotate arrow when dropdown is open */
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    background: linear-gradient(90deg, rgba(20, 20, 30, 0.99), rgba(40, 40, 60, 0.99));
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 0;
+    list-style: none;
+    margin-top: 2px;
+    display: none;
+    z-index: 1000; /* Ensure it's above other elements */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add a subtle shadow */
+}
+
+
+.dropdown.active {
+    display: block;
+}
+
+
+.dropdown li {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em; /* Adjust font size as needed */
+    white-space: nowrap; /* Prevent line break */
+}
+
+.dropdown li:hover {
+    background-color: rgba(0, 0, 0, 0.15); /* Add a slight hover background */
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    .select-box {
+        padding: 8px;
+    }
+
+    .dropdown li {
+        padding: 8px;
+    }
+}
+
+/*END projects combox*/

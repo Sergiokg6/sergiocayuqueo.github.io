@@ -568,3 +568,35 @@ backToTopButton?.addEventListener('click', () => {
       behavior: 'smooth'
     });
 });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const projectsCombobox = document.querySelector('.projects-combobox');
+    const selectBox = projectsCombobox.querySelector('.select-box');
+    const dropdown = projectsCombobox.querySelector('.dropdown');
+    const selectedItem = projectsCombobox.querySelector('#selectedProject');
+    const dropdownItems = dropdown.querySelectorAll('li');
+
+
+    selectBox.addEventListener('click', () => {
+        selectBox.classList.toggle('active');
+        dropdown.classList.toggle('active');
+    });
+
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', () => {
+            selectedItem.textContent = item.textContent;
+            dropdown.classList.remove('active');
+            selectBox.classList.remove('active');
+        });
+    });
+    document.addEventListener('click', (event) => {
+        if (!projectsCombobox.contains(event.target)) {
+            dropdown.classList.remove('active');
+            selectBox.classList.remove('active');
+        }
+    });
+});
