@@ -8,7 +8,7 @@ const CONFIG = {
     DEFAULT_QUERY: 'beautiful'
 };
 
-// State management using a singleton pattern
+// State management using a singleton pattern   
 const GalleryState = {
     currentPage: 1,
     currentCategory: 'all',
