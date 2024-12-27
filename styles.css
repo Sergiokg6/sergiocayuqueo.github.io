@@ -256,6 +256,14 @@ body {
     animation: fadeIn 1s ease forwards;
 }
 
+
+/* Responsive Adjustments for hero video*/
+@media (max-width: 768px) {
+    .hero iframe {
+        display: none;
+    }
+}
+
 .tagline-wrapper {
     height: 3em;
     overflow: hidden;
