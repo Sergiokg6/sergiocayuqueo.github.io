@@ -85,10 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Hero Background Rotator
       const images = [
         '../images_blog/adoniasgold.jpg',
-        '../images_blog/sergio-national-palace.jpg',
+        '../images_blog/cleverest-nobel-minds.png',
         '../images_blog/sheep.jpg',
         '../images_blog/sergio-playa.jpg',
-        '../images_blog/math-board.jpg',
         '../images_blog/sergio-tongoy-1.png',
 
 
