@@ -1,16 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ========================== Security & Performance ========================== -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Images</title>
-    <link rel="stylesheet" href="images.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="description" content="Explore our curated collection of premium, high-quality images from around the world">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https:;
+        connect-src 'self';
+        frame-src 'self';
+        frame-ancestors 'self';
+        form-action 'self';
+        base-uri 'self';
+        manifest-src 'self';
+        media-src 'self';
+        object-src 'none';
+        worker-src 'self' blob:;
+        upgrade-insecure-requests;
+        block-all-mixed-content"> -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#ff8000">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="../images_blog/sergiocayuqueo.jpg" type="image/x-icon">
+    <link rel="preload" href="images.css" as="style">
+    <link rel="stylesheet" href="images.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ========================== Basic Metadata ========================== -->
+    <title>World Images | Premium Global Photography Collection</title>
+    <meta name="description" content="Discover a curated collection of premium, high-quality images from around the world. Explore breathtaking landscapes, vibrant cultures, and stunning photography.">
+    <meta name="keywords" content="world images, premium photography, global images, high-quality images, curated photography, landscape photography, travel images, cultural photography, stock photos">
+    <link rel="canonical" href="https://sergiocayuqueo.com/images" />
+
+    <!-- ========================== Favicons ========================== -->
+    <link rel="icon" href="../images_blog/sergiocayuqueo.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images_blog/sergiocayuqueo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images_blog/sergiocayuqueo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images_blog/sergiocayuqueo.jpg">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- ========================== Open Graph & Social Media ========================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="World Images | Premium Global Photography Collection">
+    <meta property="og:description" content="Discover a curated collection of premium, high-quality images from around the world. Explore breathtaking landscapes, vibrant cultures, and stunning photography.">
+    <meta property="og:image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta property="og:url" content="https://sergiocayuqueo.com/images">
+    <meta property="og:site_name" content="World Images">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="World Images | Premium Global Photography Collection">
+    <meta name="twitter:description" content="Discover a curated collection of premium, high-quality images from around the world. Explore breathtaking landscapes, vibrant cultures, and stunning photography.">
+    <meta name="twitter:image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta name="twitter:url" content="https://sergiocayuqueo.com/images">
+    <meta name="twitter:site" content="@sergiocayuqueov">
+    <meta name="twitter:creator" content="@sergiocayuqueov">
+
+    <!-- LinkedIn Meta Tags -->
+    <meta property="linkedin:title" content="World Images | Premium Global Photography Collection">
+    <meta property="linkedin:description" content="Discover a curated collection of premium, high-quality images from around the world. Explore breathtaking landscapes, vibrant cultures, and stunning photography.">
+    <meta property="linkedin:image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta property="linkedin:url" content="https://www.linkedin.com/in/sergiocayuqueovi">
+
+     <!-- WhatsApp Meta Tags -->
+    <meta name="whatsapp:title" content="World Images | Premium Global Photography Collection">
+    <meta name="whatsapp:card" content="World Images" >
+    <meta name="whatsapp:image" itemprop="image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta name="whatsapp:description" content="Discover a curated collection of premium, high-quality images from around the world. Explore breathtaking landscapes, vibrant cultures, and stunning photography.">
+
+    <!-- Instagram Meta Tags -->
+    <meta name="instagram:title" content="World Images | Premium Global Photography Collection">
+    <meta name="instagramard" content="World Images" >
+    <meta name="instagram:image" itemprop="image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta name="instagram:description" content="Discover a curated collection of premium, high-quality images from around the world. Explore breathtaking landscapes, vibrant cultures, and stunning photography.">
+
+    <!-- ========================== Analytics & 3rd Party Scripts ========================== -->
+    
+    <!-- ========================== Accessibility ========================== -->
+    <meta name="language" content="en">
+    <meta name="distribution" content="global">
+    
+    <!-- ========================== Additional Metadata ========================== -->
+    <meta name="robots" content="index, follow">
 </head>
 <body>
     <header class="main-header">

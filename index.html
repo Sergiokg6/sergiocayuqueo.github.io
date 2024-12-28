@@ -1,118 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ========================== Security & Performance ========================== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' https://www.googletagmanager.com https://cdn.amplitude.com https://*.cloudflare.com 'nonce-${nonce}';
-    style-src 'self' https://*.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
-    font-src 'self' https://*.cloudflare.com https://fonts.gstatic.com;
-    img-src 'self' data: https: blob:;
-    connect-src 'self' https://www.google-analytics.com https://*.amplitude.com;
-    frame-src 'self';
-    frame-ancestors 'self';
-    form-action 'self';
-    base-uri 'self';
-    manifest-src 'self';
-    media-src 'self';
-    object-src 'none';
-    worker-src 'self' blob:;
-    upgrade-insecure-requests;
-    block-all-mixed-content"> -->
-
-    <!-- Additional Security Headers -->
+      default-src 'self';
+      script-src 'self' https://www.googletagmanager.com https://cdn.amplitude.com https://*.cloudflare.com 'nonce-${nonce}';
+      style-src 'self' https://*.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
+      font-src 'self' https://*.cloudflare.com https://fonts.gstatic.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://www.google-analytics.com https://*.amplitude.com;
+      frame-src 'self';
+      frame-ancestors 'self';
+      form-action 'self';
+      base-uri 'self';
+      manifest-src 'self';
+      media-src 'self';
+      object-src 'none';
+      worker-src 'self' blob:;
+      upgrade-insecure-requests;
+      block-all-mixed-content"> -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <!-- <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"> -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="referrer" content="no-referrer">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergio Cayuqueo | AI | Software Developer</title>
+    <meta name="google-site-verification" content="keg7anNBhK3mhncrytVCU9Lq1nKmR44xlg8Fp8ILFm4"/>
+    <meta name="theme-color" content="#ff8000">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css" />
+  
+    <!-- ========================== Basic Metadata ========================== -->
+    <title>Sergio Cayuqueo | AI & Software Engineer | Personal Blog</title>
+    <meta name="description" content="Explore Sergio Cayuqueo's journey in AI, Software Engineering, and creativity. Discover a blend of technology, innovation, and personal insights.">
+    <meta name="keywords" content="Sergio Cayuqueo, AI, Software Engineer, Software Developer, Personal Blog, Technology, Innovation, Creativity, Leadership, Chile, Startup, Full-stack development, Agile, Python, Java, JavaScript, Cloud computing, Machine learning, Data science, Entrepreneurship">
+    <link rel="canonical" href="https://sergiocayuqueo.com" />
+  
+    <!-- ========================== Favicons ========================== -->
+    <link rel="icon" href="./images_blog/sergiocayuqueo.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images_blog/sergiocayuqueo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images_blog/sergiocayuqueo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images_blog/sergiocayuqueo.jpg">
+    <link rel="manifest" href="./site.webmanifest">
+     
+    <!-- ========================== Open Graph & Social Media ========================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sergio Cayuqueo | AI & Software Engineer | Personal Blog">
+    <meta property="og:description" content="Explore Sergio Cayuqueo's journey in AI, Software Engineering, and creativity. Discover a blend of technology, innovation, and personal insights.">
+    <meta property="og:image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta property="og:url" content="https://sergiocayuqueo.com">
+    <meta property="og:site_name" content="Sergio Cayuqueo | AI & Software Engineer">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sergio Cayuqueo | AI & Software Engineer">
+    <meta name="twitter:description" content="Descubre más sobre Sergio Cayuqueo, ingeniero de software y creador. Explorando poesía, tecnología y mucho más.">
+    <meta name="twitter:image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta name="twitter:url" content="https://sergiocayuqueo.com">
+    <meta name="twitter:site" content="@sergiocayuqueov">
+    <meta name="twitter:creator" content="@sergiocayuqueov">
+    
+    <!-- LinkedIn Meta Tags -->
+    <meta property="linkedin:title" content="Sergio Cayuqueo | AI & Software Engineer">
+    <meta property="linkedin:description" content="Perfil profesional de Sergio Cayuqueo. Ingeniero de software con experiencia en startups, liderazgo y tecnología avanzada.">
+    <meta property="linkedin:image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta property="linkedin:url" content="https://www.linkedin.com/in/sergiocayuqueovi">
+    
+    
+    <!-- WhatsApp Meta Tags -->
+    <meta name="whatsapp:title" content="Sergio Cayuqueo's Personal Blog">
+    <meta name="whatsapp:card" content="Sergio Cayuqueo's Personal Blog" >
+    <meta name="whatsapp:image" itemprop="image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta name="whatsapp:description" content="This blog is about Sergio...about how you spot a winner, how you pick a winner, and how you become a winner.">
+    
+    <!-- Instagram Meta Tags -->
+    <meta name="instagram:title" content="Sergio Cayuqueo's Personal Blog">
+    <meta name="instagramard" content="Sergio Cayuqueo's Personal Blog" >
+    <meta name="instagram:image" itemprop="image" content="https://sergiocayuqueo.com/images_blog/sergiocayuqueo.jpg">
+    <meta name="instagram:description" content="This blog is about Sergio...about how you spot a winner, how you pick a winner, and how you become a winner.">
+    
+    
+    <!-- ========================== Analytics & 3rd Party Scripts ========================== -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYBEX4C2K6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-XYBEX4C2K6');
     </script>
-    <!-- End Google Analytics -->
+    <!--end google analytics-->
 
     <!--start amplitude-->
-    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-min.js.gz"></script><script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.1.9-min.js.gz"></script><script src="https://cdn.amplitude.com/libs/plugin-autocapture-browser-0.9.0-min.js.gz"></script><script>window.amplitude.init('f711aebfb2094349609443a94080186a');window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.add(window.amplitudeAutocapturePlugin.plugin());</script>
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.1.9-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-autocapture-browser-0.9.0-min.js.gz"></script>
+    <script>window.amplitude.init('f711aebfb2094349609443a94080186a'); window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 })); window.amplitude.add(window.amplitudeAutocapturePlugin.plugin());</script>
     <!--end amplitude-->
 
     <!-- Appzi: Capture Insightful Feedback -->
     <script async src="https://w.appzi.io/w.js?token=Zjnzf"></script>
     <!-- End Appzi -->
 
-    <!-- Page Metadata -->
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
+    <!-- ========================== Accessibility ========================== -->
+    <meta name="language" content="en">
     <meta name="distribution" content="global">
-
-
-    <!-- Open Graph Meta Tags (for Social Media Sharing) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Sergio Cayuqueo's Personal Blog">
-    <meta property="og:description" content="Explora la vida, los poemas y la experiencia profesional de Sergio Cayuqueo. Ingeniero apasionado por la tecnología, la creatividad y el impacto positivo.">
-    <meta property="og:image" content="./images_blog/profilesergio.jpg">
-    <meta property="og:url" content="https://sergiocayuqueo.com">
-    <meta property="og:site_name" content="Sergio Cayuqueo | AI | Software Developer">
-       
-    <!-- Permissions Policy -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta https-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()" />
-    <meta name="google-site-verification" content="keg7anNBhK3mhncrytVCU9Lq1nKmR44xlg8Fp8ILFm4"/>
-
-    <meta name="pageKey" content="p_mwlite_profile_view">
-    <meta name="description" content="Sergio Cayuqueo Experienced engineer with over a year of hands-on involvement in both HiTech and Startup industries. Demonstrated leadership in guiding teams through diverse challenges and achieving notable milestones. Known for an optimistic outlook and strong belief in potential, coupled with exceptional efficiency, adept management, and multitasking prowess. An individual who thrives on turning visions into reality while fostering collaboration and innovation.">
-    <meta name="keywords" content="Sergio Cayuqueo, Cayuqueo, Vera, Romero, Joel, Sergio Ismael Cayuqueo Vera, Engineer, HiTech, Software, Developer, Chile, Estados Unidos, Startup, Leadership, Achievements, Challenges, Believer, Optimist, Efficiency, Management, Multitasking, Teamwork, Innovation, Visionary, Collaboration, Hands-on, Experience, Skills, Sergio, Cayuqueo, Vera, Ismael, Problem-solving, Results-driven, Strategy, Goal-oriented, Technical, Adaptable, Proactive, Resourceful, Resilient, Dynamic, Creative, Growth mindset, Russia, Startup, funding, Business, development, Lean-startup, methodology,Minimum viable product(MVP), Product-market fit, Growth hacking, Customer, acquisition, Market, research, Pitching to investors, Business model, canvas, Revenue, streams, Scalability, Entrepreneurial mindset, culture, Risk management, Programming languages, Python, Java, JavaScript, Software development methodologies, Agile, Scrum, DevOps, Frameworks, libraries, React, Angular, Django, Coding best practices, Version control, Git, SVN, Debugging techniques, Test-driven development (TDD), Continuous integration,continuous deployment, (CI/CD), Software architecture Cloud, computing platforms, AWS, Azure, Google Cloud, Microservices architecture, Containerization, Docker, Kubernetes, Frontend development, Backend development, Full-stack development">
-    
-    <meta property="og:site_name" content="sergiocayuqueo">
-    <meta https-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="i18nDefaultLocale" content="en_US">
     <meta name="i18nLocale" content="en_US">
     <meta name="requestIpCountryCode" content="cl">
-
-    <meta name="whatsapp:title" content="Sergio Cayuqueo's Personal blog">
-    <meta name="whatsapp:card" content="Sergio Cayuqueo's Personal blog" >
-    <meta name="whatsapp:image" itemprop="image" content="./images_blog/profilesergio.jpg">
-    <meta name="whatsapp:description" content="This blog is about Sergio...about how you spot a winner, how you pick a winner, and how you become a winner.">
-
-    <meta name="instagram:title" content="Sergio Cayuqueo's Personal blog">
-    <meta name="instagramard" content="Sergio Cayuqueo's Personal blog" >
-    <meta name="instagram:image" itemprop="image" content="./images_blog/profilesergio.jpg">
-    <meta name="instagram:description" content="This blog is about Sergio...about how you spot a winner, how you pick a winner, and how you become a winner.">
     
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sergio Cayuqueo | AI | Software Developer">
-    <meta name="twitter:description" content="Descubre más sobre Sergio Cayuqueo, ingeniero de software y creador. Explorando poesía, tecnología y mucho más.">
-    <meta name="twitter:image" content="./images_blog/profilesergio.jpg">
-    <meta name="twitter:url" content="https://sergiocayuqueo.com">
-    <meta name="twitter:site" content="@sergiocayuqueov">
-    <meta name="twitter:creator" content="@sergiocayuqueov">
-
-    <!-- LinkedIn Meta Tags -->
-    <meta property="linkedin:title" content="Sergio Cayuqueo | AI | Software Developer">
-    <meta property="linkedin:description" content="Perfil profesional de Sergio Cayuqueo. Ingeniero de software con experiencia en startups, liderazgo y tecnología avanzada.">
-    <meta property="linkedin:image" content="./images_blog/profilesergio.jpg">
-    <meta property="linkedin:url" content="https://www.linkedin.com/in/sergiocayuqueovi">    
-    
-    <link rel="icon" href="./images_blog/sergiocayuqueo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="theme-color" content="#ff8000">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+    <!-- ========================== Additional Metadata ========================== -->
+    <meta name="robots" content="index, follow">
+    <meta https-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()" />
+    <meta name="pageKey" content="p_mwlite_profile_view"> 
 </head>
+
 <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div> 
