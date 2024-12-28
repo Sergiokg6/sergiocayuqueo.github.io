@@ -116,8 +116,26 @@
     <meta name="requestIpCountryCode" content="cl">
 
     <!-- ========================== ReCaptcha Verification ========================== -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcm2acqAAAAAHSBd2YQzOX8R8p13wwvXMX2A9AD"></script>
+    <script>
+        document.getElementById("subscribeButton").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+            grecaptcha.enterprise.ready(function() {
+                grecaptcha.enterprise.execute('6Lcm2acqAAAAAHSBd2YQzOX8R8p13wwvXMX2A9AD', {action: 'submit'}).then(function(token) {
+                    // Add the token to the form as a hidden input field.
+                   let form = document.querySelector('form'); //selects the only form
+                   let tokenInput = document.createElement("input");
+                   tokenInput.setAttribute("type", "hidden");
+                   tokenInput.setAttribute("name", "g-recaptcha-response");
+                   tokenInput.setAttribute("value", token);
+                   form.appendChild(tokenInput);
+                   form.submit(); // Submit the form with the token
+                 });
+            });
+         });
+    </script>
+
+
     <!-- ========================== Additional Metadata ========================== -->
     <meta name="robots" content="index, follow">
     <meta https-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()" />
@@ -461,7 +479,6 @@
                     <input aria-label="Enter Email" id="emailInput" type="email" placeholder="Enter your email" required />
                     <button aria-label="Subscribe Button" id="subscribeButton" class="newsletter-btn" type="submit">SUBSCRIBE</button>
                     <span id="success" class="success-message" style="display: none;">Success!</span>
-                    <div class="g-recaptcha" data-sitekey="6LcHJ6gqAAAAAL1fNKAzNKlUXd1mhJvIQzAkIIOX"></div>
                 </form>
             </div>
         </div>
