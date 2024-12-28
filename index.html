@@ -114,6 +114,9 @@
     <meta name="i18nDefaultLocale" content="en_US">
     <meta name="i18nLocale" content="en_US">
     <meta name="requestIpCountryCode" content="cl">
+
+    <!-- ========================== ReCaptcha Verification ========================== -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     
     <!-- ========================== Additional Metadata ========================== -->
     <meta name="robots" content="index, follow">
@@ -458,6 +461,7 @@
                     <input aria-label="Enter Email" id="emailInput" type="email" placeholder="Enter your email" required />
                     <button aria-label="Subscribe Button" id="subscribeButton" class="newsletter-btn" type="submit">SUBSCRIBE</button>
                     <span id="success" class="success-message" style="display: none;">Success!</span>
+                    <div class="g-recaptcha" data-sitekey="6LcHJ6gqAAAAAL1fNKAzNKlUXd1mhJvIQzAkIIOX"></div>
                 </form>
             </div>
         </div>
