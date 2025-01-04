@@ -71,8 +71,8 @@
   
   .nav-toggle .nav-icon {
     display: block;
-    width: 24px;
-    height: 2px;
+    width: 34px;
+    height: 1px;
     background-color: var(--text-color);
     position: relative;
     transition: all 0.3s;
@@ -83,8 +83,8 @@
     content: "";
     position: absolute;
     left: 0;
-    width: 24px;
-    height: 2px;
+    width: 34px;
+    height: 1px;
     background-color: var(--text-color);
     transition: all 0.3s;
   }
