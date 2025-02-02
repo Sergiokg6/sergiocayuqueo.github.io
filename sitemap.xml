@@ -4,167 +4,53 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
   <loc>https://sergiocayuqueo.com/</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
+  <lastmod>2025-02-02T13:52:12+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/biography/index</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
+  <loc>https://sergiocayuqueo.com/poems.html</loc>
+  <lastmod>2025-02-02T13:52:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/poems/cosmic-reflections</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
+  <loc>https://sergiocayuqueo.com/stamurai.html</loc>
+  <lastmod>2025-02-02T13:52:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/principles/sales-principles/index</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
+  <loc>https://sergiocayuqueo.com/buzzoms.html</loc>
+  <lastmod>2025-02-02T13:52:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/poems/amigo-tesla-alias-torre</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
+  <loc>https://sergiocayuqueo.com/Sergio_Cayuqueo_Resume.pdf</loc>
+  <lastmod>2025-02-02T13:52:13+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/poems/hechos-contemporaneos</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/LA</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/esperanza</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/eco-del-anticristo</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/quienes-QUESTIONMARK</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/espacio-y-tiempo</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/rapidez-de-cambio</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/silencio</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/ojos-blancos</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/oda-a-un-robot</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/hay-un-futuro-feliz</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/hueso</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/sabios</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/nignios</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/trenes</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/no-lo-ves</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/pajaros-raros</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/escuche</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/ciervos</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/de-pablo-paladin-hijo</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/de-dias-lluviosos</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/poems/accion</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/world-images/images</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/papers/papers</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sergiocayuqueo.com/papers_pdfs/Attention_is_all_you_need_artificial_intelligence_fundamentals_Paper.pdf</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
+  <loc>https://sergiocayuqueo.com/index.html</loc>
+  <lastmod>2025-02-02T13:52:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/papers_pdfs/bitcoin.pdf</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
+  <loc>https://sergiocayuqueo.com/fathomoptics.html</loc>
+  <lastmod>2025-02-02T13:52:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://sergiocayuqueo.com/papers_pdfs/World-Coin.pdf</loc>
-  <lastmod>2024-12-28T16:07:18+00:00</lastmod>
+  <loc>https://sergiocayuqueo.com/keralaonroad.html</loc>
+  <lastmod>2025-02-02T13:52:12+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sergiocayuqueo.com/mausumi.html</loc>
+  <lastmod>2025-02-02T13:52:12+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 
