@@ -1,99 +1,50 @@
 {
-    "name": "Sergio Cayuqueo | AI | Software Developer",
-    "short_name": "Sergio Cayuqueo",
-    "description": "Explore the life, poems, and professional expertise of Sergio Cayuqueo. Engineer passionate about technology, creativity, and positive impact.",
-    "lang": "en",
-    "start_url": "/",
-    "scope": "/",
-    "display": "standalone",
-    "theme_color": "#ff8000",
-    "background_color": "#1a1a1a",
-    "orientation": "portrait-primary",
-    "icons": [
-      {
-        "src": "./images_blog/sergio_ismael_favicon.png",
-        "type": "image/png",
-        "sizes": "48x48"
+	"dir": "ltr",
+	"lang": "en",
+	"name": "Novice Philosopher '25",
+	"short_name": "Sergio",
+	"scope": "/",
+	"display": "fullscreen",
+	"start_url": "https://sergiocayuqueo.com/",
+	"background_color": "#ededed",
+  	"theme_color": "#131313",
+	"description": "AI researcher, philosopher, and technologist pushing the boundaries of artificial intelligence and human-machine synergy. Sergio Cayuqueo is redefining how AI agents evolve, collaborate, and design the future. A deep thinker, writer, and innovator shaping the next frontier of intelligence.",
+	"orientation": "portrait",
+	"related_applications": [],
+	"categories": ["Doxa", "Physics", "AI", "Energy"],
+	"prefer_related_applications": false,
+	"icons": [
+		{
+			"src": "https://uploads-ssl.webflow.com/60c771a5f20c346840862b2b/60da24b8d75a73f2a3f4bfef_icon32.png",
+			"type": "image/png",
+			"sizes": "32x32"
       },
-      {
-        "src": "./images_blog/sergio_ismael_favicon.png",
-        "type": "image/png",
-        "sizes": "72x72"
+		{
+			"src": "https://uploads-ssl.webflow.com/60c771a5f20c346840862b2b/60d21f821c161c55718db6df_icon256.png",
+			"type": "image/png",
+			"sizes": "256x256"
       },
-      {
-        "src": "./images_blog/sergio_ismael_favicon.png",
-        "type": "image/png",
-        "sizes": "96x96"
-      },
-      {
-        "src": "./images_blog/sergio_ismael_favicon.png",
-        "type": "image/png",
-        "sizes": "144x144"
-      },
-      {
-        "src": "./images_blog/sergio_ismael_favicon.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "./images_blog/sergio_ismael_favicon.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
+		{
+			"src": "https://uploads-ssl.webflow.com/60c771a5f20c346840862b2b/60da246c1b226a4f440d5ced_maskable_icon.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+    }
     ],
-    "categories": ["personal", "technology", "education", "poetry", "career"],
-    "related_applications": [
-      {
-        "platform": "webapp",
-        "url": "https://sergiocayuqueo.com"
-      }
-    ],
-    "features": {
-      "taglines": [
-        "Building a better future for humanity or not",
-        "Non-linear thinking",
-        "Have you ever interacted with a polymath?"
-      ],
-      "social_links": [
-        {
-          "name": "GitHub",
-          "url": "https://github.com/sergiocayuqueo/",
-          "icon": "fab fa-github"
-        },
-        {
-          "name": "LinkedIn",
-          "url": "https://www.linkedin.com/in/sergiocayuqueovi/",
-          "icon": "fab fa-linkedin"
-        },
-        {
-          "name": "Twitter",
-          "url": "https://x.com/sergiocayuqueov",
-          "icon": "fab fa-twitter"
-        },
-        {
-          "name": "Instagram",
-          "url": "https://www.instagram.com/sergiocvi/",
-          "icon": "fab fa-instagram"
-        }
-      ]
+	"shortcuts": [
+    {
+      "name": "Selected Works",
+      "short_name": "Works",
+      "description": "Check the Case studies of some of Sergio's selected works.",
+      "url": "https://sergiocayuqueo.com/work",
+      "icons": [{ "src": "https://uploads-ssl.webflow.com/60c771a5f20c346840862b2b/60da232041c66c44d08767b8_works.png", "sizes": "192x192" }]
     },
-    "permissions": {
-      "notifications": true,
-      "audio": true
-    },
-    "screenshots": [
-      {
-        "src": "./images_blog/screenshot-home.png",
-        "type": "image/png",
-        "sizes": "1280x720",
-        "label": "Homepage with tagline and branding"
-      },
-      {
-        "src": "./images_blog/screenshot-projects.png",
-        "type": "image/png",
-        "sizes": "1280x720",
-        "label": "Projects section showcasing work"
-      }
-    ]
-  }
-  
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Feel free to reach out to me via email if you have a project in mind, or maybe just say 'hi'. I don't mind making new friends.",
+      "url": "https://sergiocayuqueo.com/contact",
+      "icons": [{ "src": "https://uploads-ssl.webflow.com/60c771a5f20c346840862b2b/60da2320e0c72d8cc71ed842_contact.png", "sizes": "192x192" }]
+    }
+  ]
+}
