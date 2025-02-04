@@ -1464,37 +1464,40 @@ setInterval(function(){
       </div>
       <div class="overlay2"></div>
       <div class="overlay color"></div>
-      <div
-        data-poster-url="https://uploads-ssl.webflow.com/60c771a5f20c346840862b2b/60c7ab5826e1e827098b91c2_building bg-poster-00001.jpg"
-        data-video-urls="./videos/ai-sergio-cayuqueo-deep-mind-hero.mp4, ./videos/ai-sergio-cayuqueo-deep-mind-hero.mp4"
-        data-autoplay="true"
-        data-loop="true"
-        data-wf-ignore="true"
-        data-w-id="6858e1d5-4848-8c83-6164-0fdd0ee67d8d"
-        style="opacity: 0"
-        class="background-video w-background-video w-background-video-atom"
-      >
-        <video
-          autoplay=""
-          loop=""
-          style="
-            background-image: url('https://uploads-ssl.webflow.com/60c771a5f20c346840862b2b/60c7ab5826e1e827098b91c2_building bg-poster-00001.jpg');
-          "
-          muted=""
-          playsinline=""
-          data-wf-ignore="true"
-          data-object-fit="cover"
-        >
-          <source
-            src="./videos/ai-sergio-cayuqueo-deep-mind-hero.mp4"
-            data-wf-ignore="false"
-          />
-          <source
-            src="./videos/ai-sergio-cayuqueo-deep-mind-hero.mp4"
-            data-wf-ignore="true"
-          />
-        </video>
-      </div>
+      <div 
+      style="
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100vw; 
+        height: 100vh; 
+        overflow: hidden; 
+        z-index: 0;
+      " 
+      data-poster-url="https://uploads-ssl.webflow.com/60c771a5f20c346840862b2b/60c7ab5826e1e827098b91c2_building bg-poster-00001.jpg"
+      data-video-urls="https://www.youtube.com/embed/xviAYAhzagc?si=_4Y4os8HOtYCnHX7, ./videos/ai-sergio-cayuqueo-deep-mind-hero.mp4"
+      data-autoplay="true"
+      data-loop="true"
+      class="background-video w-background-video w-background-video-atom"
+    >
+      <iframe
+        src="https://www.youtube.com/embed/xviAYAhzagc?autoplay=1&mute=1&loop=1&playlist=xviAYAhzagc"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="
+          position: absolute; 
+          top: 0; 
+          left: 0; 
+          width: 100vw; 
+          height: 100vh; 
+          object-fit: cover;
+        "
+      ></iframe>
+    </div>
+    
       <div class="div-block"></div>
     </div>
     <div class="smooth-scroll-wrapper">
@@ -2578,7 +2581,7 @@ setInterval(function(){
                 class="hr3 black testimonial resume-start-line"
               ></div>
             </div>
-            <div data-w-id="bb7da318-ef38-27cb-03eb-6566fa299de5">
+            <!-- <div data-w-id="bb7da318-ef38-27cb-03eb-6566fa299de5">
               <div
                 data-w-id="9cbf91b7-6a54-2fd6-b1e5-1f973b18bd55"
                 class="hr4 black testimonial"
@@ -2600,7 +2603,7 @@ setInterval(function(){
                 data-w-id="c57d0ac7-1fc2-8b06-c392-5fe2f2d55a32"
                 class="hr3 black testimonial"
               ></div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div id="contact" class="footer">
