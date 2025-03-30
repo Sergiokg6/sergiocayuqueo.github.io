@@ -1,0 +1,99 @@
+{
+    "name": "Sergio Cayuqueo | AI | Software Developer",
+    "short_name": "Sergio Cayuqueo",
+    "description": "Explore the life, poems, and professional expertise of Sergio Cayuqueo. Engineer passionate about technology, creativity, and positive impact.",
+    "lang": "en",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#ff8000",
+    "background_color": "#1a1a1a",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "./images_blog/sergio_ismael_favicon.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "./images_blog/sergio_ismael_favicon.png",
+        "type": "image/png",
+        "sizes": "72x72"
+      },
+      {
+        "src": "./images_blog/sergio_ismael_favicon.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "./images_blog/sergio_ismael_favicon.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "./images_blog/sergio_ismael_favicon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./images_blog/sergio_ismael_favicon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "categories": ["personal", "technology", "education", "poetry", "career"],
+    "related_applications": [
+      {
+        "platform": "webapp",
+        "url": "https://sergiocayuqueo.com"
+      }
+    ],
+    "features": {
+      "taglines": [
+        "Building a better future for humanity or not",
+        "Non-linear thinking",
+        "Have you ever interacted with a polymath?"
+      ],
+      "social_links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/sergiocayuqueo/",
+          "icon": "fab fa-github"
+        },
+        {
+          "name": "LinkedIn",
+          "url": "https://www.linkedin.com/in/sergiocayuqueovi/",
+          "icon": "fab fa-linkedin"
+        },
+        {
+          "name": "Twitter",
+          "url": "https://x.com/sergiocayuqueov",
+          "icon": "fab fa-twitter"
+        },
+        {
+          "name": "Instagram",
+          "url": "https://www.instagram.com/sergiocvi/",
+          "icon": "fab fa-instagram"
+        }
+      ]
+    },
+    "permissions": {
+      "notifications": true,
+      "audio": true
+    },
+    "screenshots": [
+      {
+        "src": "./images_blog/screenshot-home.png",
+        "type": "image/png",
+        "sizes": "1280x720",
+        "label": "Homepage with tagline and branding"
+      },
+      {
+        "src": "./images_blog/screenshot-projects.png",
+        "type": "image/png",
+        "sizes": "1280x720",
+        "label": "Projects section showcasing work"
+      }
+    ]
+  }
+  
